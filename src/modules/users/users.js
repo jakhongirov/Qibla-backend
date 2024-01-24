@@ -424,7 +424,7 @@ module.exports = {
 
          if (checkUser) {
             if (user_password) {
-               const pass_hash = await bcryptjs.hash(password, 10)
+               const pass_hash = await bcryptjs.hash(user_password, 10)
                const editUser = await model.editUser(user_id, user_email, user_phone_number, pass_hash)
 
                if (editUser) {
