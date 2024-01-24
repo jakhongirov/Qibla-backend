@@ -406,11 +406,11 @@ const updateUserAllData = (
          user_region = $5,
          user_location = $6,
          user_app_lang = $7,
-         user_phone_model = $8,
-         user_phone_lang = $9,
-         user_os = $10,
-         user_os_version = $11,
-         user_comment = $12,
+         user_phone_model = array_append(user_phone_model, $8),
+         user_phone_lang = array_append(user_phone_lang, $9),
+         user_os = array_append(user_os, $10),
+         user_os_version = array_append(user_os_version, $11),
+         user_comment = array_append(user_comment, $12),
          user_app_version = $13
       WHERE
          user_id = $1
