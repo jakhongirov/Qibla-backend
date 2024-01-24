@@ -564,7 +564,6 @@ module.exports = {
             user_phone_lang,
             user_os,
             user_os_version,
-            user_app_version
          } = req.body
          const checkUser = await model.checkUserById(user_id)
 
@@ -574,8 +573,7 @@ module.exports = {
                user_phone_model,
                user_phone_lang,
                user_os,
-               user_os_version,
-               user_app_version
+               user_os_version
             )
 
             if (editUserPhoneDetails) {

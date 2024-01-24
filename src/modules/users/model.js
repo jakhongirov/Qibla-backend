@@ -323,7 +323,7 @@ const editUserPhoneDetails = (
       UPDATE
          users
       SET
-         user_phone_model = array_append(user_phone_model, $2)
+         user_phone_model = array_append(user_phone_model, $2),
          user_phone_lang = array_append(user_phone_lang, $3),
          user_os = array_append(user_os, $4),
          user_os_version = array_append(user_os_version, $5)
