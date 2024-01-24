@@ -411,7 +411,7 @@ const updateUserAllData = (
          user_os = $10,
          user_os_version = $11,
          user_comment = $12,
-         user_app_version = = $13
+         user_app_version = $13
       WHERE
          user_id = $1
       RETURNING *;
