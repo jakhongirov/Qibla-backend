@@ -38,7 +38,7 @@ router
    .post('/user/register', users.REGISTER_USER)
    .post('/user/register/temporaryuser', users.TEMPORARY_USER)
    .post('/user/login/:contact', users.LOGIN_USER)
-   .put('/user/edit/avatar', AUTH, FileUpload.single("photo"), users.EDIT_USER_AVATAR)
+   .put('/user/edit/avatar/:user_id', AUTH, FileUpload.single("photo"), users.EDIT_USER_AVATAR)
    .put('/user/edit/contact', AUTH, users.EDIT_USER_CONTACT)
    .put('/user/edit/name', AUTH, users.EDIT_USER_NAME)
    .put('/user/edit/location', AUTH, users.EDIT_USER_LOCATION)
