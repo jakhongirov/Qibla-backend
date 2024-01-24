@@ -368,6 +368,19 @@ const editUserPremium = (user_id, user_premium, expires_at) => {
 
    return fetch(QUERY, user_id, user_premium, expires_at)
 }
+const changeLang = (user_id, lang) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_app_lang = $2
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id, lang)
+}
 const updateUserAllData = (
    user_id,
    user_name,
@@ -565,6 +578,7 @@ module.exports = {
    editUserPhoneDetails,
    editUserAbout,
    editUserPremium,
+   changeLang,
    updateUserAllData,
    foundUserStat,
    editUserStats,
