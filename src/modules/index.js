@@ -8,6 +8,7 @@ const FileUpload = require('../middleware/multer')
 // files
 const admin = require('./admin/admin')
 const users = require('./users/users')
+const usersStats = require('./userStats/userStats')
 const priceList = require('./priceList/priceList')
 const categories = require('./categories/categories')
 // const questions = require('./questions/questions')
@@ -48,6 +49,12 @@ router
    .put('/user/edit/applang', AUTH, users.CHANGE_LANG)
    .put('/user/edit/alldata', AUTH, users.EDIT_ALL_USER_DATE)
    .delete('/user/delete', AUTH, users.DELETE_USER)
+
+   // USERS STATS API
+   .get("/users/stats/list", AUTH, usersStats.GET_ADMIN)
+   .get("/user/stats/:user_id", AUTH, usersStats.GET_USER_ID)
+   .post("/user/stats/add", AUTH, usersStats.CREATE_USER_STATS)
+   .delete("/user/stats/delete", AUTH, usersStats.DELETE_USER_STATS)
 
    // PRICE ITEM API
    .get('/prices/admin/list', AUTH, priceList.GET_ADMIN)
