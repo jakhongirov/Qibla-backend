@@ -184,10 +184,10 @@ CREATE TABLE users_zikr (
 
 CREATE TABLE price_list (
    price_item_id bigserial PRiMARY KEY,
-   price_yearly_dollar NUMERIC(5, 2),
-   price_yearly_sum NUMERIC(5, 2),
-   price_monthly_dollar NUMERIC(5, 2),
-   price_monthly_sum NUMERIC(5, 2),
+   price_yearly_dollar NUMERIC(10, 2),
+   price_yearly_sum NUMERIC(10, 2),
+   price_monthly_dollar NUMERIC(10, 2),
+   price_monthly_sum NUMERIC(10, 2),
    comments json [],
    features_uzbek text [],
    features_cyrillic text [],
