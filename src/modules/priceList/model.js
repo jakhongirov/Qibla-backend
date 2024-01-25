@@ -24,7 +24,7 @@ const getPriceList = (lang, limit, page) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_uzbek AS features
+            features_uzbek AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -51,7 +51,7 @@ const getPriceList = (lang, limit, page) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_cyrillic AS features
+            features_cyrillic AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -78,7 +78,7 @@ const getPriceList = (lang, limit, page) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_russian AS features
+            features_russian AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -105,7 +105,7 @@ const getPriceList = (lang, limit, page) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_english AS features
+            features_english AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -132,7 +132,7 @@ const getPriceList = (lang, limit, page) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_kazakh AS features
+            features_kazakh AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -175,7 +175,7 @@ const foundPriceItem = (id) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_uzbek AS features
+            features_uzbek AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -200,7 +200,7 @@ const foundPriceItem = (id) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_cyrillic AS features
+            features_cyrillic AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -225,7 +225,7 @@ const foundPriceItem = (id) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_russian AS features
+            features_russian AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -250,7 +250,7 @@ const foundPriceItem = (id) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_english AS features
+            features_english AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
@@ -275,7 +275,7 @@ const foundPriceItem = (id) => {
             price_monthly_dollar,
             price_monthly_sum,
             comments,
-            features_kazakh AS features
+            features_kazakh AS features,
             privacy_policy_link,
             terms_condition_link,
             bot_link,
