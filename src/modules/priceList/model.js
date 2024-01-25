@@ -262,7 +262,7 @@ const foundPriceItem = (id, lang) => {
          FROM
             price_list
          WHERE
-            price_item_id = $1,
+            price_item_id = $1
       `;
 
       return fetch(QUERY, id)
@@ -287,7 +287,7 @@ const foundPriceItem = (id, lang) => {
          FROM
             price_list
          WHERE
-            price_item_id = $1,
+            price_item_id = $1
       `;
 
       return fetch(QUERY, id)
