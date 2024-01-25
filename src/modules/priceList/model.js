@@ -165,7 +165,7 @@ const getPriceList = (lang, limit, page) => {
       return fetchALL(QUERY)
    }
 }
-const foundPriceItem = (id) => {
+const foundPriceItem = (id, lang) => {
    if (lang == 'uzbek') {
       const QUERY = `
          SELECT
