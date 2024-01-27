@@ -324,7 +324,7 @@ const addVerse = (
             verse_number,
             juz_number,
             juz_divider_text,
-            sura_number,
+            sura_number
          ) VALUES (
             $1,
             $2,
