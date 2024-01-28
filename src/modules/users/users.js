@@ -138,7 +138,7 @@ module.exports = {
          const checkUserEmial = await model.checkUserEmial(user_email)
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
 
-         if (!checkUserEmial || checkUserPhoneNumber) {
+         if (!checkUserEmial || !checkUserPhoneNumber) {
             const pass_hash = await bcryptjs.hash(user_password, 10)
             const registerUser = await model.registerUser(
                user_phone_number,
@@ -161,10 +161,12 @@ module.exports = {
             )
 
             if (registerUser) {
+               const token = await new JWT({ id: registerUser?.user_id }).sign()
                return res.status(201).json({
                   status: 201,
                   message: "Success",
-                  data: registerUser
+                  data: registerUser,
+                  token: token
                })
             } else {
                return res.status(400).json({
@@ -221,10 +223,12 @@ module.exports = {
          )
 
          if (createTemporaryUser) {
+            const token = await new JWT({ id: createTemporaryUser?.user_id }).sign()
             return res.status(200).json({
                status: 200,
                message: "Success",
-               data: createTemporaryUser
+               data: createTemporaryUser,
+               token: token
             })
          } else {
             return res.status(400).json({
