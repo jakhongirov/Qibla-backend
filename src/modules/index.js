@@ -116,7 +116,7 @@ router
    .get('/verses/list', verses.GET)
    .get('/verses/list/:suraId', verses.GET_SURA)
    .get('/verses/:id', verses.GET_ID)
-   .get('/verses/file/add', AUTH, verses.ADD_FILE)
+   .get('/verses/file/add',  verses.ADD_FILE)
    .post('/verses/add', AUTH, verses.ADD_VERSE)
    .put('/verses/edit', AUTH, verses.EDIT_VERSE)
    .delete('/verses/delete', AUTH, verses.DELETE_VERSE)

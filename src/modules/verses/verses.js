@@ -115,8 +115,10 @@ module.exports = {
 
    ADD_FILE: async (req, res) => {
       try {
-         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `suralar.json`))
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `oyatlar.json`))
          const file = JSON.parse(data.read())
+
+         console.log(file);
 
          for (const item of file) {
             await model.addVerse(
