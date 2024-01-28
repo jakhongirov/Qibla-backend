@@ -99,7 +99,7 @@ router
    // NAMES API
    .get('/names/list', names.GET)
    .get('/name/:id', names.GET_ID)
-   .get('/name/file/add', names.ADD_FILE)
+   .get('/name/file/add', AUTH, names.ADD_FILE)
    .post('/name/add', AUTH, FileUpload.single("audio"), names.ADD_NAME)
    .put('/name/edit', AUTH, FileUpload.single("audio"), names.EDIT_NAME)
    .delete('/name/delete', AUTH, names.DELETE_NAME)
