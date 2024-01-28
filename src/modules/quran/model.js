@@ -12,7 +12,7 @@ const quranList = (lang, limit, page) => {
          FROM
             quran
          ORDER BY
-            sura_id DESC
+            sura_id
          LIMIT ${limit}
          OFFSET ${Number((page - 1) * limit)}
       `;
@@ -29,7 +29,7 @@ const quranList = (lang, limit, page) => {
          FROM
             quran
          ORDER BY
-            sura_id DESC
+            sura_id
          LIMIT ${limit}
          OFFSET ${Number((page - 1) * limit)}
       `;
@@ -46,7 +46,7 @@ const quranList = (lang, limit, page) => {
          FROM
             quran
          ORDER BY
-            sura_id DESC
+            sura_id
          LIMIT ${limit}
          OFFSET ${Number((page - 1) * limit)}
       `;
@@ -63,7 +63,7 @@ const quranList = (lang, limit, page) => {
          FROM
             quran
          ORDER BY
-            sura_id DESC
+            sura_id
          LIMIT ${limit}
          OFFSET ${Number((page - 1) * limit)}
       `;
@@ -80,7 +80,7 @@ const quranList = (lang, limit, page) => {
          FROM
             quran
          ORDER BY
-            sura_id DESC
+            sura_id
          LIMIT ${limit}
          OFFSET ${Number((page - 1) * limit)}
       `;
@@ -93,7 +93,7 @@ const quranList = (lang, limit, page) => {
          FROM
             quran
          ORDER BY
-            sura_id DESC
+            sura_id
          LIMIT ${limit}
          OFFSET ${Number((page - 1) * limit)}
       `;
