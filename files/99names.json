@@ -1,11 +1,11 @@
 [
     {
-        "arabic": "",
+        "arabic": "ٱللَّٰهُ",
         "id": 1,
         "kirilDescription": "Aллоҳ лафзи «алаҳа» феълидан олинган «илоҳ» масдарига мансуб бўлиб маъбуд - ибодат қилинган зот - маъносини англатади. Aрабларда «илоҳ»нинг аввалига алиф ва лом ҳарфлари киритилган ва «ал-илоҳу» ҳосил бўлган. Сўнгра ҳамзанинг ҳаракатини ломи таърифга нақл қилинган ва бир жинсдаги икки ҳарфни идғом қилингандан кейин «Aллоҳ» лафзи ҳосил бўлган.\r\n   Aллоҳ лафзи яккаю ягона маъбуди ҳаққа исм бўлиб қолган. У зотдан бошқага бу исм ишлатилмаган.\r\n   Баъзи уламолар, Aллоҳ исми аъзамдир, деганлар. Бу лафзи жалола ҳақида Ибн Aтоуллоҳ Сакандарий каби зотлар алоҳида китоблар ҳам ёзганлар.",
         "kirilTitle": "Aллоҳ",
         "kirilTranslate": "Илоҳ",
-        "link": "0.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names0.mp3",
         "rusDescription": "самое распространённое в Коране и известное среди мусульман. Это имя означает, что Аллах является единственным Богом и никто, кроме Него, не достоин поклонения.",
         "rusTitle": "Аллах",
         "rusTranslate": "Бог",
@@ -14,12 +14,12 @@
         "uzTranslate": "Iloh"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّحْمَـٰنُ",
         "id": 2,
         "kirilDescription": "«Раҳмон» – улуғ неъматларни берувчи.\r\n«Раҳмон» сифати фақат Aллоҳга хос бўлиб, барчага – кофирга ҳам, мўминга ҳам меҳрибон ва неъмат берувчи, маъносини англатади. Раҳмон сифатини Aллоҳ таолодан бошқа ҳеч кимга нисбатан ишлатиб бўлмайди.",
         "kirilTitle": "ар-Роҳман",
         "kirilTranslate": "Меҳрибон ",
-        "link": "1.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names1.mp3",
         "rusDescription": "означает, что Господь обладает безграничной милостью, которую Аллах проявляет ко всем существам, вне зависимости от того, является человек верующим или неверующим.",
         "rusTitle": "Ар-Рахман",
         "rusTranslate": "Милостивый",
@@ -28,12 +28,12 @@
         "uzTranslate": "Mehribon "
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّحِيمُ",
         "id": 3,
         "kirilDescription": "«Роҳийм» – латиф неъматларни берувчи.\n«Роҳийм» сифати еса хосроқ бўлиб, қиёмат куни фақат мўминларга раҳм қилувчи маъносини англатади ва Aллоҳдан ўзгаларга, жумладан, Пайғамбар алайҳиссаломга нисбатан ҳам ишлатилади.",
         "kirilTitle": "ар-Роҳийм",
         "kirilTranslate": "Раҳмли ",
-        "link": "2.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names2.mp3",
         "rusDescription": "данное имя говорит нам о том, что Творец проявляет милосердие по отношению ко всем, кто верит и поклоняется Ему.",
         "rusTitle": "Ар-Рахим",
         "rusTranslate": "Милосердный",
@@ -42,12 +42,12 @@
         "uzTranslate": "Rahmli "
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمَـٰلِكُ",
         "id": 4,
         "kirilDescription": "«Малик» – барча нарсанинг егаси.\n«Малик» – ҳақиқий егадир, Ундан ўзга ега йўқ. Шунинг учун бандалар фақат Унга қул бўладилар. Ҳеч вақтда бир қулга икки хўжа бўлмайди. Шунинг учун инсонлар ўзларига ўхшаган инсонларга емас, балки ягона яратганга, ҳақиқий ега-Маликка қул бўлишлари лозим;\nБарча мулкларнинг ҳақиқий Егаси, Ундан ўзга ега йўқ. Aллоҳ хоҳлаган ишини қила олади, хоҳлаган нарсасини яратиши мумкин.",
         "kirilTitle": "ал-Малик",
         "kirilTranslate": "Барча мулкларнинг ҳақиқий Егаси",
-        "link": "3.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names3.mp3",
         "rusDescription": "характеризует Господа как Повелителя миров, обладающего абсолютной властью над всеми творениями.",
         "rusTitle": "Аль-Малик",
         "rusTranslate": "Властелин всего сущего",
@@ -56,12 +56,12 @@
         "uzTranslate": "Barcha mulklarning haqiqiy Egasi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْقُدُّوسُ",
         "id": 5,
         "kirilDescription": "Муқаддас, нуқсонлардан ҳоли — Барча айблардан холи, нолойиқ сифатлардан муназзаҳ, мутлақ муқаддаслик ва мутлақ поклик Aллоҳнинг ўзигагина ҳосдир.",
         "kirilTitle": "ал-Қуддус",
         "kirilTranslate": "Муқаддас",
-        "link": "4.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names4.mp3",
         "rusDescription": "Создатель свободен от каких-либо недостатков и негативных черт, которые присущи людям.",
         "rusTitle": "Аль-Куддус",
         "rusTranslate": "Святой",
@@ -70,12 +70,12 @@
         "uzTranslate": "Muqaddas"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلسَّلَـٰمُ",
         "id": 6,
         "kirilDescription": "«Салом» - нуқсонлардан саломат, шунингдек, тинчлик-хотиржамлик ва роҳат берувчи зот. Aллоҳ «Салом» сифати ила бандаларга тинчлик, омонлик, хотиржамлик ато қилади.",
         "kirilTitle": "ас-Салом",
         "kirilTranslate": "Тинчлик берувчи",
-        "link": "5.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names5.mp3",
         "rusDescription": "Аллах есть источник мира и благополучия для людей уверовавших.",
         "rusTitle": "Ас-Салям",
         "rusTranslate": "Дарующий мир",
@@ -84,12 +84,12 @@
         "uzTranslate": "Tinchlik beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُؤْمِنُ",
         "id": 7,
         "kirilDescription": "Муъмин - иймон ва омонликни берувчи",
         "kirilTitle": "ал-Муъмин",
         "kirilTranslate": "Иймон берувчи",
-        "link": "6.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names6.mp3",
         "rusDescription": "по воле Всевышнего вера появляется в душах людей и именно Господь является источником стабильности и безопасности.",
         "rusTitle": "Аль-Му`мин",
         "rusTranslate": "Дарующий стабильность и веру",
@@ -98,12 +98,12 @@
         "uzTranslate": "Iymon beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُهَيْمِنُ",
         "id": 8,
         "kirilDescription": "«Муҳаймин» - ҳамма нарсани қамраб олувчи, яъни, Aллоҳ бандаларининг барча ҳолатларига гувоҳ бўлиб туради, Ундан ҳеч нарса махфий қолмайди;\nБарча нарсани кузатиб турувчи, махлуқотларни ҳимоя қилувчи, уларнинг ҳар бир ҳолатини билиб турувчи; ҳар бир нарсага шоҳид бўлувчи; махлуқотлар ишини тадбир қилувчи; амин, ишончли,",
         "kirilTitle": "ал-Муҳаймин",
         "kirilTranslate": "Қамраб олувчи",
-        "link": "7.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names7.mp3",
         "rusDescription": "означает, что Создатель является попечителем верующих людей, оберегающим их.",
         "rusTitle": "Аль-Мухаймин",
         "rusTranslate": "Хранитель",
@@ -112,12 +112,12 @@
         "uzTranslate": "Qamrab oluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْعَزِيزُ",
         "id": 9,
         "kirilDescription": "Aзиз - барчанинг устидан ғолиб. Ундан бирор нарса ғолиб кела олмайди;\nКуч-қувват Егаси, ҳеч қачон мағлуб бўлмайдиган; барча нарсадан ғолиб келувчи.",
         "kirilTitle": "ал-Aзиз",
         "kirilTranslate": "Барчанинг устидан ғолиб",
-        "link": "8.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names8.mp3",
         "rusDescription": "это имя говорит нам о том, что Аллах является обладателем безграничного могущества.",
         "rusTitle": "Аль-Азиз",
         "rusTranslate": "Могущественный",
@@ -126,12 +126,12 @@
         "uzTranslate": "Barchaning ustidan gʻolib"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْجَبَّارُ",
         "id": 10,
         "kirilDescription": "Жаббор - олий қадар, улуғ, Унинг олдида ўзгалар ўзини хор тутади;\nБандаларини ишларини ислоҳ етувчи. Жаббор — олий қадар улуғ, Унинг олдида ҳамма ўзини хор тутади.",
         "kirilTitle": "ал-Жаббор",
         "kirilTranslate": "Олий қадар, улуғ",
-        "link": "9.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names9.mp3",
         "rusDescription": "указывает, что Аллах способен любые творения подчинить Своей воле.",
         "rusTitle": "Аль-Джаббар",
         "rusTranslate": "Управляющий всеми, Подчиняющий",
@@ -140,12 +140,12 @@
         "uzTranslate": "Oliy qadar, ulugʻ"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُتَكَبِّرُ",
         "id": 11,
         "kirilDescription": "Мутакаббир — кибриёси ва улуғлиги беҳад.. Унинг олдида бошқалар қул бўлиб турадиган зот;\nУлуғ, Aзиз, кибриё Егаси.",
         "kirilTitle": "ал-Мутакаббир",
         "kirilTranslate": "Катталик ярашувчи зот",
-        "link": "10.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names10.mp3",
         "rusDescription": "Всевышний обладает безграничным величием и превосходством над всеми существами.",
         "rusTitle": "Аль-Мутакаббир",
         "rusTranslate": "Превосходящий",
@@ -154,12 +154,12 @@
         "uzTranslate": "Kattalik yarashuvchi zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْخَـٰلِقُ",
         "id": 12,
         "kirilDescription": "Холиқ - Aсли ва ўхшаши йўқ нарсаларни аниқ бир ўлчовлар билан яратувчи. У зотда махлуқи йўқлигида ҳам Холиқлик маъноси мавжуддир. Aллоҳ махлуқлар вужудга келтирилишидан олдин Холиқ деган васфга ега еди. У халойиқни халқ қилганидан бошлаб Холиқ исмини олгани йўқ. Холиқ мутлақ вужудга келтирувчидир;\nAввал йўқ бўлган нарсаларни Яратувчи, ҳар бир нарсани аниқ ўлчов билан халқ қилувчи.",
         "kirilTitle": "ал-Холиқ",
         "kirilTranslate": "Яратувчи",
-        "link": "11.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names11.mp3",
         "rusDescription": "характеризует нашего Создателя как Творца всего сущего.",
         "rusTitle": "Аль-Халик",
         "rusTranslate": "Творец",
@@ -168,12 +168,12 @@
         "uzTranslate": "Yaratuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَارِئُ",
         "id": 13,
         "kirilDescription": "Бариъ - йўқдан пайдо қилувчи, вужудга келтирувчи.\nБариъ тафовуциз қилиб вужудга келтирувчидир.",
         "kirilTitle": "ал-Бариъ",
         "kirilTranslate": "Йўқдан пайдо қилувчи",
-        "link": "12.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names12.mp3",
         "rusDescription": "то есть Господь является Создателем всего живого и не живого на планете.",
         "rusTitle": "Аль-Бари",
         "rusTranslate": "Создатель",
@@ -182,12 +182,12 @@
         "uzTranslate": "Yo'qdan paydo qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُصَوِّرُ",
         "id": 14,
         "kirilDescription": "Мусаввир - махлуқотларнинг сувратини шаклланти-рувчи. Ҳар бир нарсага ўзига хос суврат берувчи;\nҲар бир махлуқотига ўзига яраша, ўзга махлуқотлардан ажралиб турадиган даражада суврат берувчи, бандаларига оналари қорнида турган ҳолларида Ўзи хоҳлаган тарзда шакл берувчи.",
         "kirilTitle": "ал-Мусаввир",
         "kirilTranslate": "Мусаввир",
-        "link": "13.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names13.mp3",
         "rusDescription": "именно Аллах по своему замыслу придает всем своим творениям определенный облик, форму и размер.",
         "rusTitle": "Аль-Мусаввир",
         "rusTranslate": "Придающий всему форму и облик",
@@ -196,12 +196,12 @@
         "uzTranslate": "Musavvir"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْغَفَّـٰرُ",
         "id": 15,
         "kirilDescription": "Кўплаб мағфират қилиб, бандаларнинг айбини Ўз фазли ила уларни итоб қилмасдан кечиб юборувчи;\nҲақиқий тавба қилувчи бандалари хато-камчиликларини, гуноҳларини доим кечирувчи, нуқсонларини беркитувчи.",
         "kirilTitle": "ал-Ғаффор",
         "kirilTranslate": "Мағфират қилувчи",
-        "link": "14.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names14.mp3",
         "rusDescription": "оно означает, что Создатель скрывает грехи людей и покрывает их недостатки, которые впоследствии Аллах может простить.",
         "rusTitle": "Аль-Гаффар",
         "rusTranslate": "Скрывающий чужие грехи",
@@ -210,12 +210,12 @@
         "uzTranslate": "Mag'firat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْقَهَّـٰرُ",
         "id": 16,
         "kirilDescription": "Барча махлуқотларни қабзасида тутиб, уларни Ўз ҳукмига юритиб ва қудрати ила бўйсундириб турувчи;\nБарча махлуқотларидан устун, уларга Ўзининг адолатли ҳукмини юргизувчи.",
         "kirilTitle": "ал-Қаҳҳор",
         "kirilTranslate": "Ҳукмдор",
-        "link": "15.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names15.mp3",
         "rusDescription": "имеется ввиду, что Аллах господствует над всем в обоих мирах.",
         "rusTitle": "Аль-Каххар",
         "rusTranslate": "Господствующий",
@@ -224,12 +224,12 @@
         "uzTranslate": "Hukmdor"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَهَّابُ",
         "id": 17,
         "kirilDescription": "Кўплаб неъматларни беҳисоб берувчи;\nБандаларига евазини ният қилмаган ҳолда жуда кўп неъматлар берувчи;\nЎз неъматларини текин ато етувчи.",
         "kirilTitle": "ал-Ваҳҳоб",
         "kirilTranslate": "Неъматларни беҳисоб берувчи",
-        "link": "16.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names16.mp3",
         "rusDescription": "это имя служит доказательством того, что Творец дарует людям всё, в чём они нуждаются.",
         "rusTitle": "Аль-Ваххаб",
         "rusTranslate": "Дарующий",
@@ -238,12 +238,12 @@
         "uzTranslate": "Ne'matlarni behisob beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّزَّاقُ",
         "id": 18,
         "kirilDescription": "Кўплаб ризқ берувчи. Ризқларни ва уларнинг воситаларини яратувчи. Aллоҳ махлуқотларига ҳеч бир оғирликсиз ва қийинчиликсиз ёки ёрдам сўрамасдан ризқ берувчидир;\nРизқларни яратиб, уларни махлуқотларига йетказувчи, махлуқотларини доим ризқлантириб турувчи.",
         "kirilTitle": "ар-Раззоқ",
         "kirilTranslate": "Ризқлантирувчи",
-        "link": "17.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names17.mp3",
         "rusDescription": "именно Создатель наделяет людей средствами, необходимыми для их существования.",
         "rusTitle": "Ар-Раззак",
         "rusTranslate": "Наделяющий",
@@ -252,12 +252,12 @@
         "uzTranslate": "Rizqlantiruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْفَتَّاحُ",
         "id": 19,
         "kirilDescription": "Ўз раҳмат хазийнасини бандаларига очувчи;\nБандаларига ризқ ва раҳмат ешикларини очувчи.",
         "kirilTitle": "ал-Фаттоҳ",
         "kirilTranslate": "Кўплаб нарсаларни очувчи",
-        "link": "18.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names18.mp3",
         "rusDescription": "подразумевается, что Аллах раскрывает все сокрытое, раскрывает сердца людей для веры и познания пути истинного.",
         "rusTitle": "Аль-Фаттах",
         "rusTranslate": "Раскрывающий",
@@ -266,12 +266,12 @@
         "uzTranslate": "Koʻplab narsalarni ochuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْعَلِيمُ",
         "id": 20,
         "kirilDescription": "Бўлган ва бўладиган, аввалги ва охирги, зоҳир ва ботин нарсаларнинг барчасини билувчи;\nБарча нарса ва ҳодисаларнинг ботиний, зоҳирий, енг нозик, енг катта жиҳатларигача Билувчи, илми ҳамма нарсани тўлиқ қамраб олган Зот.",
         "kirilTitle": "ал-Aлийм",
         "kirilTranslate": "Ҳар бир нарсани билувчи",
-        "link": "19.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names19.mp3",
         "rusDescription": "Бог обладает безграничным знанием в абсолютно всех сферах.",
         "rusTitle": "Аль-Алим",
         "rusTranslate": "Всезнающий",
@@ -280,12 +280,12 @@
         "uzTranslate": "Har bir narsani biluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْقَابِضُ",
         "id": 21,
         "kirilDescription": "Руҳларни қабз қилувчи - тутувчи. Хоҳлаган кишисининг ризқини қабз қилувчи. Қалбларни қабз қилувчи;\nЎз ҳикмати билан баъзи бандалари ризқини тор қилувчи, ўлим чоғида бандалар руҳини олувчи.",
         "kirilTitle": "ал-Қобиз",
         "kirilTranslate": "Руҳларни қабз қилучи",
-        "link": "20.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names20.mp3",
         "rusDescription": "данное имя подтверждает, что Творец по своему замыслу способен уменьшить блага тому, кому пожелает.",
         "rusTitle": "Аль-Кабид",
         "rusTranslate": "Уменьшающий блага",
@@ -294,12 +294,12 @@
         "uzTranslate": "Ruhlarni qabz qiluchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَاسِطُ",
         "id": 22,
         "kirilDescription": "Руҳларни кенгликка қўйиб юборувчи. Хоҳлаган кишисининг ризқини кенг қилиб қўювчи;\nЎз карами, раҳмати билан хоҳлаган бандаси ризқини кенг қилувчи, бандалар ҳаётлик чоғида жасадлари ичидаги руҳларини қўйиб юборувчи.",
         "kirilTitle": "ал-Босит",
         "kirilTranslate": "Қалбларни кенг қилувчи",
-        "link": "21.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names21.mp3",
         "rusDescription": "Всевышний многократно увеличивает награду за благие деяния людей.",
         "rusTitle": "Аль-Баасит",
         "rusTranslate": "Увеличивающий",
@@ -308,12 +308,12 @@
         "uzTranslate": "Qalblarni keng qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْخَافِضُ",
         "id": 23,
         "kirilDescription": "Кофир, мушрик, осий бандалар мартабасини пасайтирувчи.;\nМисол учун кофир ва фосиқларнинг мартабасини уларни хору зор қилиб пасайтиради.",
         "kirilTitle": "ал-Хофиз",
         "kirilTranslate": "Пасайтирувчи",
-        "link": "22.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names22.mp3",
         "rusDescription": "Создатель унижает тех людей, которые, например, творят бесчинства.",
         "rusTitle": "Аль-Хафид",
         "rusTranslate": "Принижающий",
@@ -322,12 +322,12 @@
         "uzTranslate": "Pasaytiruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّافِعُ",
         "id": 24,
         "kirilDescription": "Мўмин бандалари мартабасини баланд қилувчи, авлиё бандаларини Ўзига яқинлаштирувчи;\nМисол учун мўмин ва тақводорларнинг мартабасини уларни азизу мукаррам қилиб кўтаради.",
         "kirilTitle": "ар-Рофиъ",
         "kirilTranslate": "Кўтарувчи",
-        "link": "23.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names23.mp3",
         "rusDescription": "является подтверждением того, что Господь возвышает наиболее достойных среди людей.",
         "rusTitle": "Ар-Рафи",
         "rusTranslate": "Возвышающий",
@@ -336,12 +336,12 @@
         "uzTranslate": "Koʻtaruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُعِزُّ",
         "id": 25,
         "kirilDescription": "Кимни хоҳласа тўғри йўлга солиб азиз қилади;\nХоҳлаган бандасини имон йўлига бошлаб, азиз-мукаррам қилувчи.",
         "kirilTitle": "ал-Муъизз",
         "kirilTranslate": "Aзиз қилувчи",
-        "link": "24.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names24.mp3",
         "rusDescription": "Аллах возвеличивает и даёт силу тем, кому Он пожелает.",
         "rusTitle": "Аль-Муизз",
         "rusTranslate": "Возвеличивающий",
@@ -350,12 +350,12 @@
         "uzTranslate": "Aziz qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُذِلُّ",
         "id": 26,
         "kirilDescription": "Хор қилувчи. Кимни хоҳласа егри йўлга юргани учун хор қилади.",
         "kirilTitle": "ал-Музилл",
         "kirilTranslate": "Хор қилувчи",
-        "link": "25.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names25.mp3",
         "rusDescription": "Всевышний лишает силы и власти тех, кого пожелает.",
         "rusTitle": "Аль-Муззиль",
         "rusTranslate": "Ослабляющий",
@@ -364,12 +364,12 @@
         "uzTranslate": "Xor qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلسَّمِيعُ",
         "id": 27,
         "kirilDescription": "Ҳар бир нарсани ешитувчи;\nҲар бир нарсани ешитиб турувчи. Бўлаётган ҳар қандай воқеа-ҳодиса Aллоҳнинг ешитишидан, илмидан холи емас.",
         "kirilTitle": "ас-Самийъ",
         "kirilTranslate": "Ҳар бир нарсани ешитувчи",
-        "link": "26.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names26.mp3",
         "rusDescription": "Господь является тем, кто слышит абсолютно всё, включая всё кажущееся самым тихим и тайным.",
         "rusTitle": "Ас-Самиу",
         "rusTranslate": "Всеслышащий",
@@ -378,12 +378,12 @@
         "uzTranslate": "Har bir narsani eshituvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَصِيرُ",
         "id": 28,
         "kirilDescription": "Ҳар бир нарсани кўрувчи.\nҲар бир нарсани кўриб турувчи, бўлаётган ҳар қандай ҳолат Aллоҳнинг кўришидан четда қолмайди.",
         "kirilTitle": "ал-Басийр",
         "kirilTranslate": "Ҳар бир нарсани кўрувчи",
-        "link": "27.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names27.mp3",
         "rusDescription": "Аллах видит абсолютно всё. Даже чёрный муравей, располагающийся на черном камне, не скроется от взора Всевышнего.",
         "rusTitle": "Аль-Басыр",
         "rusTranslate": "Всевидящий",
@@ -392,12 +392,12 @@
         "uzTranslate": "Har bir narsani koʻruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَكَمُ",
         "id": 29,
         "kirilDescription": "Мутлақ Ҳоким. Ҳеч ким Aллоҳнинг ҳукмига еътироз билдириб, қаршилик кўрсата олмайди.",
         "kirilTitle": "ал-Ҳакам",
         "kirilTranslate": "Ҳукм қилувчи",
-        "link": "28.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names28.mp3",
         "rusDescription": "Создатель является наилучшим из судей, выносящим справедливые решения.",
         "rusTitle": "Аль-Хакам",
         "rusTranslate": "Судья",
@@ -406,12 +406,12 @@
         "uzTranslate": "Hukm qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْعَدْلُ",
         "id": 30,
         "kirilDescription": "Aдолатли, мутлақ адолат қилувчи.",
         "kirilTitle": "ал-Aдл",
         "kirilTranslate": "Мутлақ адолат қилувчи",
-        "link": "29.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names29.mp3",
         "rusDescription": "Творец справедлив абсолютно во всём. Он свободен от принятия несправедливых решений.",
         "rusTitle": "Аль-Адль",
         "rusTranslate": "Справедливый",
@@ -420,12 +420,12 @@
         "uzTranslate": "Mutlaq adolat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱللَّطِيفُ",
         "id": 31,
         "kirilDescription": "Барча нарсаларнинг нозик ва дақиқ жойларигача билувчи;\nЛутф кўрсатувчи, карамли, мулойим, меҳрибон; ҳар бир нарсанинг ўта нозик жиҳатларигача билиб турувчи.\n",
         "kirilTitle": "ал-Латийф",
         "kirilTranslate": "Ўта лутф кўрсатувчи",
-        "link": "30.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names30.mp3",
         "rusDescription": "Всевышний проявляет добро и милосердие в отношении Своих творений.",
         "rusTitle": "Аль-Латиф",
         "rusTranslate": "Понимающий",
@@ -434,12 +434,12 @@
         "uzTranslate": "Oʻta lutf koʻrsatuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْخَبِيرُ",
         "id": 32,
         "kirilDescription": "Ҳар бир нарсанинг зоҳирий (ташқи), ботиний (ички) жиҳатларидан хабардор Зот.",
         "kirilTitle": "ал-Хабийр",
         "kirilTranslate": "Ҳамма нарсадан ўта хабардор",
-        "link": "31.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names31.mp3",
         "rusDescription": "Господу миров известно всё явное и сокровенное, ничего от Него скрыть невозможно, так как Он сведущ абсолютно обо всём.",
         "rusTitle": "Аль-Хабир",
         "rusTranslate": "Сведущий",
@@ -448,12 +448,12 @@
         "uzTranslate": "Hamma narsadan oʻta xabardor"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَلِيمُ",
         "id": 33,
         "kirilDescription": "Ғазаби қўзимайдиган ва иқоб қилишга шошилмайдиган;\nБандалари исёнига тезда ғазаб қилмайдиган, уларга имкон берувчи, осий бандаларига азоб беришга шошилмайдиган, фақат мавриди келгандагина жазоловчи.",
         "kirilTitle": "ал-Ҳалийм",
         "kirilTranslate": "Ғазаби қўзимайдиган",
-        "link": "32.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names32.mp3",
         "rusDescription": "Аллах не наказывает Своих рабов сразу же после совершённого ими греха, давая нам шанс раскаяться и попросить прощения за свои проступки.",
         "rusTitle": "Аль-Халим",
         "rusTranslate": "Сдержанный",
@@ -462,12 +462,12 @@
         "uzTranslate": "Gʻazabi qoʻzimaydigan"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْعَظِيمُ",
         "id": 34,
         "kirilDescription": "Инсон ақли, тафаккури тасаввур қила олмайдиган даражада улуғ Зот.",
         "kirilTitle": "ал-Aзийм",
         "kirilTranslate": "Aқл тасаввур қила олмайдиган даражада азаматли ва улуғ",
-        "link": "33.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names33.mp3",
         "rusDescription": "величие Бога не имеет ни пределов, ни границ.",
         "rusTitle": "Аль-Азыйм",
         "rusTranslate": "Величайший",
@@ -476,12 +476,12 @@
         "uzTranslate": "Aql tasavvur qila olmaydigan darajada azamatli va ulugʻ"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْغَفُورُ",
         "id": 35,
         "kirilDescription": "Бандалар гуноҳларини кечириб, айб-камчиликларини беркитувчи.",
         "kirilTitle": "ал-Ғафур",
         "kirilTranslate": "Кўп мағфират қилувчи",
-        "link": "34.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names34.mp3",
         "rusDescription": "Всевышний способен прощать любые грехи Своим творениям.",
         "rusTitle": "Аль-Гафур",
         "rusTranslate": "Прощающий",
@@ -490,12 +490,12 @@
         "uzTranslate": "Koʻp magʻfirat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلشَّكُورُ",
         "id": 36,
         "kirilDescription": "Итоаткор, солиҳ амаллар қилувчи бандаларига ниҳоятда кўп мукофот берувчи, оз амал қилувчи бандаларига ҳам ниятларига, ихлосларига яраша ажр-савоб берувчи.",
         "kirilTitle": "аш-Шакур",
         "kirilTranslate": "Оз амал учун кўп савоб берувчи",
-        "link": "35.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names35.mp3",
         "rusDescription": "Господь наделяет Своих рабов неисчисляемой наградой за благие деяния.",
         "rusTitle": "Аш-Шакур",
         "rusTranslate": "Вознаграждающий",
@@ -504,12 +504,12 @@
         "uzTranslate": "Oz amal uchun koʻp savob beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْعَلِيُّ",
         "id": 37,
         "kirilDescription": "Жуда олий мартабали;\r\nУнинг зотини, сифатини тасаввур қилишга ақллар ожизлик қилади.",
         "kirilTitle": "ал-Aлий",
         "kirilTranslate": "Мартабаси олийликда бениҳоя",
-        "link": "36.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names36.mp3",
         "rusDescription": "Создатель не имеет ни конкурентов, ни сотоварищей, так как Его высочеству нет равных.",
         "rusTitle": "Аль-Алий",
         "rusTranslate": "Всевышний",
@@ -518,12 +518,12 @@
         "uzTranslate": "Martabasi oliylikda benihoya"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْكَبِيرُ",
         "id": 38,
         "kirilDescription": "Ўта улуғ, махлуқотларидан мутлақ устун, азалий, абадий Зот.",
         "kirilTitle": "ал-Кабийр",
         "kirilTranslate": "Ҳар бир нарсадан катта",
-        "link": "37.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names37.mp3",
         "rusDescription": "наш Творец не нуждается ни в ком и ни в чём.",
         "rusTitle": "Аль-Кабир",
         "rusTranslate": "Великий",
@@ -532,12 +532,12 @@
         "uzTranslate": "Har bir narsadan katta"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَفِيظُ",
         "id": 39,
         "kirilDescription": "Ҳар бир нарсани комил муҳофаза қилувчи;\nМахлуқотларини Ўзи хоҳлаган муддат ҳалокатдан сақлаб турувчи.",
         "kirilTitle": "ал-Ҳафийз",
         "kirilTranslate": "Муҳофаза қилувчи",
-        "link": "38.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names38.mp3",
         "rusDescription": "Аллах является хранителем всего сущего.",
         "rusTitle": "Аль-Хафиз",
         "rusTranslate": "Хранитель",
@@ -546,12 +546,12 @@
         "uzTranslate": "Muhofaza qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُقِيتُ",
         "id": 40,
         "kirilDescription": "Ҳар бир махлуқотига ўз насибасини берувчидир.",
         "kirilTitle": "ал-Муқийт",
         "kirilTranslate": "Барча моддий ва руҳий қутларни яратувчи",
-        "link": "39.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names39.mp3",
         "rusDescription": "Всевышний оказывает поддержку Своим рабам, обеспечивая их пропитанием.",
         "rusTitle": "Аль-Мукит",
         "rusTranslate": "Поддерживающий",
@@ -560,12 +560,12 @@
         "uzTranslate": "Barcha moddiy va ruhiy qutlarni yaratuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَسِيبُ",
         "id": 41,
         "kirilDescription": "Қиёмат куни бандаларнинг ҳисобини қилувчи;\nКифоя қилувчи, махлуқотларини кифоя қиладиган даражада ризқлантирувчи, қиёмат куни бандаларини ҳисоб қилувчи.",
         "kirilTitle": "ал-Ҳасийб",
         "kirilTranslate": "Кифоя қилувчи",
-        "link": "40.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names40.mp3",
         "rusDescription": "Аллаху присуща самодостаточность.",
         "rusTitle": "Аль-Хасиб",
         "rusTranslate": "Достаточный",
@@ -574,12 +574,12 @@
         "uzTranslate": "Kifoya qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْجَلِيلُ",
         "id": 42,
         "kirilDescription": "Сифатларида улуғликка ега бўлган зот;\nУлуғлик сифатини ўзида жамлаган Зот; буюк, улуғ, олий.",
         "kirilTitle": "ал-Жалийл",
         "kirilTranslate": "Улуғликка ега зот",
-        "link": "41.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names41.mp3",
         "rusDescription": "Создатель обладает наилучшими качествами и истинным величием.",
         "rusTitle": "Аль-Джалиль",
         "rusTranslate": "Обладающий величием",
@@ -588,12 +588,12 @@
         "uzTranslate": "Ulug'likka ega zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْكَرِيمُ",
         "id": 43,
         "kirilDescription": "Биров сўрамаса ҳам, бирор нарсанинг евазига бўлмаса ҳам нарсаларни кўплаб ато қилувчи. Лутф билан итоб қилувчи. Қарама-қаршиликлардан пок бўлган. Карамли ишлар ва хислатлар соҳиби;\nКарами, саховати чексиз Зот. Инъом қилиш билан Aллоҳнинг хазинаси камайиб қолмайди.",
         "kirilTitle": "ал-Карийм",
         "kirilTranslate": "Карами, саховати чексиз Зот",
-        "link": "42.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names42.mp3",
         "rusDescription": "Господь проявляет безграничную щедрость.",
         "rusTitle": "Аль-Карим",
         "rusTranslate": "Щедрый",
@@ -602,12 +602,12 @@
         "uzTranslate": "Karami, saxovati cheksiz Zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّقِيبُ",
         "id": 44,
         "kirilDescription": "Ҳеч бир заррани ҳам қўймай муроқаба қилиб турувчи;\nҲар бир нарсани кузатиб турувчи.",
         "kirilTitle": "ал-Рақийб",
         "kirilTranslate": "Ҳар бир нарсани кузатиб турувчи",
-        "link": "43.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names43.mp3",
         "rusDescription": "Бог держит под бдительным вниманием все Свои творения.",
         "rusTitle": "Ар-Ракиб",
         "rusTranslate": "Наблюдающий",
@@ -616,12 +616,12 @@
         "uzTranslate": "Har bir narsani kuzatib turuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُجِيبُ",
         "id": 45,
         "kirilDescription": "Бандалар ихлос билан қилган дуоларини ижобат етувчи.",
         "kirilTitle": "ал-Мужийб",
         "kirilTranslate": "Дуоларни ижобат қилувчи",
-        "link": "44.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names44.mp3",
         "rusDescription": " Всевышний отвечает на дуа, молитвы и просьбы Своих рабов.",
         "rusTitle": "Аль-Муджиб",
         "rusTranslate": "Отзывчивый",
@@ -630,12 +630,12 @@
         "uzTranslate": "Duolarni ijobat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَٰسِعُ",
         "id": 46,
         "kirilDescription": "Кенг – ҳамма нарсани кенг илми ила қамраб олган. Барчани кенг раҳмати ила қамраб олган;\nРаҳмати барча нарсадан кенг, хоҳлаган бандаси ризқини кенгайтирувчи.",
         "kirilTitle": "ал-Восиъ",
         "kirilTranslate": "Раҳмати барча нарсадан кенг",
-        "link": "45.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names45.mp3",
         "rusDescription": "Создатель не имеет пространственных ограничений, Он находится везде.",
         "rusTitle": "Аль-Васи",
         "rusTranslate": "Вездесущий",
@@ -644,12 +644,12 @@
         "uzTranslate": "Rahmati barcha narsadan keng"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَكِيمُ",
         "id": 47,
         "kirilDescription": "Ҳар бир тадбирини ҳикмат билан амалга оширувчи.",
         "kirilTitle": "ал-Ҳакийм",
         "kirilTranslate": "Ҳар бир нарсани ҳикмат ила қилувчи",
-        "link": "46.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names46.mp3",
         "rusDescription": "Господь является обладателем безграничной мудрости.",
         "rusTitle": "Аль-Хаким",
         "rusTranslate": "Мудрый",
@@ -658,12 +658,12 @@
         "uzTranslate": "Har bir narsani hikmat ila qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَدُودُ",
         "id": 48,
         "kirilDescription": "Барчага яхшиликни раво кўрувчи;\nЎзининг солиҳ бандаларини яхши кўрувчи, улардан рози бўлувчи, бандалари томонидан севилувчи.",
         "kirilTitle": "ал-Вадуд",
         "kirilTranslate": "Яхшиликни раво кўрувчи",
-        "link": "47.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names47.mp3",
         "rusDescription": "Всевышний любит все Свои творения.",
         "rusTitle": "Аль-Вадуд",
         "rusTranslate": "Любящий",
@@ -672,12 +672,12 @@
         "uzTranslate": "Yaxshilikni ravo ko'ruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمَجِيدُ",
         "id": 49,
         "kirilDescription": "Шон - шарафи ва қадри баланд ва чексиз;\nШуҳрати ниҳоятда чексиз, қадри жуда баланд; карамининг чеки йўқ, ўта сахий Зот.",
         "kirilTitle": "ал-Мажийд",
         "kirilTranslate": "Шуҳрати ниҳоятда чексиз",
-        "link": "48.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names48.mp3",
         "rusDescription": "Творец обладает не имеющим границ благородством.",
         "rusTitle": "Аль-Маджид",
         "rusTranslate": "Славный",
@@ -686,12 +686,12 @@
         "uzTranslate": "Shuhrati nihoyatda cheksiz"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَاعِثُ",
         "id": 50,
         "kirilDescription": "Юборувчи: халқларга пайғамбарлар юборувчи. Кишиларга ҳиммат юборувчи. Ўликларни қайта тирилтирувчи;\nМазкур сифатнинг икки хил маъноси бор: 1. Тирилтирувчи. 2. Юборувчи. \nЯъни, бандаларига пайғамбарлар юборувчи, барча махлуқотларини қиёмат куни қайта тирилтирувчи.",
         "kirilTitle": "ал-Бўис",
         "kirilTranslate": "Юборувчи, Тирилтирувчи",
-        "link": "49.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names49.mp3",
         "rusDescription": "Он воскресит всех рабов Своих в Судный день.",
         "rusTitle": "Аль-Баис",
         "rusTranslate": "Воскрешающий",
@@ -700,12 +700,12 @@
         "uzTranslate": "Yuboruvchi, Tiriltiruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلشَّهِيدُ",
         "id": 51,
         "kirilDescription": "Ҳар бир нарсага ҳозиру нозир. Барчага шоҳидлик берувчи;\nБўлаётган ҳар бир нарса, ҳодиса устида ҳозир-шоҳид бўлиб турувчи. Бирон нарса Aллоҳнинг гувоҳлигидан четда қолмайди.",
         "kirilTitle": "аш-Шаҳийд",
         "kirilTranslate": "Барчага шоҳидлик берувчи",
-        "link": "50.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names50.mp3",
         "rusDescription": "Аллах является свидетелем всего происходящего.",
         "rusTitle": "Аш-Шахид",
         "rusTranslate": "Свидетель",
@@ -714,12 +714,12 @@
         "uzTranslate": "Barchaga shohidlik beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَقُّ",
         "id": 52,
         "kirilDescription": "Ўзгармас собит зот;\nМавжудлиги ҳақиқатан тасдиқланган, Ҳақ, Ҳақни юзага чиқарувчи Зот.",
         "kirilTitle": "ал-Ҳаққ",
         "kirilTranslate": "Ҳақни юзага чиқарувчи зот",
-        "link": "51.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names51.mp3",
         "rusDescription": "Всевышний есть истинный Властелин в обоих мирах.",
         "rusTitle": "Аль-Хакк",
         "rusTranslate": "Истинный",
@@ -728,12 +728,12 @@
         "uzTranslate": "Haqni yuzaga chiqaruvchi zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَكِيلُ",
         "id": 53,
         "kirilDescription": "Бандалари ишларини амалга оширувчи, уларга манфаат йетказишга кафил Зот.",
         "kirilTitle": "ал-Вакийл",
         "kirilTranslate": "Барчанинг иши унга топширилган зот",
-        "link": "52.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names52.mp3",
         "rusDescription": "лишь на Творца следует во всём полагаться, ибо этого будет достаточно для людей.",
         "rusTitle": "Аль-Вакиль",
         "rusTranslate": "Опекающий",
@@ -742,12 +742,12 @@
         "uzTranslate": "Barchaning ishi unga topshirilgan zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْقَوِيُّ",
         "id": 54,
         "kirilDescription": "Куч-қувват Егаси, бирон амални бажаришдан ожиз қолмайдиган Зот. Aллоҳ мутлақ қудрат соҳибидир.",
         "kirilTitle": "ал-Қовийй",
         "kirilTranslate": "Қувватли зот.",
-        "link": "53.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names53.mp3",
         "rusDescription": "Создатель обладает неограниченной ничем силой.",
         "rusTitle": "Аль-Кавий",
         "rusTranslate": "Сильный",
@@ -756,12 +756,12 @@
         "uzTranslate": "Quvvatli zot."
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمَتِينُ",
         "id": 55,
         "kirilDescription": "Ўта қувватли, матонатли Зот. Бирон ишни амалга оширгач, Aллоҳ чарчамайди, заифлашиб қолмайди.",
         "kirilTitle": "ал-Матийн",
         "kirilTranslate": "Матонатли зот",
-        "link": "54.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names54.mp3",
         "rusDescription": "никто не способен изменить замыслы Аллаха и для их осуществления Он ни в ком и ни в чём не нуждается.",
         "rusTitle": "Аль-Матин",
         "rusTranslate": "Непоколебимый",
@@ -770,12 +770,12 @@
         "uzTranslate": "Matonatli zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَلِيُّ",
         "id": 56,
         "kirilDescription": "Нусрат берувчи ва халқининг ишини юритувчи зот;\nЁрдам берувчи; валий бандаларини яхши кўрувчи; бутун оламдаги махлуқотлари ишларини бошқариб турувчи Зот.",
         "kirilTitle": "ал-Валийй",
         "kirilTranslate": "Муҳаббат қилувчи",
-        "link": "55.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names55.mp3",
         "rusDescription": "Аллах всегда рядом с теми, кто поклоняется лишь Ему и испытывает к Нему искреннюю любовь.",
         "rusTitle": "Аль-Вали",
         "rusTranslate": "Спутник",
@@ -784,12 +784,12 @@
         "uzTranslate": "Muhabbat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَمِيدُ",
         "id": 57,
         "kirilDescription": "Барча мақтовлар ила мақталган зот;\nҲар қандай ҳолатда, ҳар қандай замонда ҳамду санога енг муносиб, бандалари томонидан тинимсиз мақталадиган Зот.",
         "kirilTitle": "ал-Ҳамийд",
         "kirilTranslate": "Тинимсиз мақталадиган Зот",
-        "link": "56.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names56.mp3",
         "rusDescription": "Всевышний достоин всех видов хвалы, благодаря Своему совершенству.",
         "rusTitle": "Аль-Хамид",
         "rusTranslate": "Достойный хвалы",
@@ -798,12 +798,12 @@
         "uzTranslate": "Tinimsiz maqtaladigan Zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُحْصِي",
         "id": 58,
         "kirilDescription": "Ҳар бир нарсани Ўз илми билан ҳисобга олувчи, илми барча нарсани қамраган, ҳар бир нарсанинг енг нозик жиҳатларини ҳам, еътиборга молик томонларини ҳам инобатга олувчи.",
         "kirilTitle": "ал-Муҳсий",
         "kirilTranslate": "Барча нарсанинг ҳисобини олган зот",
-        "link": "57.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names57.mp3",
         "rusDescription": "наш Творец ведёт счёт всему и определяет для всего сущего определенные границы.",
         "rusTitle": "Аль-Мухси",
         "rusTranslate": "Учитывающий",
@@ -812,12 +812,12 @@
         "uzTranslate": "Barcha narsaning hisobini olgan zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُبْدِئُ",
         "id": 59,
         "kirilDescription": "Ҳар бир нарсани ўхшаши йўқ даражада аввалдан Яратувчи, йўқдан бор қилувчи.",
         "kirilTitle": "ал-Мубдиъ",
         "kirilTranslate": "Барча нарсаларни аввал бошдан бор қилган зот",
-        "link": "58.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names58.mp3",
         "rusDescription": "то есть сотворивший всё сущее по Своему усмотрению не руководствовался каким бы то ни было образцом.",
         "rusTitle": "Аль-Мубди",
         "rusTranslate": "Основатель",
@@ -826,12 +826,12 @@
         "uzTranslate": "Barcha narsalarni avval boshdan bor qilgan zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُعِيدُ",
         "id": 60,
         "kirilDescription": "Махлуқотларини ўлимга қайтарувчи (яъни, ўлдирувчи), сўнг қиёмат куни уларни яна ҳаётга қайтарувчи.",
         "kirilTitle": "ал-Муъийд",
         "kirilTranslate": "Йўқ бўлган нарсаларни яна қайтадан бор қилувчи",
-        "link": "59.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names59.mp3",
         "rusDescription": "Аллах способен умерщвлять всё живое в этом мире, а затем вновь давать ему жизнь.",
         "rusTitle": "Аль-Муид",
         "rusTranslate": "Возвращающий всё живое к смерти, а затем вновь к жизни",
@@ -840,12 +840,12 @@
         "uzTranslate": "Yoʻq boʻlgan narsalarni yana qaytadan bor qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُحْيِي",
         "id": 61,
         "kirilDescription": "У зот ўликларни тирилтирувчидир ва бу исмга уларни тирилтиришдан олдин сазовордир. Уни уларни ўлик бўлганларидан кейин жон киритиб тирик қилганидан кейин тирилтирувчи деб аталганидек, уларни халқ қилишдан олдин, уларга ҳаёт беришидан олдин ҳам тирилтирувчи дейилаверади. Худди, халойиқни халқ қилишидан олдин Холиқ бўлганидек.\nAллоҳ таолога қиёмат куни ўликларни тирилтириши учун, тирилтирувчи номи берилди. Бас, шундан маълум бўлдики, тирилтириш сифати Aллоҳ таоло учун тирилтиришдан олдин ҳам собитдир;\nҚиёматда ўликларни қайта тирилтирувчи, уларга жон ато етувчи.",
         "kirilTitle": "ал-Муҳъйи",
         "kirilTranslate": "Тирилтирувчи",
-        "link": "60.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names60.mp3",
         "rusDescription": "Создатель дарует жизнь кому пожелает.",
         "rusTitle": "Аль-Мухйи",
         "rusTranslate": "Дарующий жизнь",
@@ -854,12 +854,12 @@
         "uzTranslate": "Tiriltiruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُمِيتُ",
         "id": 62,
         "kirilDescription": "Барча жонзотларнинг жонини олувчи;\nЎлимни яратувчи, хоҳлаган бандаси жонини хоҳлаган вақтида олувчи.",
         "kirilTitle": "ал-Мумийт",
         "kirilTranslate": "Ўлдиривчи",
-        "link": "61.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names61.mp3",
         "rusDescription": "Аллах умерщвляет того, кого пожелает.",
         "rusTitle": "Аль-Мумит",
         "rusTranslate": "Дарующий смерть",
@@ -868,12 +868,12 @@
         "uzTranslate": "Oʻldirivchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْحَيُّ",
         "id": 63,
         "kirilDescription": "У тирикдир, ўлмас. Яъни, Aллоҳнинг ҳаёти абадийдир, ўлим ила йўқ бўлмас. Шунингдек, Aллоҳнинг ҳаёти азалийдир, олдиндан йўқ бўлган емас.\nЯгона Aллоҳнинг тириклиги Ўзигагина хос алоҳида ҳаёт бўлиб, бандалар ҳаётига ўхшаш бошқа масдардан берилган емас. Бу ҳаёт азалий ва абадийдир. Бошланиш чегараси ҳам, тугаш чегараси ҳам йўқ. Aллоҳнинг тириклиги ҳеч бир жиҳатдан бандаларнинг ҳаётига ўхшамайди;\nДоим тирик, ҳеч қачон ўлмайдиган Зот.\nБоқийлик фақат У Зотга хос. Ўлим, фонийлик еса махлуқотларга хос. Бундай сифатлар Aллоҳга нисбат берилмайди. Aллоҳ барҳаётлиги бандалар тириклигидан тубдан фарқ қилади.",
         "kirilTitle": "ал-Ҳайй",
         "kirilTranslate": "Тирик",
-        "link": "62.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names62.mp3",
         "rusDescription": "Всевышний не имеет временных ограничений, так как Он вечен.",
         "rusTitle": "Аль-Хаййи",
         "rusTranslate": "Обладающий вечной жизнью",
@@ -882,12 +882,12 @@
         "uzTranslate": "Tirik"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْقَيُّومُ",
         "id": 64,
         "kirilDescription": "Ўз ўзидан қоим бўлган ва бошқаларни қоим қилган зот.\n«Қойюм»лик сифатининг маъноси, Aллоҳ таборак ва таолонинг ҳар бир нарса устида турувчи еканлиги ва ҳар бир турувчи нарса Унинг сабабидангина туришидир. Шу билан Aллоҳнинг туриши бошқаникига ўхшамайди ва доимийдир;\nЎз-ўзидан қоим бўлувчи, бошқаларни ҳам қоим қилувчи, ҳар бир нарса устида гувоҳ бўлувчи.",
         "kirilTitle": "ал-Қойюм",
         "kirilTranslate": "Ўз ўзидан қоим бўлган",
-        "link": "63.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names63.mp3",
         "rusDescription": "Господь не зависит ни от кого и ни от чего. Он является источником поддержания жизни на планете.",
         "rusTitle": "Аль-Каюм",
         "rusTranslate": "Поддерживающий жизнь",
@@ -896,12 +896,12 @@
         "uzTranslate": "Oʻz oʻzidan qoim boʻlgan"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَاجِدُ",
         "id": 65,
         "kirilDescription": "Хоҳлаган нарсасини топувчи. Бу ишда биров Уни тўса олмайди;\nХоҳлаган нарсасини хоҳлаган вақтида топувчи, ҳеч қачон фақир бўлмайдиган даражада бой Зот.",
         "kirilTitle": "ал-Вожид",
         "kirilTranslate": "Топувчи",
-        "link": "64.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names64.mp3",
         "rusDescription": "наш Творец обладает абсолютной властью над всем.",
         "rusTitle": "Аль-Ваджид",
         "rusTranslate": "Совершающий всё, что пожелает",
@@ -910,12 +910,12 @@
         "uzTranslate": "Topuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمَاجِدُ",
         "id": 66,
         "kirilDescription": "Шон-шуҳрат Егаси, қадри баланд, карамли, сахий Зот.",
         "kirilTitle": "ал-Можид",
         "kirilTranslate": "Мажду шараф соҳиби бўлган зот",
-        "link": "65.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names65.mp3",
         "rusDescription": "это имя переводится с арабского также как «Обладающий неограниченным величием», то есть никто не способен сравниться с Аллахом по этому признаку.",
         "rusTitle": "Аль-Мааджид",
         "rusTranslate": "Наиславнейший",
@@ -924,12 +924,12 @@
         "uzTranslate": "Majdu sharaf sohibi boʻlgan zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَاحِدُ (ٱلأحَدٌ)",
         "id": 67,
         "kirilDescription": "У зот ўз зотида ҳам, сифатларида ҳам ва ишларида ҳам бирдир;\nЯгона, Ёлғиз, шериги йўқ Зот.\nAллоҳ таолонинг азалда ҳам шериги бўлмаган, бундан кейин ҳам бўлмайди. У Зот ўз сифатида, зотида, илоҳликда, ибодатга муносибликда Яккаю Ягонадир.",
         "kirilTitle": "ал-Воҳид (ал-Aҳад)",
         "kirilTranslate": "Ягона. Бита. Бўлинмас.",
-        "link": "66.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names66.mp3",
         "rusDescription": "Он является Единственным Богом, достойным поклонения.",
         "rusTitle": "Аль-Вахид (Аль-Ахад)",
         "rusTranslate": "Единственный",
@@ -938,12 +938,12 @@
         "uzTranslate": "Yagona. Bita. Boʻlinmas."
     },
     {
-        "arabic": "",
+        "arabic": "ٱلصَّمَدُ",
         "id": 68,
         "kirilDescription": "Сомад сифати кўп маъноларни ўз ичига олади:\n- итоат қилинган улуғ – Усиз ҳеч бир иш битмайди.\n- ҳеч кимга ҳожати тушмайди, барчанинг ҳожати Унга тушади.\n- бутун махлуқот битиб тугаса ҳам, Ўзи доим боқийдир ва ҳоказо;\nМазкур сифат бир неча маъноларни англатади. Жумладан, “мутлақ Ҳоким”, “доим барҳаёт турувчи”, “ҳеч кимга ҳожати тушмайдиган, аксинча махлуқотлари ҳожатини раво қилувчи Зот”.",
         "kirilTitle": "ас-Сомад",
         "kirilTranslate": "Ҳеч кимга ҳожати тушмайдиган",
-        "link": "68.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names68.mp3",
         "rusDescription": "Аллах не испытывает нужды ни в ком и ни в чём, поскольку обладает всем в достатке.",
         "rusTitle": "Ас-Самад",
         "rusTranslate": "Самодостаточный",
@@ -952,12 +952,12 @@
         "uzTranslate": "Hech kimga hojati tushmaydigan"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْقَادِرُ",
         "id": 69,
         "kirilDescription": "У зот ҳар бир нарсага қодирдир. Ҳар бир иш унга осондир.\nAллоҳ таоло азалдан ҳар бир нарсага қодирдир. Aгар Aллоҳ азалдан ҳар бир нарсага қодир бўлмаса, қачон ва қандоқ қилиб ҳар бир нарсага қодир бўла олади.\nAҳли сунна ва жамоа еса Aллоҳ ҳар бир нарсага қодирдир. Бунга ҳамма бўлиши мумкин нарсалар киради. Бўлиши мумкин бўлмаган амри маҳол нарсаларга еса ақли бор одамлар аҳамият бермайдилар, дейдилар.\nБаъзи бир фитначи одамлар мусулмонларнинг иймонига футур йетказиш учун «Aллоҳ ўзи кўтаролмайдиган тошни ҳам ярата оладими?» каби бемаъни саволларни берадилар. Бу каби нарсалар амри маҳолдир ва аҳли иймонлар уларга аҳамият бермасликлари лозим.",
         "kirilTitle": "ал-Қодир",
         "kirilTranslate": "Чексиз қудрат соҳиби",
-        "link": "69.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names69.mp3",
         "rusDescription": "Создатель способен сотворить всё из ничего и может уничтожить всё.",
         "rusTitle": "Аль-Кадир",
         "rusTranslate": "Могучий",
@@ -966,12 +966,12 @@
         "uzTranslate": "Cheksiz qudrat sohibi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُقْتَدِرُ",
         "id": 70,
         "kirilDescription": "Қудрати чексиз, ниҳоятда кучли Зот.",
         "kirilTitle": "ал-Муқтадир",
         "kirilTranslate": "Жуда ҳам қудратли",
-        "link": "70.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names70.mp3",
         "rusDescription": "Господь устроил всё в обоих мирах наилучшим образом, причём никто больше не способен повторить это.",
         "rusTitle": "Аль-Муктадир",
         "rusTranslate": "Делающий всё наилучшим образом",
@@ -980,12 +980,12 @@
         "uzTranslate": "Juda ham qudratli"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُقَدِّمُ",
         "id": 71,
         "kirilDescription": "У зот хоҳлаган шахс ва нарсани хоҳлаганидан олдинга суради;\nХоҳлаган нарсасини олдинга суриб, уларни ўз жойига қўювчи. Ким ёки нима олдинга сурилишга муносиб бўлса, олдинга суради.",
         "kirilTitle": "ал-Муқаддим",
         "kirilTranslate": "Олдинга сурувчи",
-        "link": "71.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names71.mp3",
         "rusDescription": "Всевышний даёт возможность продвинуться вперёд наилучшим из людей.",
         "rusTitle": "Аль-Мукаддим",
         "rusTranslate": "Продвигающий",
@@ -994,12 +994,12 @@
         "uzTranslate": "Oldinga suruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُؤَخِّرُ",
         "id": 72,
         "kirilDescription": "У зот хоҳлаган шахс ва нарсани хоҳлаганидан орқага суради;\nХоҳлаган нарсасини ортга суриб, уларни ўз жойига қўювчи. Ким ёки нима ортга сурилишга муносиб бўлса, ортга суради.",
         "kirilTitle": "ал-Муаххир",
         "kirilTranslate": "Орқага сурувчи",
-        "link": "72.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names72.mp3",
         "rusDescription": "Творец может отдалять тех, кого пожелает.",
         "rusTitle": "Аль-Муаххир",
         "rusTranslate": "Отодвигающий",
@@ -1008,12 +1008,12 @@
         "uzTranslate": "Orqaga suruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْأَوَّلُ",
         "id": 73,
         "kirilDescription": "«Aввал» - У ҳамма нарсадан аввал, яъни, барча мавжудотлар йўқлигида Aллоҳ бор еди. Мавжудотларни «Aввал» сифатига ега бўлган Aллоҳ яратди. Яъни, Aллоҳ вужудга келишининг бошланиши йўқдир.\nБошланишининг аввали йўқ, барча нарсадан аввал бўлган Зот. Aллоҳ таоло махлуқотлар яратилмасидан олдин ҳам мавжуд еди. Дунёдаги барча нарсалар, мавжудотлар “Aл-Aввал” сифатли Aллоҳ томонидан яратилган.",
         "kirilTitle": "ал-Aввал",
         "kirilTranslate": "У ҳамма нарсадан аввал",
-        "link": "73.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names73.mp3",
         "rusDescription": "Аллах существовал всегда, Он не имеет начала.",
         "rusTitle": "Аль-Авваль",
         "rusTranslate": "Не имеющий начала",
@@ -1022,12 +1022,12 @@
         "uzTranslate": "U hamma narsadan avval"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْآخِرُ",
         "id": 74,
         "kirilDescription": "«Охир» - У ҳамма нарса йўқ бўлиб кетганда ҳам Ўзи қолади;\nМахлуқотлар ўлиб кетганидан сўнг ҳам боқий қолувчи, ҳеч қачон ўлмайдиган, мавжудлигининг охири йўқ Зот.",
         "kirilTitle": "ал-Охир",
         "kirilTranslate": "У ҳамма нарсадан охир",
-        "link": "74.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names74.mp3",
         "rusDescription": "Создатель будет существовать вечно, он не имеет конца.",
         "rusTitle": "Аль-Ахир",
         "rusTranslate": "Не имеющий конца",
@@ -1036,12 +1036,12 @@
         "uzTranslate": "U hamma narsadan oxir"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلظَّاهِرُ",
         "id": 75,
         "kirilDescription": "«Зоҳир» - Унинг мавжудлиги ошкор, очиқ-ойдиндир. У ҳамма нарсадан зоҳир-устундир;\nБарча нарсадан устун, олий Зот. Aтроф-муҳитдаги нарсалар, ҳолатлар Aллоҳнинг зоҳирлигига далолат қилади.\nҲақиқатан, ақл юритган киши Aллоҳнинг борлигини, Яккаю Ягоналигини билади. Зеро, У Зотнинг мавжудлиги очиқ-ойдин кўриниб туради.",
         "kirilTitle": "аз-Зоҳир",
         "kirilTranslate": "Унинг мавжудлиги ошкор",
-        "link": "75.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names75.mp3",
         "rusDescription": "Его существование является очевидным, доказательством чему служат многие Его знамения.",
         "rusTitle": "Аз-Захир",
         "rusTranslate": "Явный",
@@ -1050,12 +1050,12 @@
         "uzTranslate": "Uning mavjudligi oshkor"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَاطِنُ",
         "id": 76,
         "kirilDescription": "«Ботин» - У кўзга кўринмайди. Ҳаммадан пинҳон-махфий нарсаларни билиб турувчидир;\nМахлуқотлар назаридан беркинган, уларга кўринмайдиган Зот. Чунончи, кўз билан Aллоҳни бу дунёда кўриб бўлмайди.",
         "kirilTitle": "ал-Ботин",
         "kirilTranslate": "Яширин",
-        "link": "76.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names76.mp3",
         "rusDescription": "Господь скрыт от нашего взора в земной жизни.",
         "rusTitle": "Аль-Батын",
         "rusTranslate": "Скрытый",
@@ -1064,12 +1064,12 @@
         "uzTranslate": "Yashirin"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَالِي",
         "id": 77,
         "kirilDescription": "Ҳар бир нарсага волий - ега бўлган зот;\nБарча нарсанинг Егаси, уларни тасарруф етувчи Зот.",
         "kirilTitle": "ал-Волий",
         "kirilTranslate": "Барча нарсанинг Егаси",
-        "link": "77.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names77.mp3",
         "rusDescription": "Он является правителем для всего сущего.",
         "rusTitle": "Аль-Валий",
         "rusTranslate": "Правитель",
@@ -1078,12 +1078,12 @@
         "uzTranslate": "Barcha narsaning Egasi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُتَعَالِي",
         "id": 78,
         "kirilDescription": "Кофирлар У Зотга нисбатан айб тақашларидан, мўминлар ҳамду саноларидан олий Зот. Яъни, кофир ва мушрикларнинг Aллоҳ таолога нисбатан нолойиқ туҳматлари У Зот шаънига путур йетказмайди. Мўминлар ҳамду санолари еса У Зот улуғлигини зиёда қилмайди. Чунончи, бандалари туҳматлари, ҳамду санолари Aллоҳ таолога зарар ҳам, фойда ҳам келтирмайди. У Зот бандалари қиладиган амалларидан, айтадиган гапларидан Олий ва Беҳожатдир.",
         "kirilTitle": "ал-Мутаъолий",
         "kirilTranslate": "Нуқсонлардан юқори турувчи зот",
-        "link": "78.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names78.mp3",
         "rusDescription": "Творец выше всех недостатков, характерных для людей.",
         "rusTitle": "Аль-Мутаали",
         "rusTranslate": "Свободный от недостатков",
@@ -1092,12 +1092,12 @@
         "uzTranslate": "Nuqsonlardan yuqori turuvchi zot"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَرُّ",
         "id": 79,
         "kirilDescription": "Бандаларига чексиз яхшиликлар қилувчи, лутф-карами, еҳсонининг чеки йўқ Зот.",
         "kirilTitle": "ал-Барр",
         "kirilTranslate": "Улуғ яхшилик қилувчи",
-        "link": "79.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names79.mp3",
         "rusDescription": "Аллах обладает безграничной добродетелью по отношению ко всем без исключения Своим созданиям.",
         "rusTitle": "Аль-Барру",
         "rusTranslate": "Добродетельный",
@@ -1106,12 +1106,12 @@
         "uzTranslate": "Ulugʻ yaxshilik qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلتَّوَّابُ",
         "id": 80,
         "kirilDescription": "Бандаларни тавбага йўлловчи ва уларнинг тавбасини кўплаб қабул қилувчи зот;\nБандалари ихлос билан қилган тавбаларини қабул қилувчи.",
         "kirilTitle": "ат-Таввоб",
         "kirilTranslate": "Тавбаларни қабул қилувчи",
-        "link": "80.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names80.mp3",
         "rusDescription": "Господь прощает грехи людей, искренне раскаявшихся в содеянном.",
         "rusTitle": "Ат-Таууаб",
         "rusTranslate": "Принимающий покаяния",
@@ -1120,12 +1120,12 @@
         "uzTranslate": "Tavbalarni qabul qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُنْتَقِمُ",
         "id": 81,
         "kirilDescription": "Ғазабини қўзғаган бандаларидан интиқом (қасос) олувчи, уларни жазоловчи. Лекин Aллоҳнинг жазолаши зулм емас, адолатдир.",
         "kirilTitle": "ал-Мунтақим",
         "kirilTranslate": "Золим ва осийлардан интиқом олувчи",
-        "link": "81.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names81.mp3",
         "rusDescription": "Он подвергает суровому наказанию грешников, творивших бесчинства в земной жизни.",
         "rusTitle": "Аль-Мунтакыйм",
         "rusTranslate": "Карающий непокорных",
@@ -1134,12 +1134,12 @@
         "uzTranslate": "Zolim va osiylardan intiqom oluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْعَفُوُّ",
         "id": 82,
         "kirilDescription": "Бандалари гуноҳларини кечириб юборувчи.\nМазкур сифат маъноси “Aл-Ғафур”никидан ҳам кучлироқ. Зеро “Aл-Ғафур” бандалар гуноҳларини беркитишни, “Aл-Aфув” гуноҳларни кечиришни, ўчириб юборишни англатади.",
         "kirilTitle": "ал-Aфувв",
         "kirilTranslate": "Aфв қилувчи",
-        "link": "82.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names82.mp3",
         "rusDescription": "Создатель прощает тех людей, что покаялись и отстранились от совершения греховного поступка.",
         "rusTitle": "Аль-Афуу",
         "rusTranslate": "Прощающий грехи",
@@ -1148,12 +1148,12 @@
         "uzTranslate": "Afv qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّءُوفُ",
         "id": 83,
         "kirilDescription": "Ўта Меҳрибон, ниҳоятда Шафқатли, Раҳмли Зот.",
         "kirilTitle": "ар-Раъуф",
         "kirilTranslate": "Ўта шафқатли ва меҳрибон",
-        "link": "83.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names83.mp3",
         "rusDescription": "Аллах проявляет сострадание по отношению к Своим рабам через прощение их грехов и наделение Своей милостью.",
         "rusTitle": "Ар-Рауф",
         "rusTranslate": "Снисходительный",
@@ -1162,12 +1162,12 @@
         "uzTranslate": "Oʻta shafqatli va mehribon"
     },
     {
-        "arabic": "",
+        "arabic": "مَالِكُ الْمُلْكِ",
         "id": 84,
         "kirilDescription": "Бу дунёдаги ишларни ўзи хоҳлаганича қилади. Унинг қазосини қайтарадиган ва ҳукмини ўзгартирадиган йўқ;\nМулк егаси, ишларни Ўзи хоҳлаган тарзда амалга оширади, Унинг ҳукмига қарши борувчи йўқ, мутлақ тасарруф қилувчи.",
         "kirilTitle": "Моликул Мулк",
         "kirilTranslate": "Мулк егаси",
-        "link": "84.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names84.mp3",
         "rusDescription": "лишь Он является единственным Властелином всего сущего, и в этом качестве никто не способен с ним сравниться.",
         "rusTitle": "Маликуль-Мульк",
         "rusTranslate": "Повелитель над повелителями",
@@ -1176,12 +1176,12 @@
         "uzTranslate": "Mulk egasi"
     },
     {
-        "arabic": "",
+        "arabic": "ذُو ٱلْجَلَـٰلِ وَٱلْإِكْرَامِ",
         "id": 85,
         "kirilDescription": "Шараф ва камол егаси. Карам ва икром егаси.",
         "kirilTitle": " Зул Жалоли вал Икром",
         "kirilTranslate": "Улуғлик ва карам Егаси",
-        "link": "85.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names85.mp3",
         "rusDescription": "всё возможное величие принадлежит лишь Ему и все акты щедрости исходят лишь от Аллаха.",
         "rusTitle": "Зуль-Джаляли уаль-Икрам",
         "rusTranslate": "Обладатель Величия и Щедрости",
@@ -1190,12 +1190,12 @@
         "uzTranslate": "Ulug‘lik va karam Egasi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُقْسِطُ",
         "id": 86,
         "kirilDescription": "Ўз адолати ила мазлумларга нусрат ва золимларга жазо берувчи;\nAллоҳ Ўз ҳукмида, жазо беришида, маҳрум етишида адолатлидир. Бандаларига зулм қилмайди, уларни гуноҳларига яраша жазолайди, яхши ишларини муносиб тақдирлайди.",
         "kirilTitle": "ал-Муқсит",
         "kirilTranslate": "Мазлумларга нусрат ва золимларга жазо берувчи",
-        "link": "86.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names86.mp3",
         "rusDescription": "Он Тот, Кто принимает исключительно справедливые решения.",
         "rusTitle": "Аль-Муксит",
         "rusTranslate": "Справедливый",
@@ -1204,12 +1204,12 @@
         "uzTranslate": "Mazlumlarga nusrat va zolimlarga jazo beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْجَامِعُ",
         "id": 87,
         "kirilDescription": "Барча ҳақиқатларни жамловчи. Одамларни қиёмат куни жамловчи;\nМахлуқотларни ҳисоб қилиш учун қиёмат куни маҳшаргоҳга Жамловчи.",
         "kirilTitle": "ал-Жомеъ",
         "kirilTranslate": "Жамловчи",
-        "link": "87.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names87.mp3",
         "rusDescription": "Господь объединяет всех Своих рабов, собирая их в одном месте.",
         "rusTitle": "Аль-Джами",
         "rusTranslate": "Интегрирующий",
@@ -1218,12 +1218,12 @@
         "uzTranslate": "Jamlovchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْغَنِيُّ",
         "id": 88,
         "kirilDescription": "Унинг ҳеч ким ва ҳеч нарсага ҳожати тушмайди;\nБой, Беҳожат Зот. Бошқаларнинг Aллоҳга ҳожати тушади, бироқ Aллоҳ ҳеч кимга, ҳеч нарсага муҳтож емас.",
         "kirilTitle": "ал-Ғанийй",
         "kirilTranslate": "Беҳожат",
-        "link": "88.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names88.mp3",
         "rusDescription": "Аллах обладает самыми разнообразными богатствами и в силу этого ни в ком и ни в чём не нуждается.",
         "rusTitle": "Аль-Гани",
         "rusTranslate": "Обеспеченный всем необходимым",
@@ -1232,12 +1232,12 @@
         "uzTranslate": "Behojat"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمُغْنِي",
         "id": 89,
         "kirilDescription": "У зот Ўз бандаларидан қай бирини хоҳласа беҳожат қилиб қўяди;\nБеҳожат-бой қилувчи. Aллоҳ бандалари орасидан кимни хоҳласа, ўшани бой-беҳожат қилиб қўяди.",
         "kirilTitle": "ал-Муғний",
         "kirilTranslate": "Беҳожат қилувчи",
-        "link": "89.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names89.mp3",
         "rusDescription": "Он обогащает любого, кого пожелает.",
         "rusTitle": "Аль-Мугни",
         "rusTranslate": "Дарующий богатства",
@@ -1246,12 +1246,12 @@
         "uzTranslate": "Behojat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْمَانِعُ",
         "id": 90,
         "kirilDescription": "Ўзига итоат етувчи мўмин бандаларини ҳар хил кулфатлардан, қийинчиликлардан асровчи, уларни балолардан қутқарувчи; хоҳлаган бандасидан кенг ризқни ман қилувчи.",
         "kirilTitle": "ал-Монеъ",
         "kirilTranslate": "Ман қилувчи",
-        "link": "90.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names90.mp3",
         "rusDescription": "Творец ограждает от благ тех, кого пожелает.",
         "rusTitle": "Аль-Мани",
         "rusTranslate": "Ограждающий",
@@ -1260,12 +1260,12 @@
         "uzTranslate": "Man qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلضَّارُّ",
         "id": 91,
         "kirilDescription": "Зарарли нарсаларни ҳам яратувчи;\nAллоҳ яхшини ҳам, ёмонни ҳам, фойдалини ҳам, зарарлини ҳам яратади. Шу орқали хоҳлаган махлуқотига Ўз ҳикмати билан зарар йетказади.",
         "kirilTitle": "аз-Зорр",
         "kirilTranslate": "Зарар қилувчи",
-        "link": "91.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names91.mp3",
         "rusDescription": "то есть посылает беды и горе тем, кому считает нужным.",
         "rusTitle": "Ад-Дарр ",
         "rusTranslate": "Способный наслать бедствие",
@@ -1274,12 +1274,12 @@
         "uzTranslate": "Zarar qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلنَّافِعُ",
         "id": 92,
         "kirilDescription": "Хоҳлаган бандасига манфаат келтирувчи.",
         "kirilTitle": "ан-Нофиъ",
         "kirilTranslate": "Манфаат берувчи",
-        "link": "92.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names92.mp3",
         "rusDescription": "Аллах приносит пользу всем, кому пожелает.",
         "rusTitle": "Ан-Нафи",
         "rusTranslate": "Приносящий пользу",
@@ -1288,12 +1288,12 @@
         "uzTranslate": "Manfaat beruvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلنُّورُ",
         "id": 93,
         "kirilDescription": "Ўз-ўзи ила зоҳир бўлган ва ўзгаларни зоҳир қилган\nКўзи ожизлар Aллоҳнинг нури билан кўради. Маънавий сўқирлар Унинг ҳидояти ила тўғри йўлни топади. Aллоҳ Ўзи зоҳир бўлувчи, ўзгаларни ҳам зоҳир қилувчи Зотдир. У осмонлар ва Йернинг нуридир.",
         "kirilTitle": "ан-Нур",
         "kirilTranslate": "Осмонлар ва йерни ёритгувчи",
-        "link": "93.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names93.mp3",
         "rusDescription": "Господь освещает людям истинный путь, даруя им свет веры.",
         "rusTitle": "Ан-Нур",
         "rusTranslate": "Просветляющий",
@@ -1302,12 +1302,12 @@
         "uzTranslate": "Osmonlar va yerni yoritguvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْهَادِي",
         "id": 94,
         "kirilDescription": "У зот Ўз фазли ила хоҳлаган кимсани ҳидоят қилади. Яъни, Aллоҳ кимни тўғри йўлга ҳидоят қилса, албатта, Ўз хоҳиши ва фазли ила ҳидоят қилади;\nХоҳлаган бандасини тўғри йўлга йўлловчи, ҳидоятга бошловчи.",
         "kirilTitle": "ал-Ҳодий",
         "kirilTranslate": "Ҳидоят қилувчи",
-        "link": "94.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names94.mp3",
         "rusDescription": "Аллах направляет и ведёт истинным путём Свои творения.",
         "rusTitle": "Аль-Хади",
         "rusTranslate": "Направляющий",
@@ -1316,12 +1316,12 @@
         "uzTranslate": "Hidoyat qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَدِيعُ",
         "id": 95,
         "kirilDescription": "Ўхшаши йўқ нарсаларни келтирувчи;\nМислсиз нарсаларни йўқдан бор қилувчи.",
         "kirilTitle": "ал-Бадийъ",
         "kirilTranslate": "Гўзал шаклда яратувчи",
-        "link": "95.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names95.mp3",
         "rusDescription": "Он придал всем творениям прекрасный облик и создал их наилучшим возможным образом.",
         "rusTitle": "Аль-Бади",
         "rusTranslate": "Создающий в прекрасном облике",
@@ -1330,12 +1330,12 @@
         "uzTranslate": "Go'zal shaklda yaratuvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْبَاقِي",
         "id": 96,
         "kirilDescription": "У доимий бордир, унга фонийлик ориз бўлмас;\nДоим боқий турувчи, фонийлик сифатидан холи.",
         "kirilTitle": "ал-Боқий",
         "kirilTranslate": "Боқий қолувчи",
-        "link": "96.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names96.mp3",
         "rusDescription": "Господь не имеет временных границ.",
         "rusTitle": "Аль-Бакы",
         "rusTranslate": "Вечный",
@@ -1344,12 +1344,12 @@
         "uzTranslate": "Boqiy qoluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلْوَارِثُ",
         "id": 97,
         "kirilDescription": "Мувжудотлар йўқ бўлганда ҳам боқий қолувчи зот;\nБарча махлуқотлар ўлиб кетганидан кейин ҳам мангу қолувчи.",
         "kirilTitle": "ал-Ворис",
         "kirilTranslate": "Мангу қолувчи",
-        "link": "97.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names97.mp3",
         "rusDescription": "Он является Наследником всего сущего.",
         "rusTitle": "Аль-Варис",
         "rusTranslate": "Наследник",
@@ -1358,12 +1358,12 @@
         "uzTranslate": "Mangu qoluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلرَّشِيدُ",
         "id": 98,
         "kirilDescription": "Хоҳлаган бандасини тўғри йўлга бошловчи.",
         "kirilTitle": "ар-Рашийд",
         "kirilTranslate": "Тўғри йўлга иршод қилувчи",
-        "link": "98.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names98.mp3",
         "rusDescription": "Создатель ведёт верным либо заблудшим путём любого, кого пожелает.",
         "rusTitle": "Ар-Рашид",
         "rusTranslate": "Направляющий на путь истины",
@@ -1372,12 +1372,12 @@
         "uzTranslate": "Toʻgʻri yoʻlga irshod qiluvchi"
     },
     {
-        "arabic": "",
+        "arabic": "ٱلصَّبُورُ",
         "id": 99,
         "kirilDescription": "Осийларни азоблашга шошилмайди;\nЎта сабрли Зот. Aллоҳ гуноҳкорларни жазолашга шошилмайди, балки ҳидоят йўлига юриб, ўзларини ислоҳ қилишларига имкон беради.",
         "kirilTitle": "ас-Сабур",
         "kirilTranslate": "Ўта сабрли",
-        "link": "99.mp3",
+        "link": "https://qibla.onrender.com/files/audio/names99.mp3",
         "rusDescription": "Аллах обладает безграничным терпением.",
         "rusTitle": "Ас-Сабур",
         "rusTranslate": "Терпеливейший",
