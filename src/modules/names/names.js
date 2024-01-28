@@ -68,6 +68,49 @@ module.exports = {
       }
    },
 
+   ADD_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `99names.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            await model.addName(
+               item?.arabic,
+               item?.uzTitle,
+               item?.uzDescription,
+               item?.uzTranslate,
+               item?.kirilTitle,
+               item?.kirilDescription,
+               item?.kirilTranslate,
+               item?.rusTitle,
+               item?.rusDescription,
+               item?.rusTranslate,
+               "",
+               "",
+               "",
+               "",
+               "",
+               "",
+               item?.link,
+               item?.link
+            );
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         });
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Internal Server Error"
+         });
+      }
+   },
+
+
    ADD_NAME: async (req, res) => {
       try {
          const uploadPhoto = req.file;
