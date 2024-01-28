@@ -111,6 +111,45 @@ module.exports = {
       }
    },
 
+   ADD_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `suralar.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            await model.addVerse(
+               item?.arabText,
+               item?.uzText,
+               item?.uzMeaning,
+               item?.uzKirilText,
+               item?.uzKirilMeaning,
+               item?.ruText,
+               item?.ruMeaning,
+               item?.enText,
+               item?.enMeaning,
+               item?.kzText,
+               item?.kzMeaning,
+               item?.suraID,
+               item?.relativeSurahID,
+               item?.juzRaqami,
+               item?.juzText,
+               item?.suraID,
+            );
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         });
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    ADD_VERSE: async (req, res) => {
       try {
          const {

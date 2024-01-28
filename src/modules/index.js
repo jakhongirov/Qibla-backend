@@ -107,6 +107,7 @@ router
    // QURAN API
    .get('/quran/list', quran.GET)
    .get('/sura/:id', quran.GET_ID)
+   .get('/sura/file/add', AUTH, quran.ADD_FILE)
    .post('/sura/add', AUTH, quran.ADD_SURA)
    .put('/sura/edit', AUTH, quran.EDIT_SURA)
    .delete('/sura/delete', quran.DELETE_SURA)
@@ -115,6 +116,7 @@ router
    .get('/verses/list', verses.GET)
    .get('/verses/list/:suraId', verses.GET_SURA)
    .get('/verses/:id', verses.GET_ID)
+   .get('/verses/file/add', AUTH, verses.ADD_FILE)
    .post('/verses/add', AUTH, verses.ADD_VERSE)
    .put('/verses/edit', AUTH, verses.EDIT_VERSE)
    .delete('/verses/delete', AUTH, verses.DELETE_VERSE)
