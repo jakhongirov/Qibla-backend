@@ -84,6 +84,7 @@ module.exports = {
             const foundNews = await model.foundNews(id)
 
             if (foundNews) {
+               const editNewsView = await model.editNewsView(news_id)
                return res.status(200).json({
                   status: 200,
                   message: "Success",
@@ -93,7 +94,7 @@ module.exports = {
             } else {
                return res.status(404).json({
                   status: 404,
-                  message: "Not"
+                  message: "Not Found"
                })
             }
 
