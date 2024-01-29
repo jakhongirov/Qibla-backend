@@ -22,7 +22,7 @@ const newsList = (limit, page, lang) => {
          news
       WHERE
          news_active = true
-         ${lang ? `and news_lang_code = ${lang}` : ""}
+         ${lang ? `and news_lang = ${lang}` : ""}
       ORDER BY
          news_id DESC
       LIMIT ${limit}
