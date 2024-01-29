@@ -140,13 +140,13 @@ module.exports = {
             const updateAudio = await model.updateAudio(audio_id, author_id, sura_id, JSON.parse(time), audioUrl, audioName)
 
             if (updateAudio) {
-               return req.status(200).json({
+               return res.status(200).json({
                   status: 200,
                   message: "Success",
                   data: updateAudio
                })
             } else {
-               return req.status(400).json({
+               return res.status(400).json({
                   status: 400,
                   message: "Bad request"
                })
@@ -182,13 +182,13 @@ module.exports = {
             const deleteAudio = await model.deleteAudio(audio_id)
 
             if (deleteAudio) {
-               return req.status(200).json({
+               return res.status(200).json({
                   status: 200,
                   message: "Success",
                   data: deleteAudio
                })
             } else {
-               return req.status(400).json({
+               return res.status(400).json({
                   status: 400,
                   message: "Bad request"
                })
