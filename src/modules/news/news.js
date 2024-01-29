@@ -84,7 +84,7 @@ module.exports = {
             const foundNews = await model.foundNews(id)
 
             if (foundNews) {
-               const editNewsView = await model.editNewsView(news_id)
+               const editNewsView = await model.editNewsView(id)
                return res.status(200).json({
                   status: 200,
                   message: "Success",
