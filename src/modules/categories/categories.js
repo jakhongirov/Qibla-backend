@@ -127,6 +127,7 @@ module.exports = {
 
    EDIT_CATEGORY: async (req, res) => {
       try {
+         const uploadPhoto = req.file;
          const {
             category_id,
             category_name,
