@@ -130,9 +130,9 @@ router
    // AUDIOS API
    .get('/audios/list', audios.GET)
    .get('/audio/:sura_id', audios.GET_SURA_ID)
-   .post('/audio/add', FileUpload.single("audio"), audios.ADD_AUDIO)
-   .put('/audio/edit', FileUpload.single("audio"), audios.UPDATE_AUDIO)
-   .delete('/audio/delete', audios.DELETE_AUDIO)
+   .post('/audio/add', AUTH, FileUpload.single("audio"), audios.ADD_AUDIO)
+   .put('/audio/edit', AUTH, FileUpload.single("audio"), audios.UPDATE_AUDIO)
+   .delete('/audio/delete', AUTH, audios.DELETE_AUDIO)
 
    // NEWS API
    .get('/news/admin/list', AUTH, news.GET_ADMIN)
