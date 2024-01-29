@@ -123,9 +123,9 @@ router
 
    // AUTHORS API
    .get('/authors/list', authors.GET)
-   .post('/author/add', FileUpload.single("photo"), authors.ADD_AUTHOR)
-   .put('/author/edit', FileUpload.single("photo"), authors.UPDATE_AUTHOR)
-   .delete('/author/delete', authors.DELETE_AUTHOR)
+   .post('/author/add', AUTH, FileUpload.single("photo"), authors.ADD_AUTHOR)
+   .put('/author/edit', AUTH, FileUpload.single("photo"), authors.UPDATE_AUTHOR)
+   .delete('/author/delete', AUTH, authors.DELETE_AUTHOR)
 
    // AUDIOS API
    .get('/audios/list', audios.GET)
