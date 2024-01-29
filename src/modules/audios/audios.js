@@ -92,7 +92,7 @@ module.exports = {
          const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
          const audioName = uploadPhoto?.filename;
 
-         const addAudio = await model.addAudio(author_id, sura_id, time, audioUrl, audioName)
+         const addAudio = await model.addAudio(author_id, sura_id, JSON.parse(time), audioUrl, audioName)
 
          if (addAudio) {
             return res.status(200).json({
@@ -137,7 +137,7 @@ module.exports = {
                audioName = foundAudio?.audio_name;
             }
 
-            const updateAudio = await model.updateAudio(audio_id, author_id, sura_id, time, audioUrl, audioName)
+            const updateAudio = await model.updateAudio(audio_id, author_id, sura_id, JSON.parse(time), audioUrl, audioName)
 
             if (updateAudio) {
                return req.status(200).json({
