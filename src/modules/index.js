@@ -67,8 +67,8 @@ router
    // CATEGORIES API
    .get('/categories/list', categories.GET)
    .get('/category/:id', categories.GET_ID)
-   .post('/category/add', AUTH, categories.ADD_CATEGORY)
-   .put('/category/edit', AUTH, categories.EDIT_CATEGORY)
+   .post('/category/add', FileUpload.single("photo"), AUTH, categories.ADD_CATEGORY)
+   .put('/category/edit', FileUpload.single("photo"), AUTH, categories.EDIT_CATEGORY)
    .delete('/category/delete', AUTH, categories.DELETE_CATEGORY)
 
    // ZIKRS API
@@ -116,7 +116,7 @@ router
    .get('/verses/list', verses.GET)
    .get('/verses/list/:suraId', verses.GET_SURA)
    .get('/verses/:id', verses.GET_ID)
-   .get('/verses/file/add',  verses.ADD_FILE)
+   .get('/verses/file/add', verses.ADD_FILE)
    .post('/verses/add', AUTH, verses.ADD_VERSE)
    .put('/verses/edit', AUTH, verses.EDIT_VERSE)
    .delete('/verses/delete', AUTH, verses.DELETE_VERSE)
