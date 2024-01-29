@@ -57,13 +57,13 @@ module.exports = {
             const foundBySuraId = await model.foundBySuraId(sura_id)
 
             if (foundBySuraId) {
-               return req.status(200).json({
+               return res.status(200).json({
                   status: 200,
                   message: "Success",
                   data: foundBySuraId
                })
             } else {
-               return req.status(404).json({
+               return res.status(404).json({
                   status: 404,
                   message: "Bad request"
                })
