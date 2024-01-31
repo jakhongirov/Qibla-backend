@@ -236,6 +236,7 @@ module.exports = {
          const addParticipants = await model.addParticipants(zikr_id, user_id)
 
          if (addParticipants) {
+            await model.updateZikrParticipants(zikr_id)
             return res.status(200).json({
                status: 200,
                message: "Success",

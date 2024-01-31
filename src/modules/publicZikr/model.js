@@ -425,26 +425,24 @@ const editPublicZikr = (
 }
 const addParticipants = (zikr_id, user_id) => {
    const QUERY = `
-      BEGIN;
-
       INSERT INTO users_zikr(zikr_id, user_id)
       SELECT $1, $2
       WHERE NOT EXISTS (
          SELECT * FROM users_zikr WHERE zikr_id = $1 AND user_id = $2
       )
       RETURNING *;
-
-      UPDATE public_zikr
-      SET zikr_participants = zikr_participants + 1
-      WHERE zikr_id = $1
-      AND EXISTS (
-         SELECT * FROM users_zikr WHERE zikr_id = $1 AND user_id = $2
-      );
-
-      COMMIT;
    `;
 
    return fetch(QUERY, zikr_id, user_id)
+}
+const updateZikrParticipants = (zikr_id) => {
+   const QUERY = `
+      UPDATE public_zikr
+      SET zikr_participants = zikr_participants + 1
+      WHERE zikr_id = $1 RETURNING *;;
+   `;
+
+   return fetch(QUERY, zikr_id)
 }
 const editFinishing = (zikr_id, finishing) => {
    const QUERY = `
@@ -477,6 +475,7 @@ module.exports = {
    addPublicZikr,
    editPublicZikr,
    addParticipants,
+   updateZikrParticipants,
    editFinishing,
    deletePublicZikr
 }
