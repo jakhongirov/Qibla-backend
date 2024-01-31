@@ -133,7 +133,9 @@ module.exports = {
             user_os,
             user_os_version,
             user_token,
-            user_app_version
+            user_app_version,
+            notification_id,
+            notification
          } = req.body
          const checkUserEmial = await model.checkUserEmial(user_email)
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
@@ -157,7 +159,9 @@ module.exports = {
                user_os,
                user_os_version,
                user_token,
-               user_app_version
+               user_app_version,
+               notification_id,
+               notification
             )
 
             if (registerUser) {

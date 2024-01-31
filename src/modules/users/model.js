@@ -91,7 +91,9 @@ const registerUser = (
    user_os,
    user_os_version,
    user_token,
-   user_app_version
+   user_app_version,
+   notification_id,
+   notification
 ) => {
    const QUERY = `
       INSERT INTO
@@ -112,7 +114,9 @@ const registerUser = (
             user_os,
             user_os_version,
             user_token,
-            user_app_version
+            user_app_version,
+            user_notification_id,
+            user_notification
          ) VALUES (
             $1,
             $2,
@@ -130,7 +134,9 @@ const registerUser = (
             ARRAY [ $14 ],
             ARRAY [ $15 ],
             ARRAY [ $16 ],
-            $17
+            $17,
+            $18,
+            $19
          ) RETURNING *;
    `;
 
@@ -152,7 +158,9 @@ const registerUser = (
       user_os,
       user_os_version,
       user_token,
-      user_app_version
+      user_app_version,
+      notification_id,
+      notification
    )
 }
 const createTemporaryUser = (
