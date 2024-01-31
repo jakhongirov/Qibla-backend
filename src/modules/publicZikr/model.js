@@ -322,7 +322,7 @@ const addPublicZikr = (
             $16,
             $17,
             $18,
-            $19,
+            $19
          ) RETURNING *;
    `;
 
