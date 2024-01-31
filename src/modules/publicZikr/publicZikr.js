@@ -264,7 +264,7 @@ module.exports = {
          const io = socket.getIO();
          io.emit('incrementZikrCount', id);
 
-         res.status(200).json({
+          return res.status(200).json({
             status: 200,
             message: "Success"
          })
