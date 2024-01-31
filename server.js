@@ -34,8 +34,7 @@ app.use('/public', express.static(path.resolve(__dirname, 'public')))
 app.use('/files', express.static(path.resolve(__dirname, 'files')))
 app.use("/api/v1", router);
 
-
-server.listen(PORT, () => {
+const server = app.listen(PORT, () => {
    console.log(`Server running on port ${PORT}`);
 });
 
