@@ -79,14 +79,14 @@ router
    .delete('/zikr/delete', AUTH, zikrs.DElETE_ZIKR)
 
    // PUBLIC ZIKRS API
-   .get('/publiczikr/list', publicZikrs.GET)
-   .get('/publiczikr/:id', publicZikrs.GET_ID)
-   .post('/publiczikr/add', FileUpload.single("audio"), AUTH, publicZikrs.ADD_PUBLIC_ZIKR)
-   .put('/publiczikr/edit', FileUpload.single("audio"), AUTH, publicZikrs.EDIT_PUBLIC_ZIKR)
-   .put('/publiczikr/edit/participants', publicZikrs.EDIT_PARTICIPANTS)
-   .put('/publiczikr/edit/count', publicZikrs.EDIT_COUNT)
-   .put('/publiczikr/edit/finishing', AUTH, publicZikrs.EDIT_FINISHING)
-   .delete('/publiczikr/delete', AUTH, publicZikrs.DELETE_PUBLIC_ZIKR)
+   .get('/public/zikr/list', publicZikrs.GET)
+   .get('/public/zikr/:id', publicZikrs.GET_ID)
+   .post('/public/zikr/add', FileUpload.single("audio"), AUTH, publicZikrs.ADD_PUBLIC_ZIKR)
+   .put('/public/zikr/edit', FileUpload.single("audio"), AUTH, publicZikrs.EDIT_PUBLIC_ZIKR)
+   .put('/public/zikr/edit/participants', publicZikrs.EDIT_PARTICIPANTS)
+   .put('/public/zikr/edit/count', publicZikrs.EDIT_COUNT)
+   .put('/public/zikr/edit/finishing', AUTH, publicZikrs.EDIT_FINISHING)
+   .delete('/public/zikr/delete', AUTH, publicZikrs.DELETE_PUBLIC_ZIKR)
 
    // // QUESTION API
    // .get('/questions/list', AUTH, questions.GET)
