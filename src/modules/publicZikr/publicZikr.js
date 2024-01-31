@@ -260,21 +260,22 @@ module.exports = {
 
    EDIT_COUNT: async (req, res) => {
       try {
-         const { id } = req.params
+         const { id } = req.params;
          const io = socket.getIO();
-         io.emit('incrementZikrCount', id);
 
-          return res.status(200).json({
+         // Emit the 'incrementZikrCount' event to all connected clients
+         io.emit("incrementZikrCount", id);
+
+         return res.status(200).json({
             status: 200,
-            message: "Success"
-         })
-
+            message: "Success",
+         });
       } catch (error) {
          console.log(error);
          res.status(500).json({
             status: 500,
-            message: "Interval Server Error"
-         })
+            message: "Internal Server Error",
+         });
       }
    },
 

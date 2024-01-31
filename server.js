@@ -1,11 +1,11 @@
 require('dotenv').config()
 const express = require("express");
-const http = require('http');
+// const http = require('http');
 const cors = require("cors");
 const path = require('path')
 const fs = require('fs');
 const app = express();
-const server = http.createServer(app);
+// const server = http.createServer(app);
 const { PORT } = require("./src/config");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
@@ -33,8 +33,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static(path.resolve(__dirname, 'public')))
 app.use('/files', express.static(path.resolve(__dirname, 'files')))
 app.use("/api/v1", router);
-const io = socket.initializeSocket(server);
+
 
 server.listen(PORT, () => {
    console.log(`Server running on port ${PORT}`);
 });
+
+const io = socket.initializeSocket(server);
