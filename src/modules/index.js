@@ -84,7 +84,7 @@ router
    .post('/public/zikr/add', FileUpload.single("audio"), AUTH, publicZikrs.ADD_PUBLIC_ZIKR)
    .put('/public/zikr/edit', FileUpload.single("audio"), AUTH, publicZikrs.EDIT_PUBLIC_ZIKR)
    .put('/public/zikr/edit/participants', publicZikrs.EDIT_PARTICIPANTS)
-   .put('/public/zikr/edit/count', publicZikrs.EDIT_COUNT)
+   .put('/public/zikr/edit/count/:id', publicZikrs.EDIT_COUNT)
    .put('/public/zikr/edit/finishing', AUTH, publicZikrs.EDIT_FINISHING)
    .delete('/public/zikr/delete', AUTH, publicZikrs.DELETE_PUBLIC_ZIKR)
 
