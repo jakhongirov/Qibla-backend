@@ -228,7 +228,7 @@ module.exports = {
             dua_id,
             news_id
          } = req.body
-         const foundTape = await model.foundTape(id)
+         const foundTape = await model.foundTape(tape_id)
 
          if (foundTape) {
             const editTape = await model.editTape(
