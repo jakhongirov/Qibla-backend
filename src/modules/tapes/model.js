@@ -26,6 +26,18 @@ const foundTape = (id) => {
 
    return fetch(QUERY, id)
 }
+const foundTapeByDate = (date) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         tapes
+      WHERE
+         tape_date = $1;
+   `;
+
+   return fetch(QUERY, date)
+}
 const foundZikr = (id) => {
    const QUERY = `
       SELECT
@@ -376,6 +388,7 @@ const deleteTape = (tape_id) => {
 module.exports = {
    getTapeList,
    foundTape,
+   foundTapeByDate,
    foundZikr,
    foundVerse,
    foundName,

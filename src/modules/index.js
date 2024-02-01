@@ -147,7 +147,7 @@ router
 
    // TAPES API
    .get('/tapes/list', tapes.GET)
-   .get('/tapes/:date', tapes.GET_BY_DATE)
+   .get('/tapes/date', tapes.GET_BY_DATE)
    .get('/tapes/:id', tapes.GET_ID)
    .post('/tapes/add', AUTH, tapes.ADD_TAPE)
    .put('/tapes/edit', AUTH, tapes.EDIT_TYPE)

@@ -75,9 +75,13 @@ module.exports = {
 
    GET_BY_DATE: async (req, res) => {
       try {
-         const { date } = req.params
          const { lang } = req.query
-         const foundTapeByDate = await model.foundTapeByDate(date)
+         const today = new Date();
+         const year = today.getFullYear();
+         const month = String(today.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+         const day = String(today.getDate()).padStart(2, '0');
+         const formattedDateTime = `${day}.${month}.${year}`;
+         const foundTapeByDate = await model.foundTapeByDate(formattedDateTime)
 
          if (foundTapeByDate) {
             const foundVerse = await model.foundVerse(foundTapeByDate?.verse_id, lang)
