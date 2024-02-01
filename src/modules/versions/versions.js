@@ -54,7 +54,7 @@ module.exports = {
 
          if (version) {
             const getUpdates = await model.getUpdates(version)
-            const mergedVerses = await getUpdates.reduce((accumulator, currentValue) => {
+            const mergedVerses = await getUpdates?.reduce((accumulator, currentValue) => {
                currentValue.verse_id.forEach(id => {
                   if (!accumulator.includes(id)) {
                      accumulator.push(id);
@@ -62,14 +62,22 @@ module.exports = {
                });
                return accumulator;
             }, []);
-            const getUpdatedVerse = await model.getUpdatedVerse(mergedVerses)
 
-            if (getUpdatedVerse) {
-               return res.status(200).json({
-                  status: 200,
-                  message: "Success",
-                  data: getUpdatedVerse
-               })
+            if (mergedVerses?.length > 0) {
+               const getUpdatedVerse = await model.getUpdatedVerse(mergedVerses)
+
+               if (getUpdatedVerse) {
+                  return res.status(200).json({
+                     status: 200,
+                     message: "Success",
+                     data: getUpdatedVerse
+                  })
+               } else {
+                  return res.status(404).json({
+                     status: 404,
+                     message: "Not found"
+                  })
+               }
             } else {
                return res.status(404).json({
                   status: 404,
