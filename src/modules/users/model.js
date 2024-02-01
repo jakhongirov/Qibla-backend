@@ -175,7 +175,9 @@ const createTemporaryUser = (
    user_os,
    user_os_version,
    user_token,
-   user_app_version
+   user_app_version,
+   notification_id,
+   notification
 ) => {
    const QUERY = `
       INSERT INTO
@@ -191,7 +193,9 @@ const createTemporaryUser = (
             user_os,
             user_os_version,
             user_token,
-            user_app_version
+            user_app_version,
+            user_notification_id,
+            user_notification
          ) VALUES (
             $1,
             $2,
@@ -204,7 +208,9 @@ const createTemporaryUser = (
             ARRAY [ $9 ],
             ARRAY [ $10 ],
             ARRAY [ $11 ],
-            $12
+            $12,
+            $13,
+            $14
          ) RETURNING *;
    `;
 
@@ -221,7 +227,9 @@ const createTemporaryUser = (
       user_os,
       user_os_version,
       user_token,
-      user_app_version
+      user_app_version,
+      notification_id,
+      notification
    )
 }
 const addToken = (user_id, user_token, user_app_version) => {

@@ -209,7 +209,9 @@ module.exports = {
             user_os,
             user_os_version,
             user_token,
-            user_app_version
+            user_app_version,
+            notification_id,
+            notification
          } = req.body
          const createTemporaryUser = await model.createTemporaryUser(
             user_name,
@@ -223,7 +225,9 @@ module.exports = {
             user_os,
             user_os_version,
             user_token,
-            user_app_version
+            user_app_version,
+            notification_id,
+            notification
          )
 
          if (createTemporaryUser) {
