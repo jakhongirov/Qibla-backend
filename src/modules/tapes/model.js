@@ -295,7 +295,7 @@ const foundNews = (id, lang) => {
       FROM
          news
       WHERE
-         news_id = $1
+         news_link = $1
          and ARRAY[news_id::int] && ARRAY[${newsId}];
    `;
 
