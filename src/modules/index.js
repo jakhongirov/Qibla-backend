@@ -160,8 +160,8 @@ router
    .put('/quran/updated/edit', AUTH, versions.UPDATE_UPDATES)
    .delete('/quran/updated/delete', AUTH, versions.DELETE_QURAN_UPDATES)
    .get('/versions/list', versions.GET_VERSION)
-   .post('/versions/add', versions.ADD_VERSION)
-   .post('/versions/edit', versions.UPDATE_VERSION)
-   .delete('/versions/delete', versions.DELETE_VERSION)
+   .post('/versions/add', AUTH, versions.ADD_VERSION)
+   .post('/versions/edit', AUTH, versions.UPDATE_VERSION)
+   .delete('/versions/delete', AUTH, versions.DELETE_VERSION)
 
 module.exports = router
