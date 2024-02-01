@@ -272,7 +272,7 @@ module.exports = {
    DELETE_TAPE: async (req, res) => {
       try {
          const { tape_id } = req.body
-         const foundTape = await model.foundTape(id)
+         const foundTape = await model.foundTape(tape_id)
 
          if (foundTape) {
             const deleteTape = await model.deleteTape(tape_id)
