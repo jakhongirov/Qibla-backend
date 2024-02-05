@@ -288,6 +288,130 @@ const foundVerse = (id, lang) => {
       return fetch(QUERY, id)
    }
 }
+const getVersesByJuz = (number, lang) => {
+   if (lang == 'uzbek') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            sura_number,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_uzbek AS text,
+            verse_meaning_uzbek AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            juz_number = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetch(QUERY, number)
+   } else if (lang == 'cyrillic') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            sura_number,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_cyrillic AS text,
+            verse_meaning_cyrillic AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            juz_number = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetch(QUERY, number)
+   } else if (lang == 'russian') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            sura_number,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_russian AS text,
+            verse_meaning_russian AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            juz_number = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetch(QUERY, number)
+   } else if (lang == 'english') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            sura_number,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_english AS text,
+            verse_meaning_english AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            juz_number = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetch(QUERY, number)
+   } else {
+      const QUERY = `
+         SELECT
+            *
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            juz_number = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetch(QUERY, number)
+   }
+}
 const addVerse = (
    verse_arabic,
    verse_uzbek,
@@ -446,6 +570,7 @@ module.exports = {
    versesList,
    versesBySura,
    foundVerse,
+   getVersesByJuz,
    addVerse,
    editVerse,
    deleteVerse

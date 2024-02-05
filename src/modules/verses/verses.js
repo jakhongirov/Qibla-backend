@@ -113,6 +113,43 @@ module.exports = {
       }
    },
 
+   GET_JUZ: async (req, res) => {
+      try {
+         const { number } = req.params
+         const { lang } = req.query
+
+         if (number) {
+            const getVersesByJuz = await model.getVersesByJuz(number, lang)
+
+            if (getVersesByJuz) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: getVersesByJuz
+               })
+            } else {
+               return res.status(404).json({
+                  status: 404,
+                  message: "Not found"
+               })
+            }
+
+         } else {
+            return res.status(400).json({
+               status: 400,
+               message: "Bad request"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    ADD_FILE: async (req, res) => {
       try {
          const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `oyatlar.json`))
