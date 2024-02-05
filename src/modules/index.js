@@ -67,7 +67,7 @@ router
    // CATEGORIES API
    .get('/categories/list', categories.GET)
    .get('/category/:id', categories.GET_ID)
-   .get('/category/file/add', categories.ADD_FILE)
+   .get('/category/file/add', AUTH, categories.ADD_FILE)
    .post('/category/add', FileUpload.single("photo"), AUTH, categories.ADD_CATEGORY)
    .put('/category/edit', FileUpload.single("photo"), AUTH, categories.EDIT_CATEGORY)
    .delete('/category/delete', AUTH, categories.DELETE_CATEGORY)
