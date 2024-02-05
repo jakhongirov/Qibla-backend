@@ -82,6 +82,36 @@ module.exports = {
       }
    },
 
+   ADD_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `categories.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            await model.addCategory(
+               item?.name,
+               item?.lang,
+               item?.backgrounColor,
+               item?.textColor,
+               item?.imageLink,
+               item?.imageLink,
+            )
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         });
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    ADD_CATEGORY: async (req, res) => {
       try {
          const uploadPhoto = req.file;
