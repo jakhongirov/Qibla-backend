@@ -91,6 +91,37 @@ module.exports = {
       }
    },
 
+   ADD_FILE: async (req, res) => {
+      try {
+         const data = new FS(path.resolve(__dirname, '..', '..', '..', 'files', `items.json`))
+         const file = JSON.parse(data.read())
+
+         for (const item of file) {
+            await model.addZikr(
+               item?.title,
+               item?.description,
+               item?.dailyGoal,
+               item?.catID,
+               item?.audioLink,
+               item?.audioLink,
+               item?.info,
+            )
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         });
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    ADD_ZIKR: async (req, res) => {
       try {
          const uploadPhoto = req.file;
