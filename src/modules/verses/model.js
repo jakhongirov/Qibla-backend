@@ -269,6 +269,32 @@ const foundVerse = (id, lang) => {
       `;
 
       return fetch(QUERY, id)
+   } else if (lang == 'kazakh') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            sura_number,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_kazakh AS text,
+            verse_meaning_kazakh AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            verse_id = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetch(QUERY, id)
    } else {
       const QUERY = `
          SELECT
@@ -314,7 +340,7 @@ const getVersesByJuz = (number, lang) => {
             verse_id;
       `;
 
-      return fetch(QUERY, number)
+      return fetchALL(QUERY, number)
    } else if (lang == 'cyrillic') {
       const QUERY = `
          SELECT
@@ -340,7 +366,7 @@ const getVersesByJuz = (number, lang) => {
             verse_id;
       `;
 
-      return fetch(QUERY, number)
+      return fetchALL(QUERY, number)
    } else if (lang == 'russian') {
       const QUERY = `
          SELECT
@@ -366,7 +392,7 @@ const getVersesByJuz = (number, lang) => {
             verse_id;
       `;
 
-      return fetch(QUERY, number)
+      return fetchALL(QUERY, number)
    } else if (lang == 'english') {
       const QUERY = `
          SELECT
@@ -392,7 +418,33 @@ const getVersesByJuz = (number, lang) => {
             verse_id;
       `;
 
-      return fetch(QUERY, number)
+      return fetchALL(QUERY, number)
+   } else if (lang == 'kazakh') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            sura_number,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_kazakh AS text,
+            verse_meaning_kazakh AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         WHERE
+            juz_number = $1
+         ORDER BY
+            verse_id;
+      `;
+
+      return fetchALL(QUERY, number)
    } else {
       const QUERY = `
          SELECT
@@ -409,7 +461,7 @@ const getVersesByJuz = (number, lang) => {
             verse_id;
       `;
 
-      return fetch(QUERY, number)
+      return fetchALL(QUERY, number)
    }
 }
 const addVerse = (
