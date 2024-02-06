@@ -1,6 +1,6 @@
 [
     {
-        "audioLink": "oyatalkursiy",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_oyatalkursiy",
         "catID": 1,
         "dailyGoal": 1,
         "description": "Бисмиллаҳир роҳманир роҳийм. Аллоҳу лаа илаҳа иллаҳув алҳаййул қойюм. Лаа таъхузуҳу синатув валаа навм. Лаҳуу маа фис самаваати ва маа фил арз. Ман заллазий йашфаъу ъиндаху иллаа биизниҳ. Йаъламу маа байна айдийҳим ва маа холфаҳум. Ва лаа йуҳийтувна бишайъим мин ъилмиҳи илла бимаа шаа. Васиъа курсиййуҳус самаваати вал арз. Ва лаа йаувдуҳу ҳифзуҳума ва ҳувал ъалиййул ъазийм.",
@@ -9,7 +9,7 @@
         "title": "Курсий ояти"
     },
     {
-        "audioLink": "uyqudanturganda",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_uyqudanturganda",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Асбаҳнаа ва асбаҳал мулку лиллаҳи роббил ъаламийн. Аллоҳумма ас`алука хойра ҳазал йавми фатҳаҳу ва насроҳу ва нуроҳу ва барокатаҳу ва ҳудаҳу ва аъузу бика мин шарри маа фийҳи ва шарри маа баъдаҳ»",
@@ -18,7 +18,7 @@
         "title": "Уйқудан тургандаги дуо"
     },
     {
-        "audioLink": "tongotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganida",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Аллоҳумма маа асбаҳа бий мин ниъматин фаминка ваҳдака лаа шарийка лак, фалакал ҳамду ва лакаш шукр»",
@@ -27,7 +27,7 @@
         "title": "Тонг отганида"
     },
     {
-        "audioLink": "tonggizikr",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tonggizikr",
         "catID": 1,
         "dailyGoal": 3,
         "description": "«Розийту биллаҳи роббан ва бил ислами дийнан ва бимуҳаммадин соллаллоҳу алайҳи васаллама росула»",
@@ -36,7 +36,7 @@
         "title": "Тонгги зикр"
     },
     {
-        "audioLink": "suraixlos",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suraixlos",
         "catID": 1,
         "dailyGoal": 3,
         "description": "Бисмиллаҳир роҳманир роҳийм. Қул ҳуваллоҳу аҳад. Аллоҳус сомад. Лам йалид ва лам йувлад. Валам йакуллаҳу куфуван аҳад.",
@@ -45,7 +45,7 @@
         "title": "Ихлос сураси"
     },
     {
-        "audioLink": "surafalaq",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_surafalaq",
         "catID": 1,
         "dailyGoal": 3,
         "description": "Бисмиллаҳир роҳманир роҳийм. Қул аъузу бироббил фалақ. Мин шарри маа холақ. Ва мин шарри ғосиқин изаа вақоб. Ва мин шаррин наффаасаати фил ъуқод. Ва мин шарри ҳаасидин изаа ҳасад.",
@@ -54,7 +54,7 @@
         "title": "Фалақ сураси"
     },
     {
-        "audioLink": "suranaas",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suranaas",
         "catID": 1,
         "dailyGoal": 3,
         "description": "Бисмиллаҳир роҳманир роҳийм. Қул аъузу бироббиннаас. Маликин наас. Илааҳин наас. Мин шаррил васваасил хоннаас. Аллазий ювасвису фий судуурин наас. Минал жиннати ваннаас.",
@@ -63,7 +63,7 @@
         "title": "Наас сураси"
     },
     {
-        "audioLink": "sayyidulistigfor",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_sayyidulistigfor",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Аллоҳумма анта роббий ла илаҳа илла анта холақтаний ва ана ъабдука ва ана ъала ъаҳдика ва ваъдика мастатоъту аъузу бика мин шарри ма сонаъту, абу`у лака биниъматика ъалаййа ва абу`у бизамбий фағфирлий фаиннаҳу ла йағфируз зунуба илла анта»",
@@ -72,7 +72,7 @@
         "title": "Саййидул истиғфор"
     },
     {
-        "audioLink": "allohgahamdaytish",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytish",
         "catID": 1,
         "dailyGoal": 100,
         "description": "«Субҳаналлоҳи ва биҳамдиҳи субҳоналлоҳил ъазийм»",
@@ -81,7 +81,7 @@
         "title": "Аллоҳга ҳамд айтиш"
     },
     {
-        "audioLink": "tongotganidavakunbotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganidavakunbotganida",
         "catID": 1,
         "dailyGoal": 4,
         "description": "«Аллоҳумма инний асбаҳту ушҳидука ва ушҳиду ҳамалата ъаршика ва малаикатика ва жамийъа холқик, аннака анталлоҳу лаа илаҳа илла анта ваҳдака лаа шарийка лака ва анна Муҳаммадан ъабдука ва росулук»",
@@ -90,7 +90,7 @@
         "title": "Тонг отганида ва кун ботганида"
     },
     {
-        "audioLink": "tonggizikr2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tonggizikr2",
         "catID": 1,
         "dailyGoal": 7,
         "description": "«Ҳасбийаллоҳу лаа илаҳа илла ҳува ъалайҳи таваккалту ва ҳува роббул ъаршил ъазийм»",
@@ -99,7 +99,7 @@
         "title": "Тонгги зикр"
     },
     {
-        "audioLink": "tongotganidavakunbotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganidavakunbotganida",
         "catID": 1,
         "dailyGoal": 3,
         "description": "«Бисмиллаҳиллазий лаа йазурру маъасмиҳи шай`ун фил арзи ва лаа фис самаи ва ҳувас самийъул ъалийм»",
@@ -108,7 +108,7 @@
         "title": "Тонг отганида ва кун ботганида"
     },
     {
-        "audioLink": "tongotganida2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganida2",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Аллоҳумма бика асбаҳнаа ва бика амсайнаа ва бика наҳйаа ва бика намуту ва илайкан нушур»",
@@ -117,7 +117,7 @@
         "title": "Тонг отганида ўқиладиган дуо"
     },
     {
-        "audioLink": "iymonkalimasi",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_iymonkalimasi",
         "catID": 1,
         "dailyGoal": 10,
         "description": "«Лаа илаҳа иллаллоҳу ваҳдаҳу лаа шарийка лаҳу, лаҳул мулку ва лаҳул ҳамду ва ҳува ъалаа кулли шай`ин қодийр»",
@@ -126,7 +126,7 @@
         "title": "Иймон калимаси"
     },
     {
-        "audioLink": "oyatalkursiy",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_oyatalkursiy",
         "catID": 2,
         "dailyGoal": 1,
         "description": "Бисмиллаҳир роҳманир роҳийм. Аллоҳу лаа илаҳа иллаҳув алҳаййул қойюм. Лаа таъхузуҳу синатув валаа навм. Лаҳуу маа фис самаваати ва маа фил арз. Ман заллазий йашфаъу ъиндаху иллаа биизниҳ. Йаъламу маа байна айдийҳим ва маа холфаҳум. Ва лаа йуҳийтувна бишайъим мин ъилмиҳи илла бимаа шаа. Васиъа курсиййуҳус самаваати вал арз. Ва лаа йаувдуҳу ҳифзуҳума ва ҳувал ъалиййул ъазийм.",
@@ -135,7 +135,7 @@
         "title": "Курсий ояти"
     },
     {
-        "audioLink": "kechkizikr",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_kechkizikr",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Амсайнаа ва амсал мулку лиллаҳи роббил ъаламийн. Аллоҳумма ас`алука хойра ҳазиҳил лайлати фатҳаҳаа ва насроҳаа ва нуроҳаа ва барокатаҳаа ва ҳудаҳаа ва аъузу бика мин шарри ма фийҳаа ва шарри маа баъдаҳаа»",
@@ -144,7 +144,7 @@
         "title": "Кечки зикр"
     },
     {
-        "audioLink": "suraixlos",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suraixlos",
         "catID": 2,
         "dailyGoal": 3,
         "description": "Бисмиллаҳир роҳманир роҳийм. Қул ҳуваллоҳу аҳад. Аллоҳус сомад. Лам йалид ва лам йувлад. Валам йакуллаҳу куфуван аҳад.",
@@ -153,7 +153,7 @@
         "title": "Ихлос сураси"
     },
     {
-        "audioLink": "surafalaq",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_surafalaq",
         "catID": 2,
         "dailyGoal": 3,
         "description": "Бисмиллаҳир роҳманир роҳийм. Қул аъузу бироббил фалақ. Мин шарри маа холақ. Ва мин шарри ғосиқин изаа вақоб. Ва мин шаррин наффаасаати фил ъуқод. Ва мин шарри ҳаасидин изаа ҳасад.",
@@ -162,7 +162,7 @@
         "title": "Фалақ сураси"
     },
     {
-        "audioLink": "suranaas",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suranaas",
         "catID": 2,
         "dailyGoal": 3,
         "description": "Бисмиллаҳир роҳманир роҳийм. Қул аъузу бироббиннаас. Маликин наас. Илааҳин наас. Мин шаррил васваасил хоннаас. Аллазий ювасвису фий судуурин наас. Минал жиннати ваннаас.",
@@ -171,7 +171,7 @@
         "title": "Наас сураси"
     },
     {
-        "audioLink": "sayyidulistigfor",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_sayyidulistigfor",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Аллоҳумма анта роббий ла илаҳа илла анта холақтаний ва ана ъабдука ва ана ъала ъаҳдика ва ваъдика мастатоъту аъузу бика мин шарри ма сонаъту, абу`у лака биниъматика ъалаййа ва абу`у бизамбий фағфирлий фаиннаҳу ла йағфируз зунуба илла анта»",
@@ -180,7 +180,7 @@
         "title": "Саййидул истиғфор"
     },
     {
-        "audioLink": "allohgahamdaytish",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytish",
         "catID": 2,
         "dailyGoal": 100,
         "description": "«Субҳаналлоҳи ва биҳамдиҳи субҳоналлоҳил ъазийм»",
@@ -189,7 +189,7 @@
         "title": "Аллоҳга ҳамд айтиш"
     },
     {
-        "audioLink": "kechkizikr2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_kechkizikr2",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Аллоҳумма маа амсаа бий мин ниъматин фаминка ваҳдака лаа шарийка лак, фалакал ҳамду ва лакаш шукр»",
@@ -198,7 +198,7 @@
         "title": "Кечки зикр"
     },
     {
-        "audioLink": "tonggizikr2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tonggizikr2",
         "catID": 2,
         "dailyGoal": 7,
         "description": "«Ҳасбийаллоҳу лаа илаҳа илла ҳува ъалайҳи таваккалту ва ҳува роббул ъаршил ъазийм»",
@@ -207,7 +207,7 @@
         "title": "Кечки зикр"
     },
     {
-        "audioLink": "tongotganidavakunbotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganidavakunbotganida",
         "catID": 2,
         "dailyGoal": 3,
         "description": "«Бисмиллаҳиллазий лаа йазурру маъасмиҳи шай`ун фил арзи ва лаа фис самаи ва ҳувас самийъул ъалийм»",
@@ -216,7 +216,7 @@
         "title": "Кечки зикр"
     },
     {
-        "audioLink": "kechkizikr4",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_kechkizikr4",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Аллоҳумма бика амсайнаа ва бика асбаҳнаа ва бика наҳйаа ва бика намууту ва илайкал масийр»",
@@ -225,7 +225,7 @@
         "title": "Кечки зикр"
     },
     {
-        "audioLink": "iymonkalimasi",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_iymonkalimasi",
         "catID": 2,
         "dailyGoal": 10,
         "description": "«Лаа илаҳа иллаллоҳу ваҳдаҳу лаа шарийка лаҳу, лаҳул мулку ва лаҳул ҳамду ва ҳува ъалаа кулли шай`ин қодийр»",
@@ -234,7 +234,7 @@
         "title": "Иймон калимаси"
     },
     {
-        "audioLink": "allohgahamdaytish",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytish",
         "catID": 3,
         "dailyGoal": 100,
         "description": "«Субҳаналлоҳи ва биҳамдиҳи субҳоналлоҳил ъазийм»",
@@ -243,7 +243,7 @@
         "title": "Аллоҳга ҳамд айтиш"
     },
     {
-        "audioLink": "allohgahamdaytishvapoklash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytishvapoklash",
         "catID": 3,
         "dailyGoal": 3,
         "description": "«Субҳаналлоҳи ва биҳамдиҳи ъадада холқиҳи ва ризо нафсиҳи ва зината ъаршиҳи ва мидаада калимаатиҳи»",
@@ -252,7 +252,7 @@
         "title": "Аллоҳга ҳамд айтиш ва поклаш"
     },
     {
-        "audioLink": "allohdanofiyatsorash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanofiyatsorash",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Аллоҳумма инний ас`алукал ъафийата фиддунйа вал ахироҳ. Аллоҳумма инний ас`алукал ъафва вал ъафийата фий дийний ва дунйайа ва аҳлий ва маалий. Аллоҳуммастур ъавротий ва амин равъатий. Аллоҳуммаҳфазний мин байни йадаййа ва мин холфий ва ъан йамийний ва ъан шималий ва мин фавқий ва аъузу биъазоматика ан уғтаала мин таҳтий»",
@@ -261,7 +261,7 @@
         "title": "Аллоҳдан офият сўраш дуоси"
     },
     {
-        "audioLink": "allohdanyordamsorash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanyordamsorash",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Йа ҳаййу йа қоййуму бироҳматика астағийсу аслиҳ лий ша`ний куллаҳу ва ла такилний ила нафсий торфата ъайн»",
@@ -270,7 +270,7 @@
         "title": "Аллоҳдан ёрдам сўраш дуоси"
     },
     {
-        "audioLink": "allohdanpanohso'rash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash",
         "catID": 3,
         "dailyGoal": 3,
         "description": "«Аъузу бикалиматиллаҳит таммати мин шарри ма холақ»",
@@ -279,7 +279,7 @@
         "title": "Аллоҳдан паноҳ сўраш"
     },
     {
-        "audioLink": "allohdanpanohso'rash2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash2",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Аллоҳумма анта роббий, лаа илаҳа илла анта ъалайка таваккалту ва анта роббул ъаршил ъазийм. Маша`аллоҳу каана ва маа лам йаша` лам якун. Аъламу анналлоҳа ъала кулли шай`ин қодийр ва анналлоҳа қод аҳато бикулли шай`ин ъилма. Аллоҳумма инний аъузу бика мин шарри нафсий ва мин шарри кулли даббатин анта aхизун бинaсийатиҳа, инна роббий ъала сиротим мустақийм».",
@@ -288,7 +288,7 @@
         "title": "Аллоҳдан паноҳ сўраш"
     },
     {
-        "audioLink": "allohdanpanohso'rash3",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash3",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Аллоҳумма инний аъузу бика минал ҳамми вал ҳазани ва аъузу бика минал ъажзи вал касали ва аъузу бика минал жубни вал бухли ва аъузу бика мин ғолабатид дайни ва қоҳрир рижал»",
@@ -297,7 +297,7 @@
         "title": "Аллоҳдан паноҳ сўраш"
     },
     {
-        "audioLink": "allohdanpanohso'rash4",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash4",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Аллоҳумма ъафиний фий баданий, Аллоҳумма ъафиний фий самъий, Аллоҳумма ъафиний фий басорий, лаа илаҳа илла анта. Аллоҳумма инний аъузу бика минал куфри вал фақри, Аллоҳумма инний аъузу бика мин ъазабил қобр, лаа илаҳа илла анта»",
@@ -306,7 +306,7 @@
         "title": "Аллоҳдан паноҳ сўраш дуоси"
     },
     {
-        "audioLink": "allohdanpanohso'rash5",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash5",
         "catID": 3,
         "dailyGoal": 3,
         "description": "«Аллоҳумма фатирос самавати вал арзи ъалимал ғойби ваш шаҳадати робба кулли шай`ин ва малийкаҳ, ашҳаду аллаа илаҳа илла анта, аъузу бика мин шарри нафсий ва шарриш шайтони ва ширкиҳи ва ан нақтарифа су`ан ъала анфусина ав нажурроҳу ила муслим»",
@@ -1206,7 +1206,7 @@
         "title": "Ҳамиша ўқиб юриладиган дуолар"
     },
     {
-        "audioLink": "oyatalkursiy",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_oyatalkursiy",
         "catID": 1,
         "dailyGoal": 1,
         "description": "Bismillahir rohmanir rohiym. Allohu laa ilaha illahuv alhayyul qoyyum. Laa ta'xuzuhu sinatuv valaa navm. Lahuu maa fis samavaati va maa fil arz. Man zallaziy yashfa'u 'indaxu illaa biiznih. Ya'lamu maa bayna aydiyhim va maa xolfahum. Va laa yuhiytuvna bishay'im min 'ilmihi illa bimaa shaa. Vasi'a kursiyyuhus samavaati val arz. Va laa yauvduhu hifzuhuma va huval 'aliyyul 'aziym.",
@@ -1215,7 +1215,7 @@
         "title": "Kursiy oyati"
     },
     {
-        "audioLink": "uyqudanturganda",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_uyqudanturganda",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Asbahnaa va asbahal mulku lillahi robbil 'alamiyn. Allohumma as`aluka xoyra hazal yavmi fathahu va nasrohu va nurohu va barokatahu va hudahu va a'uzu bika min sharri maa fiyhi va sharri maa ba'dah»",
@@ -1224,7 +1224,7 @@
         "title": "Uyqudan turgandagi duo"
     },
     {
-        "audioLink": "tongotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganida",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Allohumma maa asbaha biy min ni'matin faminka vahdaka laa shariyka lak, falakal hamdu va lakash shukr»",
@@ -1233,7 +1233,7 @@
         "title": "Tong otganida"
     },
     {
-        "audioLink": "tonggizikr",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tonggizikr",
         "catID": 1,
         "dailyGoal": 3,
         "description": "«Roziytu billahi robban va bil islami diynan va bimuhammadin sollallohu alayhi vasallama rosula»",
@@ -1242,7 +1242,7 @@
         "title": "Tonggi zikr"
     },
     {
-        "audioLink": "suraixlos",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suraixlos",
         "catID": 1,
         "dailyGoal": 3,
         "description": "Bismillahir rohmanir rohiym. Qul huvallohu ahad. Allohus somad. Lam yalid va lam yuvlad. Valam yakullahu kufuvan ahad.",
@@ -1251,7 +1251,7 @@
         "title": "Ixlos surasi"
     },
     {
-        "audioLink": "surafalaq",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_surafalaq",
         "catID": 1,
         "dailyGoal": 3,
         "description": "Bismillahir rohmanir rohiym. Qul a'uzu birobbil falaq. Min sharri maa xolaq. Va min sharri gʻosiqin izaa vaqob. Va min sharrin naffaasaati fil 'uqod. Va min sharri haasidin izaa hasad.",
@@ -1260,7 +1260,7 @@
         "title": "Falaq surasi"
     },
     {
-        "audioLink": "suranaas",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suranaas",
         "catID": 1,
         "dailyGoal": 3,
         "description": "Bismillahir rohmanir rohiym. Qul a'uzu birobbinnaas. Malikin naas. Ilaahin naas. Min sharril vasvaasil xonnaas. Allaziy yuvasvisu fiy suduurin naas. Minal jinnati vannaas.",
@@ -1269,7 +1269,7 @@
         "title": "Naas surasi"
     },
     {
-        "audioLink": "sayyidulistigfor",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_sayyidulistigfor",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Allohumma anta robbiy la ilaha illa anta xolaqtaniy va ana 'abduka va ana 'ala 'ahdika va va'dika mastato'tu a'uzu bika min sharri ma sona'tu, abu`u laka bini'matika 'alayya va abu`u bizambiy fagʻfirliy fainnahu la yagʻfiruz zunuba illa anta»",
@@ -1278,7 +1278,7 @@
         "title": "Sayyidul istigʼfor"
     },
     {
-        "audioLink": "allohgahamdaytish",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytish",
         "catID": 1,
         "dailyGoal": 100,
         "description": "«Subhanallohi va bihamdihi subhonallohil 'aziym»",
@@ -1287,7 +1287,7 @@
         "title": "Аllohga hamd aytish"
     },
     {
-        "audioLink": "tongotganidavakunbotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganidavakunbotganida",
         "catID": 1,
         "dailyGoal": 4,
         "description": "«Allohumma inniy asbahtu ushhiduka va ushhidu hamalata 'arshika va malaikatika va jamiy'a xolqik, annaka antallohu laa ilaha illa anta vahdaka laa shariyka laka va anna Muhammadan 'abduka va rosuluk»",
@@ -1296,7 +1296,7 @@
         "title": "Tong otganida va kun botganida"
     },
     {
-        "audioLink": "tonggizikr2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tonggizikr2",
         "catID": 1,
         "dailyGoal": 7,
         "description": "«Hasbiyallohu laa ilaha illa huva 'alayhi tavakkaltu va huva robbul 'arshil 'aziym»",
@@ -1305,7 +1305,7 @@
         "title": "Tonggi zikr"
     },
     {
-        "audioLink": "tongotganidavakunbotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganidavakunbotganida",
         "catID": 1,
         "dailyGoal": 3,
         "description": "«Bismillahillaziy laa yazurru ma'asmihi shay`un fil arzi va laa fis samai va huvas samiy'ul 'aliym»",
@@ -1314,7 +1314,7 @@
         "title": "Tong otganida va kun botganida"
     },
     {
-        "audioLink": "tongotganida2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganida2",
         "catID": 1,
         "dailyGoal": 1,
         "description": "«Allohumma bika asbahnaa va bika amsaynaa va bika nahyaa va bika namutu va ilaykan nushur»",
@@ -1323,7 +1323,7 @@
         "title": "Tong otganida oʼqiladigan duo"
     },
     {
-        "audioLink": "iymonkalimasi",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_iymonkalimasi",
         "catID": 1,
         "dailyGoal": 10,
         "description": "«Laa ilaha illallohu vahdahu laa shariyka lahu, lahul mulku va lahul hamdu va huva 'alaa kulli shay`in qodiyr»",
@@ -1332,7 +1332,7 @@
         "title": "Iymon kalimasi"
     },
     {
-        "audioLink": "oyatalkursiy",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_oyatalkursiy",
         "catID": 2,
         "dailyGoal": 1,
         "description": "Bismillahir rohmanir rohiym. Allohu laa ilaha illahuv alhayyul qoyyum. Laa ta'xuzuhu sinatuv valaa navm. Lahuu maa fis samavaati va maa fil arz. Man zallaziy yashfa'u 'indaxu illaa biiznih. Ya'lamu maa bayna aydiyhim va maa xolfahum. Va laa yuhiytuvna bishay'im min 'ilmihi illa bimaa shaa. Vasi'a kursiyyuhus samavaati val arz. Va laa yauvduhu hifzuhuma va huval 'aliyyul 'aziym.",
@@ -1341,7 +1341,7 @@
         "title": "Kursiy oyati"
     },
     {
-        "audioLink": "kechkizikr",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_kechkizikr",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Amsaynaa va amsal mulku lillahi robbil 'alamiyn. Allohumma as`aluka xoyra hazihil laylati fathahaa va nasrohaa va nurohaa va barokatahaa va hudahaa va a'uzu bika min sharri ma fiyhaa va sharri maa ba'dahaa»",
@@ -1350,7 +1350,7 @@
         "title": "Kechki zikr"
     },
     {
-        "audioLink": "suraixlos",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suraixlos",
         "catID": 2,
         "dailyGoal": 3,
         "description": "Bismillahir rohmanir rohiym. Qul huvallohu ahad. Allohus somad. Lam yalid va lam yuvlad. Valam yakullahu kufuvan ahad.",
@@ -1359,7 +1359,7 @@
         "title": "Ixlos surasi"
     },
     {
-        "audioLink": "surafalaq",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_surafalaq",
         "catID": 2,
         "dailyGoal": 3,
         "description": "Bismillahir rohmanir rohiym. Qul a'uzu birobbil falaq. Min sharri maa xolaq. Va min sharri gʻosiqin izaa vaqob. Va min sharrin naffaasaati fil 'uqod. Va min sharri haasidin izaa hasad.",
@@ -1368,7 +1368,7 @@
         "title": "Falaq surasi"
     },
     {
-        "audioLink": "suranaas",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_suranaas",
         "catID": 2,
         "dailyGoal": 3,
         "description": "Bismillahir rohmanir rohiym. Qul a'uzu birobbinnaas. Malikin naas. Ilaahin naas. Min sharril vasvaasil xonnaas. Allaziy yuvasvisu fiy suduurin naas. Minal jinnati vannaas.",
@@ -1377,7 +1377,7 @@
         "title": "Naas surasi"
     },
     {
-        "audioLink": "sayyidulistigfor",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_sayyidulistigfor",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Allohumma anta robbiy la ilaha illa anta xolaqtaniy va ana 'abduka va ana 'ala 'ahdika va va'dika mastato'tu a'uzu bika min sharri ma sona'tu, abu`u laka bini'matika 'alayya va abu`u bizambiy fagʻfirliy fainnahu la yagʻfiruz zunuba illa anta»",
@@ -1386,7 +1386,7 @@
         "title": "Sayyidul istigʼfor"
     },
     {
-        "audioLink": "allohgahamdaytish",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytish",
         "catID": 2,
         "dailyGoal": 100,
         "description": "«Subhanallohi va bihamdihi subhonallohil 'aziym»",
@@ -1395,7 +1395,7 @@
         "title": "Аllohga hamd aytish"
     },
     {
-        "audioLink": "kechkizikr2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_kechkizikr2",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Allohumma maa amsaa biy min ni'matin faminka vahdaka laa shariyka lak, falakal hamdu va lakash shukr»",
@@ -1404,7 +1404,7 @@
         "title": "Kechki zikr"
     },
     {
-        "audioLink": "tonggizikr2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tonggizikr2",
         "catID": 2,
         "dailyGoal": 7,
         "description": "«Hasbiyallohu laa ilaha illa huva 'alayhi tavakkaltu va huva robbul 'arshil 'aziym»",
@@ -1413,7 +1413,7 @@
         "title": "Kechki zikr"
     },
     {
-        "audioLink": "tongotganidavakunbotganida",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_tongotganidavakunbotganida",
         "catID": 2,
         "dailyGoal": 3,
         "description": "«Bismillahillaziy laa yazurru ma'asmihi shay`un fil arzi va laa fis samai va huvas samiy'ul 'aliym»",
@@ -1422,7 +1422,7 @@
         "title": "Kechki zikr"
     },
     {
-        "audioLink": "kechkizikr4",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_kechkizikr4",
         "catID": 2,
         "dailyGoal": 1,
         "description": "«Allohumma bika amsaynaa va bika asbahnaa va bika nahyaa va bika namuutu va ilaykal masiyr»",
@@ -1431,7 +1431,7 @@
         "title": "Kechki zikr"
     },
     {
-        "audioLink": "iymonkalimasi",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_iymonkalimasi",
         "catID": 2,
         "dailyGoal": 10,
         "description": "«Laa ilaha illallohu vahdahu laa shariyka lahu, lahul mulku va lahul hamdu va huva 'alaa kulli shay`in qodiyr»",
@@ -1440,7 +1440,7 @@
         "title": "Iymon kalimasi"
     },
     {
-        "audioLink": "allohgahamdaytish",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytish",
         "catID": 3,
         "dailyGoal": 100,
         "description": "«Subhanallohi va bihamdihi subhonallohil 'aziym»",
@@ -1449,7 +1449,7 @@
         "title": "Аllohga hamd aytish"
     },
     {
-        "audioLink": "allohgahamdaytishvapoklash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohgahamdaytishvapoklash",
         "catID": 3,
         "dailyGoal": 3,
         "description": "«Subhanallohi va bihamdihi 'adada xolqihi va rizo nafsihi va zinata 'arshihi va midaada kalimaatihi»",
@@ -1458,7 +1458,7 @@
         "title": "Аllohda hamd aytish va poklash"
     },
     {
-        "audioLink": "allohdanofiyatsorash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanofiyatsorash",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Allohumma inniy as`alukal 'afiyata fiddunya val axiroh. Allohumma inniy as`alukal 'afva val 'afiyata fiy diyniy va dunyaya va ahliy va maaliy. Allohummastur 'avrotiy va amin rav'atiy. Allohummahfazniy min bayni yadayya va min xolfiy va 'an yamiyniy va 'an shimaliy va min favqiy va a'uzu bi'azomatika an ugʻtaala min tahtiy»",
@@ -1467,7 +1467,7 @@
         "title": "Аllohdan ofiyat soʼrash duosi"
     },
     {
-        "audioLink": "allohdanyordamsorash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanyordamsorash",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Ya hayyu ya qoyyumu birohmatika astagʻiysu aslih liy sha`niy kullahu va la takilniy ila nafsiy torfata 'ayn»",
@@ -1476,7 +1476,7 @@
         "title": "Аllohdan yordam soʼrash duosi"
     },
     {
-        "audioLink": "allohdanpanohso'rash",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash",
         "catID": 3,
         "dailyGoal": 3,
         "description": "«A'uzu bikalimatillahit tammati min sharri ma xolaq»",
@@ -1485,7 +1485,7 @@
         "title": "Аllohdan panoh soʼrash"
     },
     {
-        "audioLink": "allohdanpanohso'rash2",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash2",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Allohumma anta robbiy, laa ilaha illa anta 'alayka tavakkaltu va anta robbul 'arshil 'aziym. Masha`allohu kaana va maa lam yasha` lam yakun. A'lamu annalloha 'ala kulli shay`in qodiyr va annalloha qod ahato bikulli shay`in 'ilma. Allohumma inniy a'uzu bika min sharri nafsiy va min sharri kulli dabbatin anta axizun binasiyatiha, inna robbiy 'ala sirotim mustaqiym».",
@@ -1494,7 +1494,7 @@
         "title": "Аllohdan panoh soʼrash"
     },
     {
-        "audioLink": "allohdanpanohso'rash3",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash3",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Allohumma inniy a'uzu bika minal hammi val hazani va a'uzu bika minal 'ajzi val kasali va a'uzu bika minal jubni val buxli va a'uzu bika min gʻolabatid dayni va qohrir rijal»",
@@ -1503,7 +1503,7 @@
         "title": "Аllohdan panoh soʼrash"
     },
     {
-        "audioLink": "allohdanpanohso'rash4",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash4",
         "catID": 3,
         "dailyGoal": 1,
         "description": "«Allohumma 'afiniy fiy badaniy, Allohumma 'afiniy fiy sam'iy, Allohumma 'afiniy fiy basoriy, laa ilaha illa anta. Allohumma inniy a'uzu bika minal kufri val faqri, Allohumma inniy a'uzu bika min 'azabil qobr, laa ilaha illa anta»",
@@ -1512,7 +1512,7 @@
         "title": "Аllohdan panoh soʼrash duosi"
     },
     {
-        "audioLink": "allohdanpanohso'rash5",
+        "audioLink": "https://qibla.onrender.com/files/audio/zikr_allohdanpanohsorash5",
         "catID": 3,
         "dailyGoal": 3,
         "description": "«Allohumma fatiros samavati val arzi 'alimal gʻoybi vash shahadati robba kulli shay`in va maliykah, ashhadu allaa ilaha illa anta, a'uzu bika min sharri nafsiy va sharrish shaytoni va shirkihi va an naqtarifa su`an 'ala anfusina av najurrohu ila muslim»",
