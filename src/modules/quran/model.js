@@ -7,7 +7,8 @@ const quranList = (lang, limit, page) => {
             sura_id,
             sura_name_arabic,
             sura_name_uzbek AS name,
-            sura_description_uzbek AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -24,7 +25,8 @@ const quranList = (lang, limit, page) => {
             sura_id,
             sura_name_arabic,
             sura_name_cyrillic AS name,
-            sura_description_cyrillic AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -41,7 +43,8 @@ const quranList = (lang, limit, page) => {
             sura_id,
             sura_name_arabic,
             sura_name_russian AS name,
-            sura_description_russian AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -58,7 +61,8 @@ const quranList = (lang, limit, page) => {
             sura_id,
             sura_name_arabic,
             sura_name_english AS name,
-            sura_description_english AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -75,7 +79,8 @@ const quranList = (lang, limit, page) => {
             sura_id,
             sura_name_arabic,
             sura_name_kazakh AS name,
-            sura_description_kazakh AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -108,7 +113,8 @@ const foundSura = (id, lang) => {
             sura_id,
             sura_name_arabic,
             sura_name_uzbek AS name,
-            sura_description_uzbek AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -123,7 +129,8 @@ const foundSura = (id, lang) => {
             sura_id,
             sura_name_arabic,
             sura_name_cyrillic AS name,
-            sura_description_cyrillic AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran       
@@ -138,7 +145,8 @@ const foundSura = (id, lang) => {
             sura_id,
             sura_name_arabic,
             sura_name_russian AS name,
-            sura_description_russian AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -153,7 +161,8 @@ const foundSura = (id, lang) => {
             sura_id,
             sura_name_arabic,
             sura_name_english AS name,
-            sura_description_english AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -168,7 +177,8 @@ const foundSura = (id, lang) => {
             sura_id,
             sura_name_arabic,
             sura_name_kazakh AS name,
-            sura_description_kazakh AS description,
+            sura_verse_count,
+            sura_from,
             sura_create_at
          FROM
             quran
@@ -193,30 +203,24 @@ const foundSura = (id, lang) => {
 const addSura = (
    sura_name_arabic,
    sura_name_uzbek,
-   sura_description_uzbek,
    sura_name_cyrillic,
-   sura_description_cyrillic,
    sura_name_russian,
-   sura_description_russian,
    sura_name_english,
-   sura_description_english,
    sura_name_kazakh,
-   sura_description_kazakh
+   sura_verse_count,
+   sura_from
 ) => {
    const QUERY = `
       INSERT INTO
          quran (
             sura_name_arabic,
             sura_name_uzbek,
-            sura_description_uzbek,
             sura_name_cyrillic,
-            sura_description_cyrillic,
             sura_name_russian,
-            sura_description_russian,
             sura_name_english,
-            sura_description_english,
             sura_name_kazakh,
-            sura_description_kazakh
+            sura_verse_count,
+            sura_from
          ) VALUES (
             $1,
             $2,
@@ -225,10 +229,7 @@ const addSura = (
             $5,
             $6,
             $7,
-            $8,
-            $9,
-            $10,
-            $11
+            $8
          ) RETURNING *;
    `;
 
@@ -236,30 +237,24 @@ const addSura = (
       QUERY,
       sura_name_arabic,
       sura_name_uzbek,
-      sura_description_uzbek,
       sura_name_cyrillic,
-      sura_description_cyrillic,
       sura_name_russian,
-      sura_description_russian,
       sura_name_english,
-      sura_description_english,
       sura_name_kazakh,
-      sura_description_kazakh
+      sura_verse_count,
+      sura_from
    )
 }
 const editSura = (
    sura_id,
    sura_name_arabic,
    sura_name_uzbek,
-   sura_description_uzbek,
    sura_name_cyrillic,
-   sura_description_cyrillic,
    sura_name_russian,
-   sura_description_russian,
    sura_name_english,
-   sura_description_english,
    sura_name_kazakh,
-   sura_description_kazakh
+   sura_verse_count,
+   sura_from
 ) => {
    const QUERY = `
       UPDATE
@@ -267,15 +262,12 @@ const editSura = (
       SET
          sura_name_arabic = $2,
          sura_name_uzbek = $3,
-         sura_description_uzbek = $4,
-         sura_name_cyrillic = $5,
-         sura_description_cyrillic = $6,
-         sura_name_russian = $7,
-         sura_description_russian = $8,
-         sura_name_english = $9,
-         sura_description_english = $10,
-         sura_name_kazakh = $11,
-         sura_description_kazakh = $12
+         sura_name_cyrillic = $4,
+         sura_name_russian = $5,
+         sura_name_english = $6,
+         sura_name_kazakh = $7,
+         sura_verse_count = $8,
+         sura_from = $9
       WHERE
          sura_id = $1
       RETURNING *;
@@ -286,15 +278,12 @@ const editSura = (
       sura_id,
       sura_name_arabic,
       sura_name_uzbek,
-      sura_description_uzbek,
       sura_name_cyrillic,
-      sura_description_cyrillic,
       sura_name_russian,
-      sura_description_russian,
       sura_name_english,
-      sura_description_english,
       sura_name_kazakh,
-      sura_description_kazakh
+      sura_verse_count,
+      sura_from
    )
 }
 const deleteSura = (sura_id) => {

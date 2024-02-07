@@ -50,15 +50,12 @@ CREATE TABLE quran (
    sura_id bigserial PRiMARY KEY,
    sura_name_arabic text,
    sura_name_uzbek text,
-   sura_description_uzbek text,
    sura_name_cyrillic text,
-   sura_description_cyrillic text,
    sura_name_russian text,
-   sura_description_russian text,
    sura_name_english text,
-   sura_description_english text,
    sura_name_kazakh text,
-   sura_description_kazakh text,
+   sura_verse_count int,
+   sura_from int,
    sura_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

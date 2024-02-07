@@ -86,15 +86,12 @@ module.exports = {
             await model.addSura(
                item?.arabicName,
                item?.uzLatinName,
-               item?.uzLatinDesc,
                item?.uzKirilName,
-               item?.uzKirilDesc,
                item?.ruName,
-               item?.ruDesc,
                item?.enName,
-               item?.enDesc,
                item?.kzName,
-               item?.kzDesc,
+               item?.count,
+               item?.from,
             );
          }
 
@@ -116,29 +113,23 @@ module.exports = {
          const {
             sura_name_arabic,
             sura_name_uzbek,
-            sura_description_uzbek,
             sura_name_cyrillic,
-            sura_description_cyrillic,
             sura_name_russian,
-            sura_description_russian,
             sura_name_english,
-            sura_description_english,
             sura_name_kazakh,
-            sura_description_kazakh
+            sura_verse_count,
+            sura_from
          } = req.body
 
          const addSura = await model.addSura(
             sura_name_arabic,
             sura_name_uzbek,
-            sura_description_uzbek,
             sura_name_cyrillic,
-            sura_description_cyrillic,
             sura_name_russian,
-            sura_description_russian,
             sura_name_english,
-            sura_description_english,
             sura_name_kazakh,
-            sura_description_kazakh,
+            sura_verse_count,
+            sura_from
          )
 
          if (addSura) {
@@ -169,15 +160,12 @@ module.exports = {
             sura_id,
             sura_name_arabic,
             sura_name_uzbek,
-            sura_description_uzbek,
             sura_name_cyrillic,
-            sura_description_cyrillic,
             sura_name_russian,
-            sura_description_russian,
             sura_name_english,
-            sura_description_english,
             sura_name_kazakh,
-            sura_description_kazakh
+            sura_verse_count,
+            sura_from
          } = req.body
          const foundSura = await model.foundSura(sura_id)
 
@@ -186,15 +174,12 @@ module.exports = {
                sura_id,
                sura_name_arabic,
                sura_name_uzbek,
-               sura_description_uzbek,
                sura_name_cyrillic,
-               sura_description_cyrillic,
                sura_name_russian,
-               sura_description_russian,
                sura_name_english,
-               sura_description_english,
                sura_name_kazakh,
-               sura_description_kazakh
+               sura_verse_count,
+               sura_from
             )
 
             if (editSura) {
