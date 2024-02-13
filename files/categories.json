@@ -1,74 +1,74 @@
 [
-    {
-        "backgrounColor": "FFFDE6",
-        "id": 1,
-        "imageLink": null,
-        "lang": "cyrillic",
-        "name": "Тонгги зикрлар",
-        "tartibRaqami": 1,
-        "textColor": "575435"
-    },
-    {
-        "backgrounColor": "E8E7F2",
-        "id": 2,
-        "imageLink": null,
-        "lang": "cyrillic",
-        "name": "Кечки зикрлар",
-        "tartibRaqami": 2,
-        "textColor": "4F4D69"
-    },
-    {
-        "backgrounColor": "E7F2EF",
-        "id": 3,
-        "imageLink": null,
-        "lang": "cyrillic",
-        "name": "Аллоҳдан сўраш",
-        "tartibRaqami": 3,
-        "textColor": "264F60"
-    },
-    {
-        "backgrounColor": "FFECE9",
-        "id": 4,
-        "imageLink": null,
-        "lang": "cyrillic",
-        "name": "Каракли дуолар",
-        "tartibRaqami": 4,
-        "textColor": "6C5652"
-    },
-    {
-        "backgrounColor": "FFFDE6",
-        "id": 5,
-        "imageLink": null,
-        "lang": "uzbek",
-        "name": "Tonggi zikrlar",
-        "tartibRaqami": 1,
-        "textColor": "575435"
-    },
-    {
-        "backgrounColor": "E8E7F2",
-        "id": 6,
-        "imageLink": null,
-        "lang": "uzbek",
-        "name": "Kechki zikrlar",
-        "tartibRaqami": 2,
-        "textColor": "4F4D69"
-    },
-    {
-        "backgrounColor": "E7F2EF",
-        "id": 7,
-        "imageLink": null,
-        "lang": "uzbek",
-        "name": "Аllohdan soʼrash",
-        "tartibRaqami": 3,
-        "textColor": "264F60"
-    },
-    {
-        "backgrounColor": "FFECE9",
-        "id": 8,
-        "imageLink": null,
-        "lang": "uzbek",
-        "name": "Karakli duolar",
-        "tartibRaqami": 4,
-        "textColor": "6C5652"
-    }
+	{
+		"backgrounColor": "FFFDE6",
+		"id": 1,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_1",
+		"lang": "cyrillic",
+		"name": "Тонгги зикрлар",
+		"tartibRaqami": 1,
+		"textColor": "575435"
+	},
+	{
+		"backgrounColor": "E8E7F2",
+		"id": 2,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_2",
+		"lang": "cyrillic",
+		"name": "Кечки зикрлар",
+		"tartibRaqami": 2,
+		"textColor": "4F4D69"
+	},
+	{
+		"backgrounColor": "E7F2EF",
+		"id": 3,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_3",
+		"lang": "cyrillic",
+		"name": "Аллоҳдан сўраш",
+		"tartibRaqami": 3,
+		"textColor": "264F60"
+	},
+	{
+		"backgrounColor": "FFECE9",
+		"id": 4,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_4",
+		"lang": "cyrillic",
+		"name": "Каракли дуолар",
+		"tartibRaqami": 4,
+		"textColor": "6C5652"
+	},
+	{
+		"backgrounColor": "FFFDE6",
+		"id": 5,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_1",
+		"lang": "uzbek",
+		"name": "Tonggi zikrlar",
+		"tartibRaqami": 1,
+		"textColor": "575435"
+	},
+	{
+		"backgrounColor": "E8E7F2",
+		"id": 6,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_2",
+		"lang": "uzbek",
+		"name": "Kechki zikrlar",
+		"tartibRaqami": 2,
+		"textColor": "4F4D69"
+	},
+	{
+		"backgrounColor": "E7F2EF",
+		"id": 7,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_3",
+		"lang": "uzbek",
+		"name": "Аllohdan soʼrash",
+		"tartibRaqami": 3,
+		"textColor": "264F60"
+	},
+	{
+		"backgrounColor": "FFECE9",
+		"id": 8,
+		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_4",
+		"lang": "uzbek",
+		"name": "Karakli duolar",
+		"tartibRaqami": 4,
+		"textColor": "6C5652"
+	}
 ]
