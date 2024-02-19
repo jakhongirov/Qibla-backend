@@ -1,5 +1,5 @@
 const socketIO = require('socket.io');
-const { fetch } = require('./postgres')
+const { fetch } = require('./postgres');
 
 let io;
 
@@ -30,13 +30,27 @@ function initializeSocket(server) {
 
                await fetch(updateFinishingQuery, zikr_id);
             }
+
+            const foundZikrQuery = `
+            SELECT
+               *
+            FROM
+               public_zikr
+            WHERE
+               zikr_id = $1
+         `
+            const foundZikr = await fetch(foundZikrQuery, zikr_id)
+
+            // Emit a response to the client
+            socket.emit('zikrCountUpdated', foundZikr);
+            
          } catch (error) {
             console.error('Error updating zikr count:', error);
-
+            // If there's an error, emit an error event to the client
+            socket.emit('zikrCountUpdateError', { error: 'Error updating zikr count' });
          }
       });
    });
-
 
    return io;
 }
