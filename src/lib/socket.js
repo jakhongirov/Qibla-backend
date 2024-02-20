@@ -43,12 +43,17 @@ function initializeSocket(server) {
 
             // Emit a response to the client
             socket.emit('zikrCountUpdated', foundZikr);
-            
+
          } catch (error) {
             console.error('Error updating zikr count:', error);
             // If there's an error, emit an error event to the client
             socket.emit('zikrCountUpdateError', { error: 'Error updating zikr count' });
          }
+      });
+
+      socket.on('error', (error) => {
+         console.error('Socket.IO error:', error);
+         // Additional error handling if needed
       });
    });
 
