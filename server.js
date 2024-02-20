@@ -27,7 +27,7 @@ if (!fs.existsSync(imagesFolderPath)) {
    console.log('Images folder already exists within the public folder.');
 }
 
-app.use(cors());
+app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use('/public', express.static(path.resolve(__dirname, 'public')))
