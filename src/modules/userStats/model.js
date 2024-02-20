@@ -148,7 +148,7 @@ const editVerseId = (user_id, verse_id) => {
       UPDATE
          users_stats
       SET
-         verse_id  = array_cat(verse_id, ARRAY[${verseIds}])
+         verse_id  =  ARRAY[${verseIds}]
       WHERE
          user_id = $1
       RETURNING *;
@@ -163,7 +163,7 @@ const editVerseRead = (user_id, read_verse) => {
       UPDATE
          users_stats
       SET
-         read_verse  = array_cat(read_verse, ARRAY[${readVerses}])
+         read_verse  = ARRAY[${readVerses}]
       WHERE
          user_id = $1
       RETURNING *;
@@ -178,7 +178,7 @@ const editNameCount = (user_id, name_count) => {
       UPDATE
          users_stats
       SET
-         name_count  = array_cat(name_count, ARRAY[${nameCount}])
+         name_count  = ARRAY[${nameCount}]
       WHERE
          user_id = $1
       RETURNING *;
@@ -193,7 +193,7 @@ const editZikrId = (user_id, zikr_id) => {
       UPDATE
          users_stats
       SET
-         zikr_id  = array_cat(zikr_id, ARRAY[${zikrIds}])
+         zikr_id  = ARRAY[${zikrIds}]
       WHERE
          user_id = $1
       RETURNING *;
@@ -208,7 +208,7 @@ const editZikrCount = (user_id, zikr_count) => {
       UPDATE
          users_stats
       SET
-         zikr_count  = array_cat(zikr_count, ARRAY[${zikrCount}])
+         zikr_count  = ARRAY[${zikrCount}]
       WHERE
          user_id = $1
       RETURNING *;
