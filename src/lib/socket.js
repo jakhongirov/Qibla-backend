@@ -4,7 +4,12 @@ const { fetch } = require('./postgres');
 let io;
 
 function initializeSocket(server) {
-   io = socketIO(server);
+   const io = socketIO(server, {
+      cors: {
+         origin: "*",
+         methods: ["GET", "POST"]
+      }
+   });
 
    io.on('connection', (socket) => {
       console.log('Client connected');
