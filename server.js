@@ -43,8 +43,7 @@ bot.on('message', async (msg) => {
 
       if (foundUser) {
          const content = `
-            Assalomu alaykum ${foundUser?.user_name}\n
-            Здравствуйте ${foundUser?.user_name}
+            Assalomu alaykum ${foundUser?.user_name}\nЗдравствуйте ${foundUser?.user_name}
          `;
 
          bot.sendMessage(chatId, content, {
