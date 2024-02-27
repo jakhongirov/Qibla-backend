@@ -486,11 +486,11 @@ module.exports = {
 
    EDIT_USER_NAME: async (req, res) => {
       try {
-         const { user_id, user_name, user_gender } = req.body
+         const { user_id, user_name, user_gender, user_phone_number } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
-            const editUserName = await model.editUserName(user_id, user_name, user_gender)
+            const editUserName = await model.editUserName(user_id, user_name, user_gender, user_phone_number)
 
             if (editUserName) {
                return res.status(200).json({

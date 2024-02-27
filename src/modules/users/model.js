@@ -275,19 +275,20 @@ const editUser = (user_id, user_email, user_phone_number, pass_hash) => {
 
    return fetch(QUERY, user_id, user_email, user_phone_number, pass_hash)
 }
-const editUserName = (user_id, user_name, user_gender) => {
+const editUserName = (user_id, user_name, user_gender, user_phone_number) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_name = $2,
-         user_gender = $3
+         user_gender = $3,
+         user_phone_number = $4
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, user_name, user_gender)
+   return fetch(QUERY, user_id, user_name, user_gender, user_phone_number)
 }
 const editUserQaza = (user_id, user_qaza) => {
    const QUERY = `
