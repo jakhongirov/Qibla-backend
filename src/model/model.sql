@@ -21,7 +21,7 @@ CREATE TABLE users (
    user_phone_model text [],
    user_phone_lang text [],
    user_os text [],
-   user_os_version NUMERIC(10, 2) [],
+   user_os_version text [],
    user_token text [],
    user_comment text [],
    user_premium boolean DEFAULT false,
