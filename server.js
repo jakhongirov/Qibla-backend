@@ -63,73 +63,6 @@ bot.on('message', async (msg) => {
             }
          })
 
-         bot.on('callback_query', async (msg) => {
-            const chatId = msg.message.chat.id
-            const data = msg.data
-
-            if (data == 'uz') {
-
-               bot.sendMessage(chatId, `${foundUser?.user_name}, kontaktingizni yuboring`, {
-                  reply_markup: JSON.stringify({
-                     keyboard:
-                        [
-                           [
-                              {
-                                 text: 'Kontaktni yuborish',
-                                 request_contact: true,
-                                 one_time_keyboard: true
-                              }
-                           ]
-                        ],
-                     resize_keyboard: true
-                  })
-               }).then(() => {
-                  const replyListenerId = bot.on("contact", async (msg) => {
-                     bot.removeListener(replyListenerId)
-                     if (msg.contact) {
-                        const updatedUserPhone = await model.updatedUserPhone(foundUser?.user_id, msg.contact.phone_number)
-
-                        if (updatedUserPhone) {
-                           bot.sendMessage(msg.chat.id, `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.`)
-                        }
-
-                     }
-                  })
-               })
-
-            } else if (data == "ru") {
-
-               bot.sendMessage(chatId, `${foundUser?.user_name}, отправьте свой контакт`, {
-                  reply_markup: JSON.stringify({
-                     keyboard:
-                        [
-                           [
-                              {
-                                 text: 'Отправить контакт',
-                                 request_contact: true,
-                                 one_time_keyboard: true
-                              }
-                           ]
-                        ],
-                     resize_keyboard: true
-                  })
-               }).then(() => {
-                  const replyListenerId = bot.on("contact", async (msg) => {
-                     bot.removeListener(replyListenerId)
-                     if (msg.contact) {
-                        const updatedUserPhone = await model.updatedUserPhone(foundUser?.user_id, msg.contact.phone_number)
-
-                        if (updatedUserPhone) {
-                           bot.sendMessage(msg.chat.id, `Ваш запрос успешно получен, вернитесь к приложению.`)
-                        }
-
-                     }
-                  })
-               })
-
-            }
-         })
-
       } else {
          const content = `
             Assalomu alaykum ${foundUser?.user_name}, Siz ro'yxatda o'ta olmadiz.\n
@@ -140,6 +73,73 @@ bot.on('message', async (msg) => {
       }
    }
 });
+
+bot.on('callback_query', async (msg) => {
+   const chatId = msg.message.chat.id
+   const data = msg.data
+
+   if (data == 'uz') {
+
+      bot.sendMessage(chatId, `${foundUser?.user_name}, kontaktingizni yuboring`, {
+         reply_markup: JSON.stringify({
+            keyboard:
+               [
+                  [
+                     {
+                        text: 'Kontaktni yuborish',
+                        request_contact: true,
+                        one_time_keyboard: true
+                     }
+                  ]
+               ],
+            resize_keyboard: true
+         })
+      }).then(() => {
+         const replyListenerId = bot.on("contact", async (msg) => {
+            bot.removeListener(replyListenerId)
+            if (msg.contact) {
+               const updatedUserPhone = await model.updatedUserPhone(foundUser?.user_id, msg.contact.phone_number)
+
+               if (updatedUserPhone) {
+                  bot.sendMessage(msg.chat.id, `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.`)
+               }
+
+            }
+         })
+      })
+
+   } else if (data == "ru") {
+
+      bot.sendMessage(chatId, `${foundUser?.user_name}, отправьте свой контакт`, {
+         reply_markup: JSON.stringify({
+            keyboard:
+               [
+                  [
+                     {
+                        text: 'Отправить контакт',
+                        request_contact: true,
+                        one_time_keyboard: true
+                     }
+                  ]
+               ],
+            resize_keyboard: true
+         })
+      }).then(() => {
+         const replyListenerId = bot.on("contact", async (msg) => {
+            bot.removeListener(replyListenerId)
+            if (msg.contact) {
+               const updatedUserPhone = await model.updatedUserPhone(foundUser?.user_id, msg.contact.phone_number)
+
+               if (updatedUserPhone) {
+                  bot.sendMessage(msg.chat.id, `Ваш запрос успешно получен, вернитесь к приложению.`)
+               }
+
+            }
+         })
+      })
+
+   }
+})
 
 app.get('/telegrambot', async (req, res) => {
    try {
