@@ -28,7 +28,7 @@ CREATE TABLE users (
    user_premium_expires_at text,
    user_image_link text,
    user_image_name text,
-   user_app_version NUMERIC(10, 2) DEFAULT 0,
+   user_app_version int DEFAULT 0,
    user_notification_id text,
    user_notification boolean DEFAULT false,
    user_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
