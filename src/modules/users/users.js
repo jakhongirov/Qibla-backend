@@ -245,7 +245,7 @@ module.exports = {
                user_app_version,
                notification_id,
                notification,
-               location_status
+               location_status == 'null' || location_status == null ? 0 : location_status
             )
 
             if (registerUser) {
@@ -314,7 +314,7 @@ module.exports = {
             user_app_version,
             notification_id,
             notification,
-            location_status
+            location_status == 'null' || location_status == null ? 0 : location_status
          )
 
          if (createTemporaryUser) {
@@ -625,7 +625,7 @@ module.exports = {
                user_location,
                user_region,
                user_country_code,
-               location_status
+               location_status == 'null' || location_status == null ? 0 : location_status
             )
 
             if (editUserLocation) {
