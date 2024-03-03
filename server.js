@@ -226,14 +226,6 @@ bot.on('message', msg => {
    }
 })
 
-app.get('/telegrambot', async (req, res) => {
-   try {
-      return res.send("OK")
-   } catch (e) {
-      console.log(e)
-   }
-})
-
 const bot_answer = new TelegramBot(process.env.BOT_TOKEN_ANSWER, {
    polling: true
 })
@@ -242,7 +234,7 @@ bot_answer.onText(/\/start/, msg => {
    const chatId = msg.chat.id
    const username = msg.from.first_name
 
-   bot.sendMessage(chatId, `Salom, ${username}`, {
+   bot_answer.sendMessage(chatId, `Salom, ${username}`, {
       reply_markup: JSON.stringify({
          keyboard: [
             [
@@ -291,6 +283,14 @@ bot_answer.on("message", msg => {
       })
    } else {
       bot.sendMessage(chatId, "Xatolik")
+   }
+})
+
+app.get('/telegrambot', async (req, res) => {
+   try {
+      return res.send("OK")
+   } catch (e) {
+      console.log(e)
    }
 })
 
