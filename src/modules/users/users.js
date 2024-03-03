@@ -952,31 +952,30 @@ module.exports = {
 
    DELETE_USER_ADMIN: async (req, res) => {
       try {
-         const { user_id } = req.body
+         const { user_id } = req.body;
 
-         for (const id of user_id) {
-            const checkUser = await model.checkUserById(id)
+         const deletionPromises = user_id.map(async (id) => {
+            const checkUser = await model.checkUserById(id);
             if (checkUser?.user_image_name) {
                const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${checkUser?.user_image_name}`))
-               deleteOldAvatar.delete()
+               deleteOldAvatar.delete()// Delete old avatar image
             }
+            return model.deleteUser(id);
+         });
 
-            const deleteUser = await model.deleteUser(id)
-
-            return deleteUser
-         }
+         await Promise.all(deletionPromises);
 
          return res.status(200).json({
             status: 200,
             message: "Success"
-         })
-
+         });
       } catch (error) {
          console.log(error);
-         res.status(500).json({
+         return res.status(500).json({
             status: 500,
-            message: "Interval Server Error"
-         })
+            message: "Internal Server Error"
+         });
       }
+
    }
 }
