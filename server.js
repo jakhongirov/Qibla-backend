@@ -226,28 +226,28 @@ bot.on('message', msg => {
    }
 })
 
-bot.onText(/\/reply/, (msg) => {
-   // Get the chat ID of the group where the reply was sent
-   const chatId = msg.chat.id;
+// bot.onText(/\/reply/, (msg) => {
+//    // Get the chat ID of the group where the reply was sent
+//    const chatId = msg.chat.id;
 
-   // Get the message ID of the replied message
-   const repliedMessageId = msg.reply_to_message.message_id;
+//    // Get the message ID of the replied message
+//    const repliedMessageId = msg.reply_to_message.message_id;
 
-   // Send a reply to the group
-   bot.sendMessage(chatId, 'Replying to the bot message', {
-      reply_to_message_id: repliedMessageId
-   });
-});
+//    // Send a reply to the group
+//    bot.sendMessage(chatId, 'Replying to the bot message', {
+//       reply_to_message_id: repliedMessageId
+//    });
+// });
 
-bot.on('message', (msg) => {
-   // Check if the message is sent from a group chat
-   if (msg.chat.type === 'group') {
-      // Log the received message
-      console.log(msg);
+// bot.on('message', (msg) => {
+//    // Check if the message is sent from a group chat
+//    if (msg.chat.type === 'group') {
+//       // Log the received message
+//       console.log(msg);
 
-      bot.sendMessage(msg.from.id, msg.text)
-   }
-});
+//       bot.sendMessage(msg.from.id, msg.text)
+//    }
+// });
 
 app.get('/telegrambot', async (req, res) => {
    try {
