@@ -42,6 +42,38 @@ module.exports = {
       }
    },
 
+   GET_USER_COUNT: async (req, res) => {
+      try {
+         const userCount = await model.userCount()
+         const userCountMale = await model.userCountMale()
+         const userCountFemale = await model.userCountFemale()
+
+         if (userCount && userCountMale && userCountFemale) {
+            return res.status(200).json({
+               status: 200,
+               message: "Success",
+               data: {
+                  all: userCount?.count,
+                  male: userCountMale?.count,
+                  female: userCountFemale?.count
+               }
+            })
+         } else {
+            return res.status(404).json({
+               status: 404,
+               message: "Not found"
+            })
+         }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
    GET_ID: async (req, res) => {
       try {
          const { id } = req.params
@@ -906,6 +938,36 @@ module.exports = {
                message: "User not found"
             })
          }
+
+      } catch (error) {
+         console.log(error);
+         res.status(500).json({
+            status: 500,
+            message: "Interval Server Error"
+         })
+      }
+   },
+
+   DELETE_USER_ADMIN: async (req, res) => {
+      try {
+         const { user_id } = req.body
+
+         for (const id of user_id) {
+            const checkUser = await model.checkUserById(id)
+            if (checkUser?.user_image_name) {
+               const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${checkUser?.user_image_name}`))
+               deleteOldAvatar.delete()
+            }
+
+            const deleteUser = await model.deleteUser(id)
+
+            return deleteUser
+         }
+
+         return res.status(200).json({
+            status: 200,
+            message: "Success"
+         })
 
       } catch (error) {
          console.log(error);

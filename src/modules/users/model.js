@@ -14,6 +14,40 @@ const getAdminUsers = (limit, page) => {
 
    return fetchALL(QUERY)
 }
+const userCount = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users;
+   `;
+
+   return fetchALL(QUERY)
+}
+const userCountMale = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_gender = 'Erkak';
+   `;
+
+   return fetchALL(QUERY)
+}
+const userCountFemale = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_gender = 'Ayol';
+   `;
+
+   return fetchALL(QUERY)
+}
 const checkUserById = (id) => {
    const QUERY = `
       SELECT
@@ -579,6 +613,9 @@ const deleteUser = (user_id) => {
 
 module.exports = {
    getAdminUsers,
+   userCount,
+   userCountMale,
+   userCountFemale,
    checkUserById,
    foundUserByToken,
    checkUserEmial,

@@ -34,6 +34,7 @@ router
 
    // USERS API
    .get('/users/list', AUTH, users.GET_ADMIN)
+   .get('/users/count', AUTH, users.GET_USER_COUNT)
    .get('/user/:id', users.GET_ID)
    .get('/user/token/:token', users.GET_TOKEN)
    .post('/user/register', users.REGISTER_USER)
@@ -49,6 +50,7 @@ router
    .put('/user/edit/applang', AUTH, users.CHANGE_LANG)
    .put('/user/edit/alldata', AUTH, users.EDIT_ALL_USER_DATE)
    .delete('/user/delete', AUTH, users.DELETE_USER)
+   .delete('/user/admin/delete', AUTH, users.DELETE_USER_ADMIN)
 
    // USERS STATS API
    .get("/users/stats/list", AUTH, usersStats.GET_ADMIN)
