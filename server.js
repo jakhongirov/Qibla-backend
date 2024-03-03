@@ -282,7 +282,7 @@ bot_answer.on("message", msg => {
          })
       })
    } else {
-      bot.sendMessage(chatId, "Xatolik")
+      bot_answer.sendMessage(chatId, "Xatolik")
    }
 })
 
