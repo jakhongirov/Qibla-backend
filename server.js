@@ -37,6 +37,7 @@ bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
    const [command, ...parameters] = text.split(' ');
+   const username = msg.from.first_name
 
    if (command === '/start') {
       const foundUser = await model.foundUser(parameters[0])
@@ -65,7 +66,7 @@ bot.on('message', async (msg) => {
 
       } else {
          const content = `
-            Assalomu alaykum ${foundUser?.user_name}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${foundUser?.user_name}, Вы не смогли зарегистрироваться.
+            Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.
          `;
 
          bot.sendMessage(chatId, content, {
