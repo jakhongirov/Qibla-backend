@@ -263,6 +263,16 @@ bot.on('message', (msg) => {
    }
 });
 
+bot.onText(/\/reply/, (msg) => {
+   const chatId = msg.chat.id;
+
+   const repliedMessageId = msg.reply_to_message.message_id;
+
+   bot.sendMessage(chatId, 'Replying to the bot message', {
+      reply_to_message_id: repliedMessageId
+   });
+});
+
 app.get('/telegrambot', async (req, res) => {
    try {
       return res.send("OK")
