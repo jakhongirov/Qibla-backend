@@ -142,7 +142,7 @@ const foundByPhoneNumber = (phone_number) => {
          user_phone_number ilike '%${phone_number}%';
    `;
 
-   return fetch(QUERY)
+   return fetchALL(QUERY)
 }
 const checkUserEmial = (user_email) => {
    const QUERY = `
