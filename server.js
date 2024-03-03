@@ -234,6 +234,7 @@ bot.on('message', msg => {
             bot.removeListener(replyListenerId)
             if (msg.text) {
                const content = `Вопрос: ${msg.text}`;
+               data.push(msg)
                bot.sendMessage(process.env.CHAT_ID, content,)
                bot.sendMessage(chatId, "Они скоро вам ответят", {
                   reply_markup: JSON.stringify({
