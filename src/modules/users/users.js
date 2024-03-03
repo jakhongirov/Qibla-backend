@@ -48,6 +48,8 @@ module.exports = {
          const userCountMale = await model.userCountMale()
          const userCountFemale = await model.userCountFemale()
 
+         console
+
          if (userCount && userCountMale && userCountFemale) {
             return res.status(200).json({
                status: 200,

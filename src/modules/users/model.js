@@ -22,7 +22,7 @@ const userCount = () => {
          users;
    `;
 
-   return fetchALL(QUERY)
+   return fetch(QUERY)
 }
 const userCountMale = () => {
    const QUERY = `
@@ -34,7 +34,7 @@ const userCountMale = () => {
          user_gender = 'Erkak';
    `;
 
-   return fetchALL(QUERY)
+   return fetch(QUERY)
 }
 const userCountFemale = () => {
    const QUERY = `
@@ -46,7 +46,7 @@ const userCountFemale = () => {
          user_gender = 'Ayol';
    `;
 
-   return fetchALL(QUERY)
+   return fetch(QUERY)
 }
 const checkUserById = (id) => {
    const QUERY = `
