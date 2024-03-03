@@ -25,8 +25,36 @@ const updatedUserPhone = (id, phone_number) => {
 
    return fetch(QUERY, id, phone_number)
 }
+const addMessage = (chat_id, date) => {
+   const QUERY = `
+      INSERT INTO
+         messages (
+            chat_id,
+            message_dete
+         ) VALUES (
+            $1,
+            $2
+         ) RETURNING *;
+   `;
+
+   fetch(QUERY, chat_id, date)
+}
+const foundMsg = (date) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         messages
+      WHERE
+         message_dete = $1;
+   `;
+
+   return fetch(QUERY,date)
+}
 
 module.exports = {
    foundUser,
-   updatedUserPhone
+   updatedUserPhone,
+   addMessage,
+   foundMsg
 }

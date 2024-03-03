@@ -269,3 +269,9 @@ CREATE TABLE questions (
    category_id int REFERENCES question_categories(category_id) ON DELETE CASCADE,
    question_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE messages (
+   message_id bigserial PRiMARY KEY,
+   chat_id text,
+   message_dete int
+);
