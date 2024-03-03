@@ -72,6 +72,42 @@ const userNotificationFalse = () => {
 
    return fetch(QUERY)
 }
+const userLocationStatus1 = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_location_status = 1;
+   `;
+
+   return fetch(QUERY)
+}
+const userLocationStatus2 = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_location_status = 2;
+   `;
+
+   return fetch(QUERY)
+}
+const userLocationStatus3 = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_location_status = 3;
+   `;
+
+   return fetch(QUERY)
+}
 const checkUserById = (id) => {
    const QUERY = `
       SELECT
@@ -163,7 +199,8 @@ const registerUser = (
    user_token,
    user_app_version,
    notification_id,
-   notification
+   notification,
+   location_status
 ) => {
    const QUERY = `
       INSERT INTO
@@ -186,7 +223,8 @@ const registerUser = (
             user_token,
             user_app_version,
             user_notification_id,
-            user_notification
+            user_notification,
+            user_location_status
          ) VALUES (
             $1,
             $2,
@@ -206,7 +244,8 @@ const registerUser = (
             ARRAY [ $16 ],
             $17,
             $18,
-            $19
+            $19,
+            $20
          ) RETURNING *;
    `;
 
@@ -230,7 +269,8 @@ const registerUser = (
       user_token,
       user_app_version,
       notification_id,
-      notification
+      notification,
+      location_status
    )
 }
 const createTemporaryUser = (
@@ -247,7 +287,8 @@ const createTemporaryUser = (
    user_token,
    user_app_version,
    notification_id,
-   notification
+   notification,
+   location_status
 ) => {
    const QUERY = `
       INSERT INTO
@@ -265,7 +306,8 @@ const createTemporaryUser = (
             user_token,
             user_app_version,
             user_notification_id,
-            user_notification
+            user_notification,
+            user_location_status
          ) VALUES (
             $1,
             $2,
@@ -299,7 +341,8 @@ const createTemporaryUser = (
       user_token,
       user_app_version,
       notification_id,
-      notification
+      notification,
+      location_status
    )
 }
 const addToken = (user_id, user_token, user_app_version) => {
@@ -377,7 +420,8 @@ const editUserLocation = (
    user_id,
    user_location,
    user_region,
-   user_country_code
+   user_country_code,
+   location_status
 ) => {
    const QUERY = `
       UPDATE
@@ -385,7 +429,8 @@ const editUserLocation = (
       SET
       user_location = $2,
          user_region = $3,
-         user_country_code = $4
+         user_country_code = $4,
+         user_location_status = $5
       WHERE
          user_id = $1
       RETURNING *;
@@ -396,7 +441,8 @@ const editUserLocation = (
       user_id,
       user_location,
       user_region,
-      user_country_code
+      user_country_code,
+      location_status
    )
 }
 const editUserPhoneDetails = (
@@ -654,6 +700,9 @@ module.exports = {
    userCountFemale,
    userNotificationTrue,
    userNotificationFalse,
+   userLocationStatus1,
+   userLocationStatus2,
+   userLocationStatus3,
    checkUserById,
    foundUserByToken,
    foundByPhoneNumber,

@@ -49,6 +49,9 @@ module.exports = {
          const userCountFemale = await model.userCountFemale()
          const userNotificationTrue = await model.userNotificationTrue()
          const userNotificationFalse = await model.userNotificationFalse()
+         const userLocationStatus1 = await model.userLocationStatus1()
+         const userLocationStatus2 = await model.userLocationStatus2()
+         const userLocationStatus3 = await model.userLocationStatus3()
 
          console
 
@@ -60,8 +63,13 @@ module.exports = {
                   all: userCount?.count,
                   male: userCountMale?.count,
                   female: userCountFemale?.count,
-                  notificationTrue: userNotificationTrue,
-                  notificationFalse: userNotificationFalse,
+                  notificationTrue: userNotificationTrue?.count,
+                  notificationFalse: userNotificationFalse?.count,
+                  location_status: {
+                     1: userLocationStatus1?.count,
+                     2: userLocationStatus2?.count,
+                     3: userLocationStatus3?.count
+                  }
                }
             })
          } else {
@@ -209,7 +217,8 @@ module.exports = {
             user_token,
             user_app_version,
             notification_id,
-            notification
+            notification,
+            location_status
          } = req.body
          const checkUserEmial = await model.checkUserEmial(user_email)
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
@@ -235,7 +244,8 @@ module.exports = {
                user_token,
                user_app_version,
                notification_id,
-               notification
+               notification,
+               location_status
             )
 
             if (registerUser) {
@@ -285,8 +295,10 @@ module.exports = {
             user_token,
             user_app_version,
             notification_id,
-            notification
+            notification,
+            location_status
          } = req.body
+
          const createTemporaryUser = await model.createTemporaryUser(
             user_name,
             user_gender,
@@ -301,7 +313,8 @@ module.exports = {
             user_token,
             user_app_version,
             notification_id,
-            notification
+            notification,
+            location_status
          )
 
          if (createTemporaryUser) {
@@ -602,6 +615,7 @@ module.exports = {
             user_location,
             user_region,
             user_country_code,
+            location_status
          } = req.body
          const checkUser = await model.checkUserById(user_id)
 
@@ -611,6 +625,7 @@ module.exports = {
                user_location,
                user_region,
                user_country_code,
+               location_status
             )
 
             if (editUserLocation) {

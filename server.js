@@ -65,8 +65,7 @@ bot.on('message', async (msg) => {
 
       } else {
          const content = `
-            Assalomu alaykum ${foundUser?.user_name}, Siz ro'yxatda o'ta olmadiz.\n
-            Здравствуйте ${foundUser?.user_name}, Вы не смогли зарегистрироваться.
+            Assalomu alaykum ${foundUser?.user_name}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${foundUser?.user_name}, Вы не смогли зарегистрироваться.
          `;
 
          bot.sendMessage(chatId, content);
