@@ -191,21 +191,22 @@ bot.on("message", msg => {
    }
 })
 
-bot.on('message', async (msg) => {
+bot.on('message', (msg) => {
    const chatId = msg.chat.id
    const text = msg.text
 
    if (text == 'Savol berish') {
-      await model.addMessage(msg.chat.id, msg.date)
+
       bot.sendMessage(chatId, "Savol:", {
          reply_markup: {
             force_reply: true
          }
-      }).then(async (payload) => {
-         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
+      }).then((payload) => {
+         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
             bot.removeListener(replyListenerId)
             if (msg.text) {
                const content = `Savol: ${msg.text}`;
+               await model.addMessage(msg.chat.id, msg.date)
                bot.sendMessage(process.env.CHAT_ID, content)
                bot.sendMessage(chatId, "Sizga tez orada javob berishadi.", {
                   reply_markup: JSON.stringify({
@@ -224,16 +225,16 @@ bot.on('message', async (msg) => {
          })
       })
    } else if (text == 'Задайте вопрос') {
-      await model.addMessage(msg.chat.id, msg.date)
       bot.sendMessage(chatId, "Вопрос:", {
          reply_markup: {
             force_reply: true
          }
-      }).then(async (payload) => {
-         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
+      }).then((payload) => {
+         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
             bot.removeListener(replyListenerId)
             if (msg.text) {
                const content = `Вопрос: ${msg.text}`;
+               await model.addMessage(msg.chat.id, msg.date)
                bot.sendMessage(process.env.CHAT_ID, content,)
                bot.sendMessage(chatId, "Они скоро вам ответят", {
                   reply_markup: JSON.stringify({
