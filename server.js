@@ -68,7 +68,22 @@ bot.on('message', async (msg) => {
             Assalomu alaykum ${foundUser?.user_name}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${foundUser?.user_name}, Вы не смогли зарегистрироваться.
          `;
 
-         bot.sendMessage(chatId, content);
+         bot.sendMessage(chatId, content, {
+            reply_markup: JSON.stringify({
+               keyboard:
+                  [
+                     [
+                        {
+                           text: "Uzbek"
+                        },
+                        {
+                           text: "Русский"
+                        }
+                     ]
+                  ],
+               resize_keyboard: true
+            })
+         });
       }
    }
 });
@@ -137,6 +152,76 @@ bot.on('callback_query', async (msg) => {
          })
       })
 
+   }
+})
+
+bot.on("message", msg => {
+   const chatId = msg.chat.id
+   const text = msg.text
+
+   if (text == "Uzbek") {
+      bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
+         reply_markup: JSON.stringify({
+            keyboard:
+               [
+                  [
+                     {
+                        text: "Savol berish"
+                     }
+                  ]
+               ],
+            resize_keyboard: true
+         })
+      })
+   } else if (text == 'Русский') {
+      bot.sendMessage(chatId, 'Напишите свой вопрос. Мы обязательно вам ответим!', {
+         reply_markup: JSON.stringify({
+            keyboard:
+               [
+                  [
+                     {
+                        text: "Задайте вопрос"
+                     }
+                  ]
+               ],
+            resize_keyboard: true
+         })
+      })
+   }
+})
+
+bot.on('message', msg => {
+   const chatId = msg.chat.id
+   const text = msg.text
+
+   if (text == 'Savol berish') {
+      bot.sendMessage(chatId, "Savol:", {
+         reply_markup: {
+            force_reply: true
+         }
+      }).then(payload => {
+         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
+            bot.removeListener(replyListenerId)
+            if (msg.text) {
+               const content = `chat_id: ${chatId}\nSavol: ${msg.text}`;
+               bot.sendMessage(process.env.CHAT_ID, content)
+            }
+         })
+      })
+   } else if (text == 'Задайте вопрос') {
+      bot.sendMessage(chatId, "Вопрос:", {
+         reply_markup: {
+            force_reply: true
+         }
+      }).then(payload => {
+         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
+            bot.removeListener(replyListenerId)
+            if (msg.text) {
+               const content = `chat_id: ${chatId}\nВопрос: ${msg.text}`;
+               bot.sendMessage(process.env.CHAT_ID, content)
+            }
+         })
+      })
    }
 })
 
