@@ -33,6 +33,8 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {
    polling: true
 })
 
+const data = []
+
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
@@ -204,8 +206,21 @@ bot.on('message', msg => {
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
             bot.removeListener(replyListenerId)
             if (msg.text) {
-               const content = `chat_id: ${chatId}\nSavol: ${msg.text}`;
+               const content = `Savol: ${msg.text}`;
                bot.sendMessage(process.env.CHAT_ID, content)
+               bot.sendMessage(chatId, "Sizga tez orada javob berishadi.", {
+                  reply_markup: JSON.stringify({
+                     keyboard:
+                        [
+                           [
+                              {
+                                 text: "Savol berish"
+                              }
+                           ]
+                        ],
+                     resize_keyboard: true
+                  })
+               })
             }
          })
       })
@@ -218,36 +233,35 @@ bot.on('message', msg => {
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
             bot.removeListener(replyListenerId)
             if (msg.text) {
-               const content = `chat_id: ${chatId}\nВопрос: ${msg.text}`;
-               bot.sendMessage(process.env.CHAT_ID, content)
+               const content = `Вопрос: ${msg.text}`;
+               bot.sendMessage(process.env.CHAT_ID, content,)
+               bot.sendMessage(chatId, "Они скоро вам ответят", {
+                  reply_markup: JSON.stringify({
+                     keyboard:
+                        [
+                           [
+                              {
+                                 text: "Задайте вопрос"
+                              }
+                           ]
+                        ],
+                     resize_keyboard: true
+                  })
+               })
             }
          })
       })
    }
 })
 
-// bot.onText(/\/reply/, (msg) => {
-//    // Get the chat ID of the group where the reply was sent
-//    const chatId = msg.chat.id;
+bot.on('message', (msg) => {
 
-//    // Get the message ID of the replied message
-//    const repliedMessageId = msg.reply_to_message.message_id;
-
-//    // Send a reply to the group
-//    bot.sendMessage(chatId, 'Replying to the bot message', {
-//       reply_to_message_id: repliedMessageId
-//    });
-// });
-
-// bot.on('message', (msg) => {
-//    // Check if the message is sent from a group chat
-//    if (msg.chat.type === 'group') {
-//       // Log the received message
-//       console.log(msg);
-
-//       bot.sendMessage(msg.from.id, msg.text)
-//    }
-// });
+   if (msg.chat.type === 'group') {
+      let a = msg.reply_to_message.date
+      let b = data.filter(e => e.date == a)
+      bot.sendMessage(b[0].chat.id, `Javob: ${msg.text}`)
+   }
+});
 
 app.get('/telegrambot', async (req, res) => {
    try {
