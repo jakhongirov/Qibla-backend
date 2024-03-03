@@ -234,6 +234,66 @@ app.get('/telegrambot', async (req, res) => {
    }
 })
 
+const bot_answer = new TelegramBot(process.env.BOT_TOKEN_ANSWER, {
+   polling: true
+})
+
+bot_answer.onText(/\/start/, msg => {
+   const chatId = msg.chat.id
+   const username = msg.from.first_name
+
+   bot.sendMessage(chatId, `Salom, ${username}`, {
+      reply_markup: JSON.stringify({
+         keyboard: [
+            [
+               {
+                  text: "Savolga javob berish"
+               }
+            ]
+         ],
+         resize_keyboard: true
+      })
+   })
+})
+
+bot_answer.on("message", msg => {
+   const chatId = msg.chat.id
+   const text = msg.text
+   let user_chat_id = '';
+
+   if (text == "Savolga javob berish") {
+      bot_answer.sendMessage(chatId, "Chat id", {
+         reply_markup: {
+            force_reply: true
+         }
+      }).then(payload => {
+         const replyListenerId = bot_answer.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
+            bot_answer.removeListener(replyListenerId)
+
+            if (msg.text) {
+               user_chat_id = msg.text
+               bot_answer.sendMessage(msg.chat.id, 'Javob:', {
+                  reply_markup: {
+                     force_reply: true
+                  }
+               }).then(payload => {
+                  const replyListenerId = bot_answer.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
+                     bot_answer.removeListener(replyListenerId)
+
+                     bot.sendMessage(user_chat_id, `Javob: ${msg.text}`)
+
+                     bot_answer.sendMessage(msg.chat.id, `Yuborildi`)
+
+                  })
+               })
+            }
+         })
+      })
+   } else {
+      bot.sendMessage(chatId, "Xatolik")
+   }
+})
+
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
