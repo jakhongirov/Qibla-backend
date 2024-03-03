@@ -2,7 +2,7 @@
 	{
 		"backgrounColor": "FFFDE6",
 		"id": 1,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_1.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_1.png",
 		"lang": "cyrillic",
 		"name": "Тонгги зикрлар",
 		"tartibRaqami": 1,
@@ -11,7 +11,7 @@
 	{
 		"backgrounColor": "E8E7F2",
 		"id": 2,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_2.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_2.png",
 		"lang": "cyrillic",
 		"name": "Кечки зикрлар",
 		"tartibRaqami": 2,
@@ -20,7 +20,7 @@
 	{
 		"backgrounColor": "E7F2EF",
 		"id": 3,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_3.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_3.png",
 		"lang": "cyrillic",
 		"name": "Аллоҳдан сўраш",
 		"tartibRaqami": 3,
@@ -29,7 +29,7 @@
 	{
 		"backgrounColor": "FFECE9",
 		"id": 4,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_4.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_4.png",
 		"lang": "cyrillic",
 		"name": "Каракли дуолар",
 		"tartibRaqami": 4,
@@ -38,7 +38,7 @@
 	{
 		"backgrounColor": "FFFDE6",
 		"id": 5,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_1.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_1.png",
 		"lang": "uzbek",
 		"name": "Tonggi zikrlar",
 		"tartibRaqami": 1,
@@ -47,7 +47,7 @@
 	{
 		"backgrounColor": "E8E7F2",
 		"id": 6,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_2.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_2.png",
 		"lang": "uzbek",
 		"name": "Kechki zikrlar",
 		"tartibRaqami": 2,
@@ -56,7 +56,7 @@
 	{
 		"backgrounColor": "E7F2EF",
 		"id": 7,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_3.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_3.png",
 		"lang": "uzbek",
 		"name": "Аllohdan soʼrash",
 		"tartibRaqami": 3,
@@ -65,7 +65,7 @@
 	{
 		"backgrounColor": "FFECE9",
 		"id": 8,
-		"imageLink": "https://qibla.onrender.com/files/images/icon_zikr_4.png",
+		"imageLink": "https://server.qiblah.app/files/images/icon_zikr_4.png",
 		"lang": "uzbek",
 		"name": "Karakli duolar",
 		"tartibRaqami": 4,
