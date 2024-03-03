@@ -256,9 +256,11 @@ bot.on('message', msg => {
 
 bot.on('message', (msg) => {
 
-   if (msg.chat.type === 'group') {
+   if (msg.chat.type == 'group') {
+      console.log(data);
       let a = msg.reply_to_message.date
       let b = data.filter(e => e.date == a)
+      console.log(b);
       bot.sendMessage(b[0].chat.id, `Javob: ${msg.text}`)
    }
 });
