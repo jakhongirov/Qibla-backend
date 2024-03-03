@@ -48,6 +48,30 @@ const userCountFemale = () => {
 
    return fetch(QUERY)
 }
+const userNotificationTrue = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_notification = true;
+   `;
+
+   return fetch(QUERY)
+}
+const userNotificationFalse = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_notification = false;
+   `;
+
+   return fetch(QUERY)
+}
 const checkUserById = (id) => {
    const QUERY = `
       SELECT
@@ -628,6 +652,8 @@ module.exports = {
    userCount,
    userCountMale,
    userCountFemale,
+   userNotificationTrue,
+   userNotificationFalse,
    checkUserById,
    foundUserByToken,
    foundByPhoneNumber,

@@ -47,6 +47,8 @@ module.exports = {
          const userCount = await model.userCount()
          const userCountMale = await model.userCountMale()
          const userCountFemale = await model.userCountFemale()
+         const userNotificationTrue = await model.userNotificationTrue()
+         const userNotificationFalse = await model.userNotificationFalse()
 
          console
 
@@ -57,7 +59,9 @@ module.exports = {
                data: {
                   all: userCount?.count,
                   male: userCountMale?.count,
-                  female: userCountFemale?.count
+                  female: userCountFemale?.count,
+                  notificationTrue: userNotificationTrue,
+                  notificationFalse: userNotificationFalse,
                }
             })
          } else {
