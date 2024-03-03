@@ -226,65 +226,28 @@ bot.on('message', msg => {
    }
 })
 
-const bot_answer = new TelegramBot(process.env.BOT_TOKEN_ANSWER, {
-   polling: true
-})
+bot.onText(/\/reply/, (msg) => {
+   // Get the chat ID of the group where the reply was sent
+   const chatId = msg.chat.id;
 
-bot_answer.onText(/\/start/, msg => {
-   const chatId = msg.chat.id
-   const username = msg.from.first_name
+   // Get the message ID of the replied message
+   const repliedMessageId = msg.reply_to_message.message_id;
 
-   bot_answer.sendMessage(chatId, `Salom, ${username}`, {
-      reply_markup: JSON.stringify({
-         keyboard: [
-            [
-               {
-                  text: "Savolga javob berish"
-               }
-            ]
-         ],
-         resize_keyboard: true
-      })
-   })
-})
+   // Send a reply to the group
+   bot.sendMessage(chatId, 'Replying to the bot message', {
+      reply_to_message_id: repliedMessageId
+   });
+});
 
-bot_answer.on("message", msg => {
-   const chatId = msg.chat.id
-   const text = msg.text
-   let user_chat_id = '';
+bot.on('message', (msg) => {
+   // Check if the message is sent from a group chat
+   if (msg.chat.type === 'group') {
+      // Log the received message
+      console.log(msg);
 
-   if (text == "Savolga javob berish") {
-      bot_answer.sendMessage(chatId, "Chat id", {
-         reply_markup: {
-            force_reply: true
-         }
-      }).then(payload => {
-         const replyListenerId = bot_answer.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
-            bot_answer.removeListener(replyListenerId)
-
-            if (msg.text) {
-               user_chat_id = msg.text
-               bot_answer.sendMessage(msg.chat.id, 'Javob:', {
-                  reply_markup: {
-                     force_reply: true
-                  }
-               }).then(payload => {
-                  const replyListenerId = bot_answer.onReplyToMessage(payload.chat.id, payload.message_id, msg => {
-                     bot_answer.removeListener(replyListenerId)
-
-                     bot.sendMessage(user_chat_id, `Javob: ${msg.text}`)
-
-                     bot_answer.sendMessage(msg.chat.id, `Yuborildi`)
-
-                  })
-               })
-            }
-         })
-      })
-   } else {
-      bot_answer.sendMessage(chatId, "Xatolik")
+      bot.sendMessage(msg.from.id, msg.text)
    }
-})
+});
 
 app.get('/telegrambot', async (req, res) => {
    try {
