@@ -72,6 +72,18 @@ const foundUserByToken = (token) => {
 
    return fetch(QUERY, token)
 }
+const foundByPhoneNumber = (phone_number) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users
+      WHERE
+         user_phone_number ilike '%${phone_number}%';
+   `;
+
+   return fetch(QUERY)
+}
 const checkUserEmial = (user_email) => {
    const QUERY = `
       SELECT
@@ -618,6 +630,7 @@ module.exports = {
    userCountFemale,
    checkUserById,
    foundUserByToken,
+   foundByPhoneNumber,
    checkUserEmial,
    checkUserPhoneNumber,
    checkUserMethod,

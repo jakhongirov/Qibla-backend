@@ -37,6 +37,7 @@ router
    .get('/users/count', AUTH, users.GET_USER_COUNT)
    .get('/user/:id', users.GET_ID)
    .get('/user/token/:token', users.GET_TOKEN)
+   .post('/user/phone', users.GET_BY_PHONE)
    .post('/user/register', users.REGISTER_USER)
    .post('/user/register/temporaryuser', users.TEMPORARY_USER)
    .post('/user/login/:contact', users.LOGIN_USER)
