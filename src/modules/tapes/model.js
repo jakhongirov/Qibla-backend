@@ -287,19 +287,24 @@ const foundName = (id, lang) => {
    }
 }
 const foundNews = (id, lang) => {
-   const newsId = id?.map(e => `${e}`).join(', ');
 
-   const QUERY = `
-      SELECT
-         *
-      FROM
-         news
-      WHERE
-         news_link = $1
-         and ARRAY[news_id::int] && ARRAY[${newsId}];
-   `;
+   if (id?.length > 0) {
+      const newsId = id?.map(e => `${e}`).join(', ');
 
-   return fetchALL(QUERY, lang)
+      const QUERY = `
+         SELECT
+            *
+         FROM
+            news
+         WHERE
+            news_link = $1
+            and ARRAY[news_id::int] && ARRAY[${newsId}];
+      `;
+
+      return fetchALL(QUERY, lang)
+   } else {
+      return {}
+   }
 }
 const addTape = (
    tape_date,
