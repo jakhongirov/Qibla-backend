@@ -303,7 +303,7 @@ const foundNews = (id, lang) => {
 
       return fetchALL(QUERY, lang)
    } else {
-      return {}
+      return []
    }
 }
 const addTape = (
