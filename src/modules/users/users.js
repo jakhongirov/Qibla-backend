@@ -52,6 +52,7 @@ module.exports = {
          const userLocationStatus1 = await model.userLocationStatus1()
          const userLocationStatus2 = await model.userLocationStatus2()
          const userLocationStatus3 = await model.userLocationStatus3()
+         const userPremium = await model.userPremium()
 
          console
 
@@ -63,6 +64,7 @@ module.exports = {
                   all: userCount?.count,
                   male: userCountMale?.count,
                   female: userCountFemale?.count,
+                  premium: userPremium?.count,
                   notificationTrue: userNotificationTrue?.count,
                   notificationFalse: userNotificationFalse?.count,
                   location_status: {

@@ -108,6 +108,18 @@ const userLocationStatus3 = () => {
 
    return fetch(QUERY)
 }
+const userPremium = () => {
+   const QUERY = `
+      SELECT
+         count(user_id)
+      FROM
+         users
+      WHERE
+         user_premium = true;
+   `;
+
+   return fetch(QUERY)
+}
 const checkUserById = (id) => {
    const QUERY = `
       SELECT
@@ -704,6 +716,7 @@ module.exports = {
    userLocationStatus1,
    userLocationStatus2,
    userLocationStatus3,
+   userPremium,
    checkUserById,
    foundUserByToken,
    foundByPhoneNumber,
