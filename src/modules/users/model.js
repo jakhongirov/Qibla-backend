@@ -120,6 +120,22 @@ const userPremium = () => {
 
    return fetch(QUERY)
 }
+const getUserPremiumList = (limit, page) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users
+      WHERE
+         user_premium = true
+      ORDER BY
+         user_id DESC
+      LIMIT ${limit}
+      OFFSET ${Number((page - 1) * limit)};
+   `;
+
+   return fetchALL(QUERY)
+}
 const checkUserById = (id) => {
    const QUERY = `
       SELECT
@@ -717,6 +733,7 @@ module.exports = {
    userLocationStatus2,
    userLocationStatus3,
    userPremium,
+   getUserPremiumList,
    checkUserById,
    foundUserByToken,
    foundByPhoneNumber,
