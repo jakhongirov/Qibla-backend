@@ -115,8 +115,8 @@ module.exports = {
    UPDATE_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { itme_id, item_name, category_id } = req.body
-         const foundItem = await model.foundItem(itme_id)
+         const { item_id, item_name, category_id } = req.body
+         const foundItem = await model.foundItem(item_id)
          let audioUrl = '';
          let audioName = '';
 
@@ -134,7 +134,7 @@ module.exports = {
             }
 
             const updateItem = await model.updateItem(
-               itme_id,
+               item_id,
                item_name,
                category_id,
                audioUrl,
@@ -172,8 +172,8 @@ module.exports = {
 
    DELETE_CATEGORY: async (req, res) => {
       try {
-         const { itme_id } = req.body
-         const foundItem = await model.foundItem(itme_id)
+         const { item_id } = req.body
+         const foundItem = await model.foundItem(item_id)
 
          if (foundItem) {
             if (foundItem?.item_audio_name) {
@@ -181,7 +181,7 @@ module.exports = {
                deleteOldAvatar.delete()
             }
 
-            const deleteItem = await model.deleteItem(itme_id)
+            const deleteItem = await model.deleteItem(item_id)
 
             if (deleteItem) {
                return res.status(200).json({

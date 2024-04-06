@@ -152,20 +152,20 @@ const addItem = (
       audioName
    )
 }
-const foundItem = (itme_id) => {
+const foundItem = (item_id) => {
    const QUERY = `
       SELECT
          *
       FROM
          meditation_item
       WHERE
-         itme_id = $1
+      item_id = $1
    `;
 
-   return fetch(QUERY, itme_id)
+   return fetch(QUERY, item_id)
 }
 const updateItem = (
-   itme_id,
+   item_id,
    item_name,
    category_id,
    audioUrl,
@@ -180,13 +180,13 @@ const updateItem = (
          item_audio_url = $4,
          item_audio_name = $5
       WHERE
-         itme_id = $1
+         item_id = $1
       RETURNING *;
    `;
 
    return fetch(
       QUERY,
-      itme_id,
+      item_id,
       item_name,
       category_id,
       audioUrl,
@@ -198,7 +198,7 @@ const deleteItem = (itme_id) => {
       DELETE FROM
          meditation_item
       WHERE
-         itme_id = $1
+         item_id = $1
       RETURNING *;
    `;
 

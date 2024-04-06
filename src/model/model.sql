@@ -266,7 +266,7 @@ CREATE TABLE meditation_categories (
 );
 
 CREATE TABLE meditation_item (
-   itme_id bigserial PRiMARY KEY,
+   item_id bigserial PRiMARY KEY,
    item_name text not null,
    category_id int REFERENCES meditation_categories(category_id) ON DELETE CASCADE,
    item_audio_url text,
