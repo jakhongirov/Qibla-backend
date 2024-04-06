@@ -26,7 +26,7 @@ const categoriesList = () => {
          category_id DESC;
    `
 
-   return fetchALL(QUERY, lang)
+   return fetchALL(QUERY)
 }
 const addCategory = (
    category_name,
