@@ -152,6 +152,18 @@ const addItem = (
       audioName
    )
 }
+const foundItem = (itme_id) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         meditation_item
+      WHERE
+         itme_id = $1
+   `;
+
+   return fetch(QUERY, itme_id)
+}
 const updateItem = (
    itme_id,
    item_name,
@@ -206,6 +218,7 @@ module.exports = {
    itemsListAdmin,
    itemsListByCategory,
    addItem,
+   foundItem,
    updateItem,
    deleteItem
 }
