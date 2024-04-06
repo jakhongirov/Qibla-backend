@@ -104,7 +104,7 @@ const itemsListAdmin = (limit, page) => {
       FROM
          meditation_item
       ORDER BY
-         itme_id DESC
+         item_id DESC
       LIMIT ${limit}
       OFFSET ${Number((page - 1) * limit)};
    `;
@@ -193,7 +193,7 @@ const updateItem = (
       audioName
    )
 }
-const deleteItem = (itme_id) => {
+const deleteItem = (item_id) => {
    const QUERY = `
       DELETE FROM
          meditation_item
@@ -202,7 +202,7 @@ const deleteItem = (itme_id) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, itme_id)
+   return fetch(QUERY, item_id)
 }
 
 module.exports = {
