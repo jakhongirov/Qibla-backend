@@ -22,6 +22,9 @@ const publicZikrs = require('./publicZikr/publicZikr')
 const news = require('./news/news')
 const tapes = require('./tapes/tapes')
 const versions = require('./versions/versions')
+const meditationCategories = require('./meditation/categories')
+const meditationItems = require('./meditation/items')
+const additionalVotes = require('./votes/votes')
 
 router
 
@@ -169,5 +172,24 @@ router
    .post('/versions/add', AUTH, versions.ADD_VERSION)
    .put('/versions/edit', AUTH, versions.UPDATE_VERSION)
    .delete('/versions/delete', AUTH, versions.DELETE_VERSION)
+
+   // MEDITATION CATEGORIES
+   .get('/meditation/categories', meditationCategories.GET)
+   .post('/meditation/category/add', AUTH, meditationCategories.ADD_CATEGORY)
+   .put('/meditation/category/edit', AUTH, meditationCategories.UPDATE_CATEGORY)
+   .delete('/meditation/category/delete', AUTH, meditationCategories.DELETE_CATEGORY)
+
+   // MEDITATION ITEMS
+   .get('/meditation/items/admin', AUTH, meditationItems.GET_ADMIN)
+   .get('/meditation/items', meditationItems.GET_CATEGORIES)
+   .post('/meditation/item/add', AUTH, FileUpload.single("audio"), meditationItems.ADD_ITEM)
+   .put('/meditation/item/edit', AUTH, FileUpload.single("audio"), meditationItems.UPDATE_ITEM)
+   .delete('/meditation/item/delete', AUTH, meditationItems.DELETE_CATEGORY)
+
+   // ADDITIONAL VOTES
+   .get('/additional/votes', additionalVotes.GET)
+   .post('/additional/vote/add', AUTH, FileUpload.single("audio"), additionalVotes.ADD_VOTE)
+   .put('/additional/vote/edit', AUTH, FileUpload.single("audio"), additionalVotes.UPDATE_VOTE)
+   .delete('/additional/vote/delete', AUTH, additionalVotes.DELETE_VOTE)
 
 module.exports = router

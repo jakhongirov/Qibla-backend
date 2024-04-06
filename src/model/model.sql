@@ -252,6 +252,37 @@ CREATE TABLE versions (
    version_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE messages (
+   message_id bigserial PRiMARY KEY,
+   chat_id text,
+   message_dete int
+);
+
+CREATE TABLE meditation_categories (
+   category_id bigserial PRiMARY KEY,
+   category_name text not null,
+   category_lang text not null,
+   category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE meditation_item (
+   itme_id bigserial PRiMARY KEY,
+   item_name text not null,
+   category_id int REFERENCES meditation_categories(category_id) ON DELETE CASCADE,
+   item_audio_url text,
+   item_audio_name text,
+   item_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE additional_votes (
+   vote_id bigserial PRiMARY KEY,
+   vote_name text not null,
+   vote_lang text not null,
+   vote_audio_url text,
+   vote_audio_name text,
+   vote_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 -- old
 CREATE TABLE question_categories (
    category_id bigserial PRiMARY KEY,
@@ -268,10 +299,4 @@ CREATE TABLE questions (
    source text,
    category_id int REFERENCES question_categories(category_id) ON DELETE CASCADE,
    question_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
-);
-
-CREATE TABLE messages (
-   message_id bigserial PRiMARY KEY,
-   chat_id text,
-   message_dete int
 );
