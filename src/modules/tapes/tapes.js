@@ -161,9 +161,20 @@ module.exports = {
             }
 
          } else {
-            return res.status(404).json({
-               status: 404,
-               message: "Not found"
+            const foundZikrRandom = await model.foundZikrRandom(lang)
+            const foundDuaRandom = await model.foundZikrRandom(lang)
+            const foundVerseRandom = await model.foundVerseRandom(lang)
+            const foundNameRandom = await model.foundNameRandom(lang)
+            const foundNewsRandom = await model.foundNewsRandom(lang)
+
+            return res.status(200).json({
+               status: 200,
+               message: "Success",
+               zikr: foundZikrRandom,
+               dua: foundDuaRandom,
+               verse: foundVerseRandom,
+               name: foundNameRandom,
+               news: foundNewsRandom
             })
          }
       } catch (error) {

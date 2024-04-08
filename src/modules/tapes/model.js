@@ -297,7 +297,7 @@ const foundNews = (id, lang) => {
          FROM
             news
          WHERE
-            news_link = $1
+            news_lang = $1
             and ARRAY[news_id::int] && ARRAY[${newsId}];
       `;
 
@@ -389,6 +389,254 @@ const deleteTape = (tape_id) => {
 
    return fetch(QUERY, tape_id)
 }
+const foundZikrRandom = (lang) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         zikrs a
+      INNER JOIN
+         zikr_categories b
+      ON
+         a.category_id = b.category_id
+      WHERE
+         category_lang = $1
+      ORDER BY
+         random()
+      LIMIT 1;
+   `;
+
+   return fetch(QUERY, lang)
+}
+const foundVerseRandom = (lang) => {
+   if (lang == 'uzbek') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_uzbek AS text,
+            verse_meaning_uzbek AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         ORDER BY
+            random();
+      `;
+
+      return fetch(QUERY, id)
+   } else if (lang == 'cyrillic') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_cyrillic AS text,
+            verse_meaning_cyrillic AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         ORDER BY
+            random();
+      `;
+
+      return fetch(QUERY)
+   } else if (lang == 'russian') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_russian AS text,
+            verse_meaning_russian AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         ORDER BY
+            random();
+      `;
+
+      return fetch(QUERY)
+   } else if (lang == 'english') {
+      const QUERY = `
+         SELECT
+            verse_id,
+            verse_number,
+            juz_number,
+            juz_divider_text,
+            a.sura_id,
+            verse_arabic,
+            verse_english AS text,
+            verse_meaning_english AS meaning,
+            verse_create_at
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         ORDER BY
+            random();
+      `;
+
+      return fetch(QUERY)
+   } else {
+      const QUERY = `
+         SELECT
+            *
+         FROM
+            verses a
+         INNER JOIN
+            quran b
+         ON
+            a.sura_id = b.sura_id
+         ORDER BY
+            random();
+      `;
+
+      return fetch(QUERY)
+   }
+}
+const foundNameRandom = (lang) => {
+   if (lang == 'uzbek') {
+      const QUERY = `
+         SELECT
+            name_id,
+            name_arabic,
+            name_title_uzbek AS title,
+            name_description_uzbek AS description,
+            name_translation_uzbek AS translation,
+            name_audio_link,
+            name_audio_name,
+            name_create_at
+         FROM
+            names_99
+         ORDER BY
+            random()
+      `;
+
+      return fetch(QUERY)
+   } else if (lang == 'cyrillic') {
+      const QUERY = `
+         SELECT
+            name_id,
+            name_arabic,
+            name_title_cyrillic AS title,
+            name_description_cyrillic AS description,
+            name_translation_cyrillic AS translation,
+            name_audio_link,
+            name_audio_name,
+            name_create_at
+         FROM
+            names_99
+         ORDER BY
+            random()
+      `;
+
+      return fetch(QUERY)
+   } else if (lang == 'russian') {
+      const QUERY = `
+         SELECT
+            name_id,
+            name_arabic,
+            name_title_russian AS title,
+            name_description_russian AS description,
+            name_translation_russian AS translation,
+            name_audio_link,
+            name_audio_name,
+            name_create_at
+         FROM
+            names_99
+         ORDER BY
+            random()
+      `;
+
+      return fetch(QUERY)
+   } else if (lang == 'english') {
+      const QUERY = `
+         SELECT
+            name_id,
+            name_arabic,
+            name_title_english AS title,
+            name_description_english AS description,
+            name_translation_english AS translation,
+            name_audio_link,
+            name_audio_name,
+            name_create_at
+         FROM
+            names_99
+         ORDER BY
+            random()
+      `;
+
+      return fetch(QUERY)
+   } else if (lang == 'kazakh') {
+      const QUERY = `
+         SELECT
+            name_id,
+            name_arabic,
+            name_title_kazakh AS title,
+            name_description_kazakh AS description,
+            name_translation_kazakh AS translation,
+            name_audio_link,
+            name_audio_name,
+            name_create_at
+         FROM
+            names_99
+         ORDER BY
+            random()
+      `;
+
+      return fetch(QUERY)
+   } else {
+      const QUERY = `
+         SELECT
+            *
+         FROM
+            names_99
+         ORDER BY
+            random()
+      `;
+
+      return fetch(QUERY, id)
+   }
+}
+const foundNewsRandom = (lang) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         news
+      WHERE
+         news_link = $1
+      ORDER BY
+         random()
+      LIMIT 2;
+   `;
+
+   fetchALL(QUERY, lang)
+}
 
 module.exports = {
    getTapeList,
@@ -400,5 +648,9 @@ module.exports = {
    foundNews,
    addTape,
    editTape,
-   deleteTape
+   deleteTape,
+   foundZikrRandom,
+   foundVerseRandom,
+   foundNameRandom,
+   foundNewsRandom
 }
