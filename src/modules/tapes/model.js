@@ -431,7 +431,7 @@ const foundVerseRandom = (lang) => {
             random();
       `;
 
-      return fetch(QUERY, id)
+      return fetch(QUERY)
    } else if (lang == 'cyrillic') {
       const QUERY = `
          SELECT
