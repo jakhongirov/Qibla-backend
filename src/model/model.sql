@@ -280,6 +280,8 @@ CREATE TABLE additional_votes (
    vote_lang text not null,
    vote_audio_url text,
    vote_audio_name text,
+   vote_icon_url text,
+   vote_icon_name text,
    vote_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

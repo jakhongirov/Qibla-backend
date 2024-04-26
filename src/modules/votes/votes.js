@@ -42,16 +42,20 @@ module.exports = {
 
    ADD_VOTE: async (req, res) => {
       try {
-         const uploadPhoto = req.file;
+         const uploadFile = req.files;
          const { vote_name, vote_lang } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-         const audioName = uploadPhoto?.filename;
+         const audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio?.filename}`;
+         const audioName = uploadFile?.audio?.filename;
+         const iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon?.filename}`;
+         const iconName = uploadFile?.icon?.filename;
 
          const addVote = await model.addVote(
             vote_name,
             vote_lang,
             audioUrl,
-            audioName
+            audioName,
+            iconUrl,
+            iconName
          )
 
          if (addVote) {
@@ -78,23 +82,37 @@ module.exports = {
 
    UPDATE_VOTE: async (req, res) => {
       try {
-         const uploadPhoto = req.file;
+         const uploadFile = req.files;
          const { vote_id, vote_name, vote_lang } = req.body
          const foundVote = await model.foundVote(vote_id)
          let audioUrl = '';
          let audioName = '';
+         let iconUrl = '';
+         let iconName = '';
 
          if (foundVote) {
-            if (uploadPhoto) {
+            if (uploadFile?.audio) {
                if (foundVote?.vote_audio_name) {
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_audio_name}`))
                   deleteOldAvatar.delete()
                }
-               audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-               audioName = uploadPhoto?.filename;
+               audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio?.filename}`;
+               audioName = uploadFile?.audio?.filename;
             } else {
                audioUrl = foundVote?.vote_audio_url;
                audioName = foundVote?.vote_audio_name;
+            }
+
+            if (uploadFile?.icon) {
+               if (foundVote?.vote_icon_name) {
+                  const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_icon_name}`))
+                  deleteOldAvatar.delete()
+               }
+               iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon?.filename}`;
+               iconName = uploadFile?.icon?.filename;
+            } else {
+               iconUrl = foundVote?.vote_icon_url;
+               iconName = foundVote?.vote_icon_name;
             }
 
             const updateVote = await model.updateVote(
@@ -102,7 +120,9 @@ module.exports = {
                vote_name,
                vote_lang,
                audioUrl,
-               audioName
+               audioName,
+               iconUrl,
+               iconName
             )
 
             if (updateVote) {
@@ -142,6 +162,11 @@ module.exports = {
          if (foundVote) {
             if (foundVote?.vote_audio_name) {
                const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_audio_name}`))
+               deleteOldAvatar.delete()
+            }
+
+            if (foundVote?.vote_icon_name) {
+               const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_icon_name}`))
                deleteOldAvatar.delete()
             }
 

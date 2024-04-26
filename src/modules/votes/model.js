@@ -22,7 +22,9 @@ const addVote = (
    vote_name,
    vote_lang,
    audioUrl,
-   audioName
+   audioName,
+   iconUrl,
+   iconName
 ) => {
    const QUERY = `
       INSERT INTO
@@ -30,12 +32,16 @@ const addVote = (
             vote_name,
             vote_lang,
             vote_audio_url,
-            vote_audio_name
+            vote_audio_name,
+            vote_icon_url,
+            vote_icon_name
          ) VALUES (
             $1,
             $2,
             $3,
-            $4
+            $4,
+            $5,
+            $6
          ) RETURNING *;
    `;
 
@@ -44,7 +50,9 @@ const addVote = (
       vote_name,
       vote_lang,
       audioUrl,
-      audioName
+      audioName,
+      iconUrl,
+      iconName
    )
 }
 const foundVote = (vote_id) => {
@@ -64,7 +72,9 @@ const updateVote = (
    vote_name,
    vote_lang,
    audioUrl,
-   audioName
+   audioName,
+   iconUrl,
+   iconName
 ) => {
    const QUERY = `
       UPDATE
@@ -73,7 +83,9 @@ const updateVote = (
          vote_name = $2,
          vote_lang = $3,
          vote_audio_url = $4,
-         vote_audio_name = $5
+         vote_audio_name = $5,
+         vote_icon_url = $6,
+         vote_icon_name = $7
       WHERE
          vote_id = $1
       RETURNING *;
@@ -85,7 +97,9 @@ const updateVote = (
       vote_name,
       vote_lang,
       audioUrl,
-      audioName
+      audioName,
+      iconUrl,
+      iconName
    )
 }
 const deleteVote = (vote_id) => {

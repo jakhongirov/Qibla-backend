@@ -189,8 +189,8 @@ router
 
    // ADDITIONAL VOTES
    .get('/additional/votes', additionalVotes.GET)
-   .post('/additional/vote/add', AUTH, FileUpload.single("audio"), additionalVotes.ADD_VOTE)
-   .put('/additional/vote/edit', AUTH, FileUpload.single("audio"), additionalVotes.UPDATE_VOTE)
+   .post('/additional/vote/add', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.ADD_VOTE)
+   .put('/additional/vote/edit', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.UPDATE_VOTE)
    .delete('/additional/vote/delete', AUTH, additionalVotes.DELETE_VOTE)
 
 module.exports = router
