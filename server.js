@@ -294,7 +294,7 @@ const options = {
       },
       servers: [
          {
-            url: "http://localhost:8000/api/v1",
+            url: "https://server.qiblah.app/api/v1",
          },
       ],
    },
