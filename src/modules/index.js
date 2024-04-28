@@ -69,10 +69,21 @@ router
     * @swagger
     * /admin/list:
     *   get:
-    *     summary: Returns the list of all the admins
+    *     summary: Returns the list of all the admins for Frontend developer
     *     tags: [Admin]
     *     security:
     *       - token: []
+    *     parameters:
+    *        - in: query
+    *          name: limit
+    *          schema:
+    *             type: number
+    *          description: limit of list
+    *        - in: query
+    *          name: page
+    *          schema:
+    *             type: number
+    *          description: page of list
     *     responses:
     *       '200':
     *          description: The list of the admins
@@ -97,7 +108,7 @@ router
     * @swagger
     * /admin/register:
     *    post:
-    *       summary: Register new admin
+    *       summary: Register new admin for Frontend developer
     *       tags: [Admin]
     *       requestBody:
     *          required: true
@@ -122,7 +133,7 @@ router
     * @swagger
     * /admin/login:
     *    post:
-    *       summary: Login admin
+    *       summary: Login admin for Frontend developer
     *       tags: [Admin]
     *       requestBody:
     *          required: true
@@ -147,7 +158,7 @@ router
     * @swagger
     * /admin/edit:
     *    put:
-    *       summary: Change admin's email and password
+    *       summary: Change admin's email and password for Frontend developer
     *       tags: [Admin]
     *       security:
     *          - token: []
@@ -179,7 +190,7 @@ router
     * @swagger
     * /admin/delete:
     *    delete:
-    *       summary: Delete admin
+    *       summary: Delete admin for Frontend developer
     *       tags: [Admin]
     *       security:
     *          - token: []
@@ -208,7 +219,148 @@ router
    .delete('/admin/delete', AUTH, admin.DELETE_ADMIN)
 
    // USERS API
+   /** 
+    * @swagger
+    * components: 
+    *     schemas: 
+    *       User:
+    *          type: object
+    *          required: 
+    *             - user_name
+    *             - user_gender
+    *          properties:
+    *             user_id: 
+    *                type: string
+    *                description: auto generate
+    *             user_phone_number: 
+    *                type: string
+    *                description: user's phone number
+    *             user_email: 
+    *                type: string
+    *                description: user's email
+    *             user_password:
+    *                type: string
+    *                description: user put password for login and it hashing
+    *             user_name:
+    *                type: string
+    *                description: user's name
+    *             user_gender:
+    *                type: string
+    *                description: user's gender
+    *             user_signin_method:
+    *                type: string
+    *                description: user singined by google, yandex and e.t.c
+    *             user_extra_auth_id:
+    *                type: string
+    *                description: google, yandex unique id
+    *             user_country_code:
+    *                type: string
+    *                description: user location country code
+    *             user_region:
+    *                type: string
+    *                description: user location region
+    *             user_location_status:
+    *                type: number
+    *                description: location status (1,2,3)
+    *             user_app_lang:
+    *                type: number
+    *                description: user's app lang
+    *             user_phone_model:
+    *                type: array
+    *                description: user's phones models
+    *             user_phone_lang:
+    *                type: array
+    *                description: user's phones' lang
+    *             user_os:
+    *                type: array
+    *                description: user's phones' os
+    *             user_os_version:
+    *                type: array
+    *                description: user's phones' os version
+    *             user_token:
+    *                type: array
+    *                description: user's token from app
+    *             user_comment:
+    *                type: array
+    *                description: user's information
+    *             user_premium:
+    *                type: boolean
+    *                description: user's premium status
+    *             user_premium_expires_at:
+    *                type: boolean
+    *                description: user's premium expired date
+    *             user_image_link:
+    *                type: text
+    *                description: user's profile image's link
+    *             user_image_name:
+    *                type: text
+    *                description: user's profile image's name
+    *             user_app_version:
+    *                type: text
+    *                description: app's version
+    *             user_notification_id:
+    *                type: text
+    *                description: notification status
+    *             user_notification:
+    *                type: boolean
+    *                description: notification status
+    *             user_create_at:
+    *                type: string
+    *                description: user created date
+    *          example:
+    *             admin_id: 1
+    *             admin_email: diyor.jakhongirov@gmail.com
+    *             admin_password: 2jk3jnnj3nj43nb4j3bjeb3b23j
+    *             admin_create_at: 2024-01-23 10:52:41 +0000
+   */
+
+   /**
+    * @swagger
+    * tags:
+    *    name: User
+    *    description: User managing API
+    */
+
+      /**
+    * @swagger
+    * /users/list:
+    *   get:
+    *     summary: Returns the list of all the users for Frontend developer
+    *     tags: [User]
+    *     security:
+    *       - token: []
+    *     parameters:
+    *        - in: query
+    *          name: limit
+    *          schema:
+    *             type: number
+    *          description: limit of list
+    *        - in: query
+    *          name: page
+    *          schema:
+    *             type: number
+    *          description: page of list
+    *     responses:
+    *       '200':
+    *          description: The list of the users
+    *          content:
+    *             application/json:
+    *                schema:
+    *                type: array
+    *                items:
+    *                   $ref: '#/components/schemas/User'
+    *          headers:
+    *             token:
+    *                description: Token for User
+    *                schema:
+    *                type: string
+    *       '500':
+    *          description: Some server error
+    */
+
    .get('/users/list', AUTH, users.GET_ADMIN)
+
+
    .get('/users/count', AUTH, users.GET_USER_COUNT)
    .get('/users/premium/list', AUTH, users.GET_PREMIUM_USERS)
    .get('/user/:id', users.GET_ID)
