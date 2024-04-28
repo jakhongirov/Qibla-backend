@@ -7,6 +7,8 @@ const fs = require('fs');
 const app = express();
 const server = http.createServer(app);
 const { PORT } = require("./src/config");
+const swaggerUI = require("swagger-ui-express");
+const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
 const TelegramBot = require('node-telegram-bot-api')
@@ -281,6 +283,27 @@ app.get('/telegrambot', async (req, res) => {
       console.log(e)
    }
 })
+
+const options = {
+   definition: {
+      openapi: "3.0.0",
+      info: {
+         title: "Library API",
+         version: "1.0.0",
+         description: "A simple Express Library API",
+      },
+      servers: [
+         {
+            url: "http://localhost:8000/api/v1",
+         },
+      ],
+   },
+   apis: ["./src/modules/index.js"],
+};
+
+const specs = swaggerJsDoc(options);
+app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(specs));
+
 
 app.use(cors({ origin: "*" }));
 app.use(express.json());

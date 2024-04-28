@@ -29,6 +29,66 @@ const additionalVotes = require('./votes/votes')
 router
 
    // ADMIN API
+   /** 
+    * @swagger
+    * components: 
+    *     schemas: 
+    *       Admin:
+    *          type: object
+    *          required: 
+    *             - admin_email
+    *             - admin_password
+    *          properties:
+    *             admin_id: 
+    *                type: string
+    *                description: auto generate
+    *             admin_email: 
+    *                type: string
+    *                description: admin's email
+    *             admin_password:
+    *                type: string
+    *                description: admin put password for login and it hashing
+    *             admin_create_at:
+    *                type: string
+    *                description: admin created date
+    *          example:
+    *             admin_id: 1
+    *             admin_email: diyor.jakhongirov@gmail.com
+    *             admin_password: 2jk3jnnj3nj43nb4j3bjeb3b23j
+    *             admin_create_at: 2024-01-23 10:52:41 +0000
+   */
+
+   /**
+    * @swagger
+    * tags:
+    *    name: Admin
+    *    description: Admin managing API
+    */
+
+   /**
+    * @swagger
+    * /admin/list:
+    *   get:
+    *     summary: Returns the list of all the admins
+    *     tags: [Admin]
+    *     security:
+    *       - token: []
+    *     responses:
+    *       '200':
+    *         description: The list of the admins
+    *         content:
+    *           application/json:
+    *             schema:
+    *               type: array
+    *               items:
+    *                 $ref: '#/components/schemas/Admin'
+    *         headers:
+    *           token:
+    *             description: Token for authentication
+    *             schema:
+    *               type: string
+    */
+
    .get('/admin/list', AUTH, admin.GET_ADMIN)
    .post('/admin/register', admin.REGISTER_ADMIN)
    .post('/admin/login', admin.LOGIN_ADMIN)
