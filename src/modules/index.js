@@ -75,24 +75,136 @@ router
     *       - token: []
     *     responses:
     *       '200':
-    *         description: The list of the admins
-    *         content:
-    *           application/json:
-    *             schema:
-    *               type: array
-    *               items:
-    *                 $ref: '#/components/schemas/Admin'
-    *         headers:
-    *           token:
-    *             description: Token for authentication
-    *             schema:
-    *               type: string
+    *          description: The list of the admins
+    *          content:
+    *             application/json:
+    *                schema:
+    *                type: array
+    *                items:
+    *                   $ref: '#/components/schemas/Admin'
+    *          headers:
+    *             token:
+    *                description: Token for authentication
+    *                schema:
+    *                type: string
+    *       '500':
+    *          description: Some server error
     */
 
    .get('/admin/list', AUTH, admin.GET_ADMIN)
+
+   /**
+    * @swagger
+    * /admin/register:
+    *    post:
+    *       summary: Register new admin
+    *       tags: [Admin]
+    *       requestBody:
+    *          required: true
+    *          content: 
+    *             application/json:
+    *                schema:
+    *                   $ref: '#/components/schemas/Admin'
+    *       responses:
+    *          200:
+    *             description: Created new admin
+    *             content:
+    *                application/json:
+    *                   schema:
+    *                      $ref: '#/components/schemas/Admin'
+    *          500:
+    *             description: Some server error
+    */
+
    .post('/admin/register', admin.REGISTER_ADMIN)
+
+   /**
+    * @swagger
+    * /admin/login:
+    *    post:
+    *       summary: Login admin
+    *       tags: [Admin]
+    *       requestBody:
+    *          required: true
+    *          content:
+    *             application/json:
+    *                schema:
+    *                   $ref: '#/components/schemas/Admin'
+    *       responses:
+    *          200:
+    *             description: You logined
+    *             content: 
+    *                application/json:
+    *                   schema:
+    *                      $ref: '#/components/schemas/Admin' 
+    *          500:
+    *             description: Server error
+    */
+
    .post('/admin/login', admin.LOGIN_ADMIN)
+
+   /**
+    * @swagger
+    * /admin/edit:
+    *    put:
+    *       summary: Change admin's email and password
+    *       tags: [Admin]
+    *       security:
+    *          - token: []
+    *       requestBody:
+    *          required: true
+    *          content:
+    *             application/json:
+    *                schema:
+    *                   $ref: '#/components/schemas/Admin'
+    *       responses:
+    *          200:
+    *             description: Changed data
+    *             content: 
+    *                application/json:
+    *                   schema:
+    *                      $ref: '#/components/schemas/Admin' 
+    *             headers:
+    *                token:
+    *                   description: Token for authentication
+    *                   schema:
+    *                   type: string
+    *          500:
+    *             description: Server error
+    */
+
    .put('/admin/edit', AUTH, admin.EDIT_ADMIN)
+
+   /**
+    * @swagger
+    * /admin/delete:
+    *    delete:
+    *       summary: Delete admin
+    *       tags: [Admin]
+    *       security:
+    *          - token: []
+    *       requestBody:
+    *          required: true
+    *          content:
+    *             application/json:
+    *                schema:
+    *                   $ref: '#/components/schemas/Admin'
+    *       responses:
+    *          200:
+    *             description: Deleted admin
+    *             content: 
+    *                application/json:
+    *                   schema:
+    *                      $ref: '#/components/schemas/Admin' 
+    *             headers:
+    *                token:
+    *                   description: Token for authentication
+    *                   schema:
+    *                   type: string
+    *          500:
+    *             description: Server error
+    */
+
    .delete('/admin/delete', AUTH, admin.DELETE_ADMIN)
 
    // USERS API
