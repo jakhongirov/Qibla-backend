@@ -125,31 +125,39 @@ const itemsListByCategory = (category_id) => {
 }
 const addItem = (
    item_name,
+   item_description,
    category_id,
    audioUrl,
-   audioName
+   audioName,
+   duration
 ) => {
    const QUERY = `
       INSERT INTO
          meditation_item (
             item_name,
+            item_description,
             category_id,
             item_audio_url,
-            item_audio_name
+            item_audio_name,
+            item_time
          ) VALUES (
             $1,
             $2,
             $3,
-            $4
+            $4,
+            $5,
+            $6
          ) RETURNING *;
    `;
 
    return fetch(
       QUERY,
       item_name,
+      item_description,
       category_id,
       audioUrl,
-      audioName
+      audioName,
+      duration
    )
 }
 const foundItem = (item_id) => {
@@ -167,18 +175,22 @@ const foundItem = (item_id) => {
 const updateItem = (
    item_id,
    item_name,
+   item_description,
    category_id,
    audioUrl,
-   audioName
+   audioName,
+   duration
 ) => {
    const QUERY = `
       UPDATE
          meditation_item
       SET
          item_name = $2,
-         category_id = $3,
-         item_audio_url = $4,
-         item_audio_name = $5
+         item_description = $3,
+         category_id = $4,
+         item_audio_url = $5,
+         item_audio_name = $6,
+         item_time = $7
       WHERE
          item_id = $1
       RETURNING *;
@@ -188,9 +200,11 @@ const updateItem = (
       QUERY,
       item_id,
       item_name,
+      item_description,
       category_id,
       audioUrl,
-      audioName
+      audioName,
+      duration
    )
 }
 const deleteItem = (item_id) => {

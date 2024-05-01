@@ -268,7 +268,9 @@ CREATE TABLE meditation_categories (
 CREATE TABLE meditation_item (
    item_id bigserial PRiMARY KEY,
    item_name text not null,
+   item_description text,
    category_id int REFERENCES meditation_categories(category_id) ON DELETE CASCADE,
+   item_time text,
    item_audio_url text,
    item_audio_name text,
    item_create_at timestamptz DEFAULT CURRENT_TIMESTAMP

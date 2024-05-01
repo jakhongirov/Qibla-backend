@@ -2,6 +2,8 @@ require('dotenv').config();
 const model = require('./model')
 const path = require('path')
 const FS = require('../../lib/fs/fs')
+const mp3Duration = require('mp3-duration');
+const fs = require('fs');
 
 module.exports = {
    GET_ADMIN: async (req, res) => {
@@ -79,29 +81,51 @@ module.exports = {
    ADD_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { item_name, category_id } = req.body
+         const { item_name, category_id, item_description } = req.body
          const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
          const audioName = uploadPhoto?.filename;
+         const filePath = uploadPhoto.path;
 
-         const addItem = await model.addItem(
-            item_name,
-            category_id,
-            audioUrl,
-            audioName
-         )
+         mp3Duration(filePath, async function (err, duration) {
+            if (err) {
+               console.error('Error getting MP3 duration:', err);
+               // If there's an error getting the duration, respond with an error
+               return res.status(500).json({
+                  status: 500,
+                  message: "Error getting MP3 duration"
+               });
+            }
 
-         if (addItem) {
-            return res.status(200).json({
-               status: 200,
-               message: "Success",
-               data: addItem
-            })
-         } else {
-            return res.status(400).json({
-               status: 400,
-               message: "Bad request"
-            })
-         }
+            // Delete the uploaded file after getting its duration
+            fs.unlink(filePath, (err) => {
+               if (err) {
+                  console.error('Error deleting file:', err);
+               }
+            });
+
+            // Call your model to add the item with the duration information
+            const addItem = await model.addItem(
+               item_name,
+               item_description,
+               category_id,
+               audioUrl,
+               audioName,
+               duration // Pass the duration to the model
+            );
+
+            if (addItem) {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: addItem
+               });
+            } else {
+               return res.status(400).json({
+                  status: 400,
+                  message: "Bad request"
+               });
+            }
+         });
 
       } catch (error) {
          console.log(error);
@@ -115,58 +139,108 @@ module.exports = {
    UPDATE_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { item_id, item_name, category_id } = req.body
-         const foundItem = await model.foundItem(item_id)
+         const { item_id, item_name, item_description, category_id } = req.body
+         const foundItem = await model.foundItem(item_id);
          let audioUrl = '';
          let audioName = '';
 
          if (foundItem) {
             if (uploadPhoto) {
+               // If there's an uploaded file, handle it
                if (foundItem?.item_audio_name) {
+                  // Delete old audio file if it exists
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundItem?.item_audio_name}`))
                   deleteOldAvatar.delete()
                }
-               audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
-               audioName = uploadPhoto?.filename;
+               // Get the path of the uploaded MP3 file
+               const filePath = uploadPhoto.path;
+
+               // Get the duration of the MP3 file
+               mp3Duration(filePath, async function (err, duration) {
+                  if (err) {
+                     console.error('Error getting MP3 duration:', err);
+                     // If there's an error getting the duration, respond with an error
+                     return res.status(500).json({
+                        status: 500,
+                        message: "Error getting MP3 duration"
+                     });
+                  }
+
+                  // Delete the uploaded file after getting its duration
+                  fs.unlink(filePath, (err) => {
+                     if (err) {
+                        console.error('Error deleting file:', err);
+                     }
+                  });
+
+                  // Set audioUrl and audioName
+                  audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto.filename}`;
+                  audioName = uploadPhoto.filename;
+
+                  // Call your model to update the item with the new audio information
+                  const updateItem = await model.updateItem(
+                     item_id,
+                     item_name,
+                     item_description,
+                     category_id,
+                     audioUrl,
+                     audioName,
+                     duration // Pass the duration to the model
+                  );
+
+                  if (updateItem) {
+                     return res.status(200).json({
+                        status: 200,
+                        message: "Success",
+                        data: updateItem
+                     });
+                  } else {
+                     return res.status(400).json({
+                        status: 400,
+                        message: "Bad request"
+                     });
+                  }
+               });
             } else {
+               // If there's no uploaded file, update the item with existing audio information
                audioUrl = foundItem?.item_audio_url;
                audioName = foundItem?.item_audio_name;
+
+               const updateItem = await model.updateItem(
+                  item_id,
+                  item_name,
+                  item_description,
+                  category_id,
+                  audioUrl,
+                  audioName,
+                  foundItem?.item_time
+               );
+
+               if (updateItem) {
+                  return res.status(200).json({
+                     status: 200,
+                     message: "Success",
+                     data: updateItem
+                  });
+               } else {
+                  return res.status(400).json({
+                     status: 400,
+                     message: "Bad request"
+                  });
+               }
             }
-
-            const updateItem = await model.updateItem(
-               item_id,
-               item_name,
-               category_id,
-               audioUrl,
-               audioName
-            )
-
-            if (updateItem) {
-               return res.status(200).json({
-                  status: 200,
-                  message: "Success",
-                  data: updateItem
-               })
-            } else {
-               return res.status(400).json({
-                  status: 400,
-                  message: "Bad request"
-               })
-            }
-
          } else {
             return res.status(404).json({
                status: 404,
                message: "Not found"
-            })
+            });
          }
-
       } catch (error) {
          console.log(error);
          res.status(500).json({
             status: 500,
-            message: "Interval Server Error"
-         })
+            message: "Internal Server Error"
+         });
       }
    },
 
