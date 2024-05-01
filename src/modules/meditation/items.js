@@ -5,6 +5,18 @@ const FS = require('../../lib/fs/fs')
 const mp3Duration = require('mp3-duration');
 const fs = require('fs');
 
+function formatDuration(seconds) {
+   const hours = Math.floor(seconds / 3600);
+   const minutes = Math.floor((seconds % 3600) / 60);
+   const remainingSeconds = Math.floor(seconds % 60);
+
+   const formattedHours = hours.toString().padStart(2, '0');
+   const formattedMinutes = minutes.toString().padStart(2, '0');
+   const formattedSeconds = remainingSeconds.toString().padStart(2, '0');
+
+   return `${formattedHours}:${formattedMinutes}:${formattedSeconds}`;
+}
+
 module.exports = {
    GET_ADMIN: async (req, res) => {
       try {
@@ -110,7 +122,7 @@ module.exports = {
                category_id,
                audioUrl,
                audioName,
-               duration // Pass the duration to the model
+               formatDuration(duration) // Pass the duration to the model
             );
 
             if (addItem) {
@@ -185,7 +197,7 @@ module.exports = {
                      category_id,
                      audioUrl,
                      audioName,
-                     duration // Pass the duration to the model
+                     formatDuration(duration) // Pass the duration to the model
                   );
 
                   if (updateItem) {
