@@ -44,10 +44,10 @@ module.exports = {
       try {
          const uploadFile = req.files;
          const { vote_name, vote_lang } = req.body
-         const audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio?.filename}`;
-         const audioName = uploadFile?.audio?.filename;
-         const iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon?.filename}`;
-         const iconName = uploadFile?.icon?.filename;
+         const audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio[0]?.filename}`;
+         const audioName = uploadFile?.audio[0]?.filename;
+         const iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon[0]?.filename}`;
+         const iconName = uploadFile?.icon[0]?.filename;
 
          const addVote = await model.addVote(
             vote_name,
@@ -91,25 +91,25 @@ module.exports = {
          let iconName = '';
 
          if (foundVote) {
-            if (uploadFile?.audio) {
+            if (uploadFile?.audio[0]) {
                if (foundVote?.vote_audio_name) {
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_audio_name}`))
                   deleteOldAvatar.delete()
                }
-               audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio?.filename}`;
-               audioName = uploadFile?.audio?.filename;
+               audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio[0]?.filename}`;
+               audioName = uploadFile?.audio[0]?.filename;
             } else {
                audioUrl = foundVote?.vote_audio_url;
                audioName = foundVote?.vote_audio_name;
             }
 
-            if (uploadFile?.icon) {
+            if (uploadFile?.icon[0]) {
                if (foundVote?.vote_icon_name) {
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_icon_name}`))
                   deleteOldAvatar.delete()
                }
-               iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon?.filename}`;
-               iconName = uploadFile?.icon?.filename;
+               iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon[0]?.filename}`;
+               iconName = uploadFile?.icon[0]?.filename;
             } else {
                iconUrl = foundVote?.vote_icon_url;
                iconName = foundVote?.vote_icon_name;
