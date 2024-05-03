@@ -3,7 +3,6 @@ const model = require('./model')
 const path = require('path')
 const FS = require('../../lib/fs/fs')
 const mp3Duration = require('mp3-duration');
-const fs = require('fs');
 
 function formatDuration(seconds) {
    const hours = Math.floor(seconds / 3600);
@@ -108,13 +107,6 @@ module.exports = {
                });
             }
 
-            // Delete the uploaded file after getting its duration
-            fs.unlink(filePath, (err) => {
-               if (err) {
-                  console.error('Error deleting file:', err);
-               }
-            });
-
             // Call your model to add the item with the duration information
             const addItem = await model.addItem(
                item_name,
@@ -177,13 +169,6 @@ module.exports = {
                         message: "Error getting MP3 duration"
                      });
                   }
-
-                  // Delete the uploaded file after getting its duration
-                  fs.unlink(filePath, (err) => {
-                     if (err) {
-                        console.error('Error deleting file:', err);
-                     }
-                  });
 
                   // Set audioUrl and audioName
                   audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto.filename}`;
