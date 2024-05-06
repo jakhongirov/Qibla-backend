@@ -287,6 +287,12 @@ CREATE TABLE additional_votes (
    vote_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE map_key (
+   key_id bigserial PRiMARY KEY,
+   key text not null,
+   key_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 -- old
 CREATE TABLE question_categories (
    category_id bigserial PRiMARY KEY,
