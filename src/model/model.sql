@@ -293,6 +293,18 @@ CREATE TABLE map_key (
    key_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
+CREATE TABLE transactions (
+   id bigserial PRiMARY KEY,
+   click_id text,
+   amount text,
+   expires_month int,
+   user_id int,
+   merchant_id text,
+   error text,
+   error_note text,
+   transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
 -- old
 CREATE TABLE question_categories (
    category_id bigserial PRiMARY KEY,

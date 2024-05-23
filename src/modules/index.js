@@ -26,6 +26,7 @@ const meditationCategories = require('./meditation/categories')
 const meditationItems = require('./meditation/items')
 const additionalVotes = require('./votes/votes')
 const mapKey = require('./map/map')
+const click = require('./click/click')
 
 router
 
@@ -522,5 +523,8 @@ router
   .get('/map/key/random', mapKey.GET_RANDOM)
   .post('/map/key/add', AUTH, mapKey.ADD_KEY)
   .delete('/map/key/delete', AUTH, mapKey.DELETE_KEY)
+
+  .post('/click/prepare', click.Prepare)
+  .post('/click/complete', click.Complete)
 
 module.exports = router
