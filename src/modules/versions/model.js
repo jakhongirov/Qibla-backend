@@ -137,10 +137,11 @@ const versionsUpdates = () => {
       FROM
          versions
       ORDER BY
-         version_id DESC;
+         version_id DESC
+      LIMIT 1;
    `;
 
-   return fetchALL(QUERY)
+   return fetch(QUERY)
 }
 const addVersion = (
    zikr_version,
