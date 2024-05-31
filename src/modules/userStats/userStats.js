@@ -130,7 +130,7 @@ module.exports = {
                   await model.editUserQazo(user_id, user_qazo)
                }
 
-               if (verse_id.length > 0) {
+               if (verse_id?.length > 0) {
                   const editVerseId = await model.editVerseId(user_id, verse_id)
 
                   if (editVerseId) {
