@@ -178,13 +178,13 @@ const editNameCount = (user_id, name_count) => {
       UPDATE
          users_stats
       SET
-         name_count  = ARRAY[${nameCount}]
+         name_count  = $2::jsonb
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id)
+   return fetch(QUERY, user_id, nameCount)
 }
 const editZikrId = (user_id, zikr_id) => {
    const zikrIds = zikr_id?.map(e => `${e}`).join(', ');
@@ -208,13 +208,13 @@ const editZikrCount = (user_id, zikr_count) => {
       UPDATE
          users_stats
       SET
-         zikr_count  = ARRAY[${zikrCount}]
+         zikr_count  = $2::jsonb
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id)
+   return fetch(QUERY, user_id, zikrCount)
 }
 const deleteUserStats = (user_id) => {
    const QUERY = `
