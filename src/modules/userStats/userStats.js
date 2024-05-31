@@ -89,11 +89,11 @@ module.exports = {
 
             if (
                user_qazo &&
-               verse_id.length > 0 &&
-               read_verse.length > 0 &&
-               name_count.length > 0 &&
-               zikr_id.length > 0 &&
-               zikr_count.length > 0
+               verse_id?.length > 0 &&
+               read_verse?.length > 0 &&
+               name_count?.length > 0 &&
+               zikr_id?.length > 0 &&
+               zikr_count?.length > 0
             ) {
                const editUserStats = await model.editUserStats(
                   user_id,
@@ -140,15 +140,15 @@ module.exports = {
                   }
                }
 
-               if (read_verse.length > 0) {
+               if (read_verse?.length > 0) {
                   await model.editVerseRead(user_id, read_verse)
                }
 
-               if (name_count.length > 0) {
+               if (name_count?.length > 0) {
                   await model.editNameCount(user_id, name_count)
                }
 
-               if (zikr_id.length > 0) {
+               if (zikr_id?.length > 0) {
                   const editZikrId = await model.editZikrId(user_id, zikr_id)
 
                   if (editZikrId) {
@@ -158,7 +158,7 @@ module.exports = {
                   }
                }
 
-               if (zikr_count.length > 0) {
+               if (zikr_count?.length > 0) {
                   await model.editZikrCount(user_id, zikr_count)
                }
 
