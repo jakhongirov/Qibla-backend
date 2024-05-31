@@ -178,7 +178,7 @@ const editNameCount = (user_id, name_count) => {
       UPDATE
          users_stats
       SET
-         name_count  = $2::jsonb
+         name_count  = $2::json[]
       WHERE
          user_id = $1
       RETURNING *;
@@ -208,7 +208,7 @@ const editZikrCount = (user_id, zikr_count) => {
       UPDATE
          users_stats
       SET
-         zikr_count  = $2::jsonb
+         zikr_count  = $2::json[]
       WHERE
          user_id = $1
       RETURNING *;
