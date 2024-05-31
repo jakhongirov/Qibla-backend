@@ -172,7 +172,7 @@ const editVerseRead = (user_id, read_verse) => {
    return fetch(QUERY, user_id)
 }
 const editNameCount = (user_id, name_count) => {
-   const nameCount = JSON.stringify(name_count)
+   const nameCountArray = name_count.map(item => `'${JSON.stringify(item).replace(/'/g, "''")}'`);
 
    const QUERY = `
       UPDATE
@@ -184,7 +184,7 @@ const editNameCount = (user_id, name_count) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, nameCount)
+   return fetch(QUERY, user_id, nameCountArray)
 }
 const editZikrId = (user_id, zikr_id) => {
    const zikrIds = zikr_id?.map(e => `${e}`).join(', ');
@@ -202,7 +202,7 @@ const editZikrId = (user_id, zikr_id) => {
    return fetch(QUERY, user_id)
 }
 const editZikrCount = (user_id, zikr_count) => {
-   const zikrCount = JSON.stringify(zikr_count);
+   const zikrCountArray = zikr_count.map(item => `'${JSON.stringify(item).replace(/'/g, "''")}'`);
 
    const QUERY = `
       UPDATE
@@ -214,7 +214,7 @@ const editZikrCount = (user_id, zikr_count) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, zikrCount)
+   return fetch(QUERY, user_id, zikrCountArray)
 }
 const deleteUserStats = (user_id) => {
    const QUERY = `
