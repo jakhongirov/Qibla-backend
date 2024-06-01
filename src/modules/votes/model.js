@@ -18,6 +18,18 @@ const voteList = (limit, page, lang) => {
 
    return fetchALL(QUERY)
 }
+const versionVote = () => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         versions
+      ORDER BY
+         version_id DESC;
+   `;
+
+   return fetch(QUERY)
+}
 const addVote = (
    vote_name,
    vote_lang,
@@ -116,6 +128,7 @@ const deleteVote = (vote_id) => {
 
 module.exports = {
    voteList,
+   versionVote,
    addVote,
    foundVote,
    updateVote,

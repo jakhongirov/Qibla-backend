@@ -249,6 +249,8 @@ CREATE TABLE versions (
    zikr_version int DEFAULT 1,
    names_99_version int DEFAULT 1,
    audios_version int DEFAULT 1,
+   meditation_votes int  DEFAULT 1,
+   meditation_categories int  DEFAULT 1,
    version_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

@@ -146,18 +146,24 @@ const versionsUpdates = () => {
 const addVersion = (
    zikr_version,
    names_99_version,
-   audios_version
+   audios_version,
+   meditation_votes,
+   meditation_categories
 ) => {
    const QUERY = `
       INSERT INTO
          versions (
             zikr_version,
             names_99_version,
-            audios_version
+            audios_version,
+            meditation_votes,
+            meditation_categories
          ) VALUES (
             $1,
             $2,
-            $3
+            $3,
+            $4,
+            $5
          ) RETURNING *;
    `;
 
@@ -165,14 +171,18 @@ const addVersion = (
       QUERY,
       zikr_version,
       names_99_version,
-      audios_version
+      audios_version,
+      meditation_votes,
+      meditation_categories
    )
 }
 const updateVersion = (
    version_id,
    zikr_version,
    names_99_version,
-   audios_version
+   audios_version,
+   meditation_votes,
+   meditation_categories
 ) => {
    const QUERY = `
       UPDATE
@@ -180,7 +190,9 @@ const updateVersion = (
       SET
          zikr_version = $2,
          names_99_version = $3,
-         audios_version = $4
+         audios_version = $4,
+         meditation_votes = $5,
+         meditation_categories = $6
       WHERE
          version_id = $1
       RETURNING *;
@@ -191,7 +203,9 @@ const updateVersion = (
       version_id,
       zikr_version,
       names_99_version,
-      audios_version
+      audios_version,
+      meditation_votes,
+      meditation_categories
    )
 }
 const deleteVersion = (version_id) => {

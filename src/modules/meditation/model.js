@@ -2,6 +2,19 @@ const { fetchALL, fetch } = require('../../lib/postgres')
 
 // categories
 
+const versionCategory = () => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         versions
+      ORDER BY
+         version_id DESC;
+   `;
+
+   return fetch(QUERY)
+}
+
 const categoriesListByLang = (lang) => {
    const QUERY = `
       SELECT
@@ -221,6 +234,7 @@ const deleteItem = (item_id) => {
 
 module.exports = {
    // categories
+   versionCategory,
    categoriesListByLang,
    categoriesList,
    addCategory,

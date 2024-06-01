@@ -264,13 +264,17 @@ module.exports = {
          const {
             zikr_version,
             names_99_version,
-            audios_version
+            audios_version,
+            meditation_votes,
+            meditation_categories
          } = req.body
 
          const addVersion = await model.addVersion(
             zikr_version,
             names_99_version,
-            audios_version
+            audios_version,
+            meditation_votes,
+            meditation_categories
          )
 
          if (addVersion) {
@@ -301,14 +305,18 @@ module.exports = {
             version_id,
             zikr_version,
             names_99_version,
-            audios_version
+            audios_version,
+            meditation_votes,
+            meditation_categories
          } = req.body
 
          const updateVersion = await model.updateVersion(
             version_id,
             zikr_version,
             names_99_version,
-            audios_version
+            audios_version,
+            meditation_votes,
+            meditation_categories
          )
 
          if (updateVersion) {

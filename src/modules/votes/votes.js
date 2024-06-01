@@ -9,13 +9,15 @@ module.exports = {
          const { limit, page, lang } = req.query
 
          if (limit && page) {
+            const version = await model.versionVote()
             const voteList = await model.voteList(limit, page, lang)
 
             if (voteList?.length > 0) {
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: voteList
+                  data: voteList,
+                  version: version?.meditation_votes
                })
             } else {
                return res.status(404).json({

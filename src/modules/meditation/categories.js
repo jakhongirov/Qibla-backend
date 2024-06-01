@@ -7,6 +7,7 @@ module.exports = {
    GET: async (req, res) => {
       try {
          const { lang } = req.query
+         const version = await model.versionCategory()
 
          if (lang) {
             const categoriesListByLang = await model.categoriesListByLang(lang)
@@ -15,7 +16,8 @@ module.exports = {
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: categoriesListByLang
+                  data: categoriesListByLang,
+                  version: version?.meditation_categories
                })
             } else {
                return res.status(404).json({
@@ -31,7 +33,8 @@ module.exports = {
                return res.status(200).json({
                   status: 200,
                   message: "Success",
-                  data: categoriesList
+                  data: categoriesList,
+                  version: version?.meditation_categories
                })
             } else {
                return res.status(404).json({
