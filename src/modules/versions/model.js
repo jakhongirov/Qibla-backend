@@ -62,7 +62,7 @@ const getUpdatedVerse = (mergedVerses, lang) => {
             verse_id;
       `;
 
-      return fetchALL(QUERY, suraId)
+      return fetchALL(QUERY)
    } else if (lang == 'cyrillic') {
       const QUERY = `
          SELECT
@@ -84,7 +84,7 @@ const getUpdatedVerse = (mergedVerses, lang) => {
             verse_id;
       `;
 
-      return fetchALL(QUERY, suraId)
+      return fetchALL(QUERY)
    } else if (lang == 'russian') {
       const QUERY = `
          SELECT
@@ -106,7 +106,7 @@ const getUpdatedVerse = (mergedVerses, lang) => {
             verse_id;
       `;
 
-      return fetchALL(QUERY, suraId)
+      return fetchALL(QUERY)
    } else if (lang == 'english') {
       const QUERY = `
          SELECT
@@ -128,7 +128,7 @@ const getUpdatedVerse = (mergedVerses, lang) => {
             verse_id;
       `;
 
-      return fetchALL(QUERY, suraId)
+      return fetchALL(QUERY)
    } else if (lang == 'kazakh') {
       const QUERY = `
          SELECT
@@ -150,7 +150,7 @@ const getUpdatedVerse = (mergedVerses, lang) => {
             verse_id;
       `;
 
-      return fetchALL(QUERY, suraId)
+      return fetchALL(QUERY)
    } else {
       const QUERY = `
          SELECT
@@ -163,7 +163,7 @@ const getUpdatedVerse = (mergedVerses, lang) => {
             verse_id;
       `;
 
-      return fetchALL(QUERY, suraId)
+      return fetchALL(QUERY)
    }
 
    // const QUERY = `
