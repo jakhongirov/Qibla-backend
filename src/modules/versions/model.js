@@ -38,19 +38,113 @@ const getUpdates = (version) => {
 
    return fetchALL(QUERY, version)
 }
-const getUpdatedVerse = (mergedVerses) => {
+const getUpdatedVerse = (mergedVerses, lang) => {
    const verseIds = mergedVerses?.map(e => `${e}`).join(', ');
 
-   const QUERY = `
-      SELECT
-         *
-      FROM
-         verses
-      WHERE
-         ARRAY[verse_id::int] && ARRAY[${verseIds}];
-   `;
+   if (lang == "uzbek") {
+      const QUERY = `
+         SELECT
+            sura_id,
+            sura_name_arabic,
+            sura_name_uzbek AS name,
+            sura_verse_count,
+            sura_from,
+            sura_create_at
+         FROM
+            quran
+         WHERE
+            ARRAY[verse_id::int] && ARRAY[${verseIds}]
+         ORDER BY
+            sura_id;
+      `;
 
-   return fetchALL(QUERY)
+      return fetchALL(QUERY)
+   } else if (lang == "cyrillic") {
+      const QUERY = `
+         SELECT
+            sura_id,
+            sura_name_arabic,
+            sura_name_cyrillic AS name,
+            sura_verse_count,
+            sura_from,
+            sura_create_at
+         FROM
+            quran
+         WHERE
+            ARRAY[verse_id::int] && ARRAY[${verseIds}]
+         ORDER BY
+            sura_id;
+      `;
+
+      return fetchALL(QUERY)
+   } else if (lang == 'russian') {
+      const QUERY = `
+         SELECT
+            sura_id,
+            sura_name_arabic,
+            sura_name_russian AS name,
+            sura_verse_count,
+            sura_from,
+            sura_create_at
+         FROM
+            quran
+         WHERE
+            ARRAY[verse_id::int] && ARRAY[${verseIds}]
+         ORDER BY
+            sura_id;
+      `;
+
+      return fetchALL(QUERY)
+   } else if (lang == "english") {
+      const QUERY = `
+         SELECT
+            sura_id,
+            sura_name_arabic,
+            sura_name_english AS name,
+            sura_verse_count,
+            sura_from,
+            sura_create_at
+         FROM
+            quran
+         WHERE
+            ARRAY[verse_id::int] && ARRAY[${verseIds}]
+         ORDER BY
+            sura_id;
+      `;
+
+      return fetchALL(QUERY)
+   } else if (lang == "kazakh") {
+      const QUERY = `
+         SELECT
+            sura_id,
+            sura_name_arabic,
+            sura_name_kazakh AS name,
+            sura_verse_count,
+            sura_from,
+            sura_create_at
+         FROM
+            quran
+         WHERE
+            ARRAY[verse_id::int] && ARRAY[${verseIds}]
+         ORDER BY
+            sura_id;
+      `;
+
+      return fetchALL(QUERY)
+   } else {
+      const QUERY = `
+         SELECT
+            *
+         FROM
+            quran
+         WHERE
+            ARRAY[verse_id::int] && ARRAY[${verseIds}]
+         ORDER BY
+            sura_id;
+      `;
+
+      return fetchALL(QUERY)
+   }
 }
 const addUpdated = (quran_version, verse_id) => {
    const QUERY = `

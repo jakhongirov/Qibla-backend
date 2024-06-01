@@ -50,6 +50,7 @@ module.exports = {
 
    GET_UPDATES: async (req, res) => {
       try {
+         const { lang } = req.query
          const { version } = req.body
 
          if (version) {
@@ -64,7 +65,7 @@ module.exports = {
             }, []);
 
             if (mergedVerses?.length > 0) {
-               const getUpdatedVerse = await model.getUpdatedVerse(mergedVerses)
+               const getUpdatedVerse = await model.getUpdatedVerse(mergedVerses, lang)
 
                if (getUpdatedVerse) {
                   return res.status(200).json({
