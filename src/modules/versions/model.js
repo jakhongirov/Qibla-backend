@@ -268,6 +268,18 @@ const versionsUpdates = () => {
 
    return fetch(QUERY)
 }
+const quranLastVersion = () => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         quran_updates
+      ORDER BY
+         version_id DESC
+   `;
+
+   return fetch(QUERY)
+}
 const addVersion = (
    zikr_version,
    names_99_version,
@@ -358,5 +370,6 @@ module.exports = {
    versionsUpdates,
    addVersion,
    updateVersion,
-   deleteVersion
+   deleteVersion,
+   quranLastVersion
 }

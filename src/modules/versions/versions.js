@@ -235,7 +235,9 @@ module.exports = {
             }
 
          } else {
+            const quranLastVersion = await model.quranLastVersion()
             const versionsUpdates = await model.versionsUpdates()
+            versionsUpdates['quran_version'] = quranLastVersion?.quran_version
 
             if (versionsUpdates) {
                return res.status(200).json({
