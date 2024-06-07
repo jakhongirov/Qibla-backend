@@ -1,6 +1,6 @@
 const { fetch } = require('../../lib/postgres')
 
-const editUserPremium = (param3, timestamp) => {
+const editUserPremium = (param2, timestamp) => {
    const QUERY = `
       UPDATE
          users
@@ -12,14 +12,14 @@ const editUserPremium = (param3, timestamp) => {
       RETURNING *;
    `;
 
-   return fetch(QUERY, param3, timestamp)
+   return fetch(QUERY, param2, timestamp)
 }
 
 const addTransaction = (
    click_trans_id,
    amount,
-   param2,
    param3,
+   param2,
    merchant_trans_id,
    error,
    error_note
