@@ -228,7 +228,8 @@ const registerUser = (
    user_app_version,
    notification_id,
    notification,
-   location_status
+   location_status,
+   user_address_name
 ) => {
    const QUERY = `
       INSERT INTO
@@ -252,7 +253,8 @@ const registerUser = (
             user_app_version,
             user_notification_id,
             user_notification,
-            user_location_status
+            user_location_status,
+            user_address_name
          ) VALUES (
             $1,
             $2,
@@ -273,7 +275,8 @@ const registerUser = (
             $17,
             $18,
             $19,
-            $20
+            $20,
+            $21
          ) RETURNING *;
    `;
 
@@ -298,7 +301,8 @@ const registerUser = (
       user_app_version,
       notification_id,
       notification,
-      location_status
+      location_status,
+      user_address_name
    )
 }
 const createTemporaryUser = (
@@ -316,7 +320,8 @@ const createTemporaryUser = (
    user_app_version,
    notification_id,
    notification,
-   location_status
+   location_status,
+   user_address_name
 ) => {
    const QUERY = `
       INSERT INTO
@@ -335,7 +340,8 @@ const createTemporaryUser = (
             user_app_version,
             user_notification_id,
             user_notification,
-            user_location_status
+            user_location_status,
+            user_address_name
          ) VALUES (
             $1,
             $2,
@@ -351,7 +357,8 @@ const createTemporaryUser = (
             $12,
             $13,
             $14,
-            $15
+            $15,
+            $16
          ) RETURNING *;
    `;
 
@@ -371,7 +378,8 @@ const createTemporaryUser = (
       user_app_version,
       notification_id,
       notification,
-      location_status
+      location_status,
+      user_address_name
    )
 }
 const addToken = (user_id, user_token, user_app_version) => {
@@ -450,7 +458,8 @@ const editUserLocation = (
    user_location,
    user_region,
    user_country_code,
-   location_status
+   location_status,
+   user_address_name
 ) => {
    const QUERY = `
       UPDATE
@@ -459,7 +468,8 @@ const editUserLocation = (
       user_location = $2,
          user_region = $3,
          user_country_code = $4,
-         user_location_status = $5
+         user_location_status = $5,
+         user_address_name = $6
       WHERE
          user_id = $1
       RETURNING *;
@@ -471,7 +481,8 @@ const editUserLocation = (
       user_location,
       user_region,
       user_country_code,
-      location_status
+      location_status,
+      user_address_name
    )
 }
 const editUserPhoneDetails = (
@@ -556,7 +567,8 @@ const updateUserAllData = (
    user_os,
    user_os_version,
    user_comment,
-   user_app_version
+   user_app_version,
+   user_address_name
 ) => {
    const QUERY = `
       UPDATE
@@ -573,7 +585,8 @@ const updateUserAllData = (
          user_os = array_append(user_os, $10),
          user_os_version = array_append(user_os_version, $11),
          user_comment = array_append(user_comment, $12),
-         user_app_version = $13
+         user_app_version = $13,
+         user_address_name = $14
       WHERE
          user_id = $1
       RETURNING *;
@@ -593,7 +606,8 @@ const updateUserAllData = (
       user_os,
       user_os_version,
       user_comment,
-      user_app_version
+      user_app_version,
+      user_address_name
    )
 }
 const foundUserStat = (user_id) => {

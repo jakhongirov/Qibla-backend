@@ -17,6 +17,7 @@ CREATE TABLE users (
    user_country_code text,
    user_region text,
    user_location text,
+   user_address_name text,
    user_location_status int DEFAULT 0,
    user_app_lang text,
    user_phone_model text [],

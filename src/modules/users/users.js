@@ -256,7 +256,8 @@ module.exports = {
             user_app_version,
             notification_id,
             notification,
-            location_status
+            location_status,
+            user_address_name
          } = req.body
          const checkUserEmial = await model.checkUserEmial(user_email)
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
@@ -283,7 +284,8 @@ module.exports = {
                user_app_version,
                notification_id,
                notification,
-               location_status == 'null' || location_status == null ? 0 : location_status
+               location_status == 'null' || location_status == null ? 0 : location_status,
+               user_address_name
             )
 
             if (registerUser) {
@@ -334,7 +336,8 @@ module.exports = {
             user_app_version,
             notification_id,
             notification,
-            location_status
+            location_status,
+            user_address_name
          } = req.body
 
          const createTemporaryUser = await model.createTemporaryUser(
@@ -352,7 +355,8 @@ module.exports = {
             user_app_version,
             notification_id,
             notification,
-            location_status == 'null' || location_status == null ? 0 : location_status
+            location_status == 'null' || location_status == null ? 0 : location_status,
+            user_address_name
          )
 
          if (createTemporaryUser) {
@@ -653,7 +657,8 @@ module.exports = {
             user_location,
             user_region,
             user_country_code,
-            location_status
+            location_status,
+            user_address_name
          } = req.body
          const checkUser = await model.checkUserById(user_id)
 
@@ -663,7 +668,8 @@ module.exports = {
                user_location,
                user_region,
                user_country_code,
-               location_status == 'null' || location_status == null ? 0 : location_status
+               location_status == 'null' || location_status == null ? 0 : location_status,
+               user_address_name
             )
 
             if (editUserLocation) {
@@ -895,7 +901,8 @@ module.exports = {
             name_count,
             zikr_id,
             zikr_count,
-            user_app_version
+            user_app_version,
+            user_address_name
          } = req.body
          const checkUserById = await model.checkUserById(user_id)
          const foundUserStat = await model.foundUserStat(user_id)
@@ -914,7 +921,8 @@ module.exports = {
                user_os,
                user_os_version,
                user_comment,
-               user_app_version
+               user_app_version,
+               user_address_name
             )
 
             if (foundUserStat) {
