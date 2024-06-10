@@ -305,11 +305,11 @@ module.exports = {
 
    EDIT_STATUS: async (req, res) => {
       try {
-         const { news_id } = req.body
+         const { news_id, status} = req.body
          const foundNews = await model.foundNews(news_id)
 
          if (foundNews) {
-            const editNewsStatus = await model.editNewsStatus(news_id)
+            const editNewsStatus = await model.editNewsStatus(news_id, status)
 
             if (editNewsStatus) {
                return res.status(200).json({
