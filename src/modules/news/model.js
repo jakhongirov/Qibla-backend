@@ -150,7 +150,7 @@ const addNewsLike = (user_id, news_id) => {
 const editNewsLike = (user_id, news_id) => {
    const QUERY = `
       UPDATE news
-      SET news_like_count = news_like_count + 1
+      SET news_like = news_like + 1
       WHERE news_id = $2
       AND EXISTS (
          SELECT * FROM users_news WHERE user_id = $1 AND news_id = $2
