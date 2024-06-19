@@ -235,9 +235,10 @@ module.exports = {
          const foundNews = await model.foundNews(news_id)
 
          if (foundNews) {
-            const editNewsLike = await model.editNewsLike(user_id, news_id)
+            const addNewsLike = await model.addNewsLike(user_id, news_id)
 
-            if (editNewsLike) {
+            if (addNewsLike) {
+               const editNewsLike = await model.editNewsLike(user_id, news_id)
                return res.status(200).json({
                   status: 200,
                   message: "Success",
@@ -305,7 +306,7 @@ module.exports = {
 
    EDIT_STATUS: async (req, res) => {
       try {
-         const { news_id, status} = req.body
+         const { news_id, status } = req.body
          const foundNews = await model.foundNews(news_id)
 
          if (foundNews) {

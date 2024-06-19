@@ -135,25 +135,26 @@ const editNewsStatus = (news_id, status) => {
 
    return fetch(QUERY, news_id, status)
 }
-const editNewsLike = (user_id, news_id) => {
+const addNewsLike = (user_id, news_id) => {
    const QUERY = `
-      BEGIN;
-
       INSERT INTO users_news(user_id, news_id)
       SELECT $1, $2
       WHERE NOT EXISTS (
          SELECT * FROM users_news WHERE user_id = $1 AND news_id = $2
       )
-      RETURNING *;
-      
+      RETURNING *
+   `;
+
+   return fetch(QUERY, user_id, news_id)
+}
+const editNewsLike = (user_id, news_id) => {
+   const QUERY = `
       UPDATE news
       SET news_like_count = news_like_count + 1
       WHERE news_id = $2
       AND EXISTS (
          SELECT * FROM users_news WHERE user_id = $1 AND news_id = $2
       );
-      
-      COMMIT;
    `;
 
    return fetch(QUERY, user_id, news_id)
@@ -190,6 +191,7 @@ module.exports = {
    addNews,
    editNews,
    editNewsStatus,
+   addNewsLike,
    editNewsLike,
    editNewsView,
    deleteNews
