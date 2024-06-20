@@ -15,16 +15,17 @@ module.exports = {
          }
 
          if (error_note === 'Success') {
+            const month = await model.foundPayment(param3)?.month
             const today = new Date();
             const expiresDate = new Date(today);
-            expiresDate.setMonth(today.getMonth() + Number(param3));
+            expiresDate.setMonth(today.getMonth() + Number(month));
             if (expiresDate.getDate() < today.getDate()) {
                expiresDate.setDate(0);
             }
             const timestamp = expiresDate.getTime();
 
             await model.editUserPremium(param2, timestamp)
-            await model.addTransaction(click_trans_id, amount, param3, param2, merchant_trans_id, error, error_note)
+            await model.addTransaction(click_trans_id, amount, month, param2, merchant_trans_id, error, error_note)
          }
 
          makeCode(4)
