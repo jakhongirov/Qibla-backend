@@ -27,6 +27,7 @@ const meditationItems = require('./meditation/items')
 const additionalVotes = require('./votes/votes')
 const mapKey = require('./map/map')
 const click = require('./click/click')
+const paymentCategories = require('./payment/payment')
 
 router
 
@@ -519,12 +520,20 @@ router
   .put('/additional/vote/edit', AUTH, FileUpload.fields([{ name: "audio" }, { name: "icon" }]), additionalVotes.UPDATE_VOTE)
   .delete('/additional/vote/delete', AUTH, additionalVotes.DELETE_VOTE)
 
+  // MAP KEY
   .get('/map/key/list', AUTH, mapKey.GET_LIST)
   .get('/map/key/random', mapKey.GET_RANDOM)
   .post('/map/key/add', AUTH, mapKey.ADD_KEY)
   .delete('/map/key/delete', AUTH, mapKey.DELETE_KEY)
 
+  // CLICK
   .post('/click/prepare', click.Prepare)
   .post('/click/complete', click.Complete)
+
+  //PAYMENT CATEGORIES
+  .get('/payment/categories', paymentCategories.GET)
+  .post('/payment/category/add', AUTH, paymentCategories.POST)
+  .put('/payment/category/edit', AUTH, paymentCategories.PUT)
+  .delete('/payment/category/delete', AUTH, paymentCategories.DELETE)
 
 module.exports = router

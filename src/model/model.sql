@@ -250,8 +250,8 @@ CREATE TABLE versions (
    zikr_version int DEFAULT 1,
    names_99_version int DEFAULT 1,
    audios_version int DEFAULT 1,
-   meditation_votes int  DEFAULT 1,
-   meditation_categories int  DEFAULT 1,
+   meditation_votes int DEFAULT 1,
+   meditation_categories int DEFAULT 1,
    version_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -307,6 +307,13 @@ CREATE TABLE transactions (
    error text,
    error_note text,
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE payment_cateegories (
+   category_id bigserial PRiMARY key,
+   category_name text,
+   month int,
+   category_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
 -- old
