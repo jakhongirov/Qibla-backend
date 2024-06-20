@@ -93,7 +93,7 @@ module.exports = {
          let iconName = '';
 
          if (foundVote) {
-            if (uploadFile?.audio[0]) {
+            if (uploadFile?.audio) {
                if (foundVote?.vote_audio_name) {
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_audio_name}`))
                   deleteOldAvatar.delete()
@@ -105,7 +105,7 @@ module.exports = {
                audioName = foundVote?.vote_audio_name;
             }
 
-            if (uploadFile?.icon[0]) {
+            if (uploadFile?.icon) {
                if (foundVote?.vote_icon_name) {
                   const deleteOldAvatar = new FS(path.resolve(__dirname, '..', '..', '..', 'public', 'images', `${foundVote?.vote_icon_name}`))
                   deleteOldAvatar.delete()
