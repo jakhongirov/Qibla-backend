@@ -92,7 +92,7 @@ module.exports = {
    ADD_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { item_name, category_id, item_description } = req.body
+         const { item_name, category_id, item_description, suggested_item } = req.body
          const audioUrl = `${process.env.BACKEND_URL}/${uploadPhoto?.filename}`;
          const audioName = uploadPhoto?.filename;
          const filePath = uploadPhoto.path;
@@ -112,6 +112,7 @@ module.exports = {
                item_name,
                item_description,
                category_id,
+               suggested_item,
                audioUrl,
                audioName,
                formatDuration(duration) // Pass the duration to the model
@@ -143,7 +144,7 @@ module.exports = {
    UPDATE_ITEM: async (req, res) => {
       try {
          const uploadPhoto = req.file;
-         const { item_id, item_name, item_description, category_id } = req.body
+         const { item_id, item_name, item_description, category_id, suggested_item } = req.body
          const foundItem = await model.foundItem(item_id);
          let audioUrl = '';
          let audioName = '';
@@ -180,6 +181,7 @@ module.exports = {
                      item_name,
                      item_description,
                      category_id,
+                     suggested_item,
                      audioUrl,
                      audioName,
                      formatDuration(duration) // Pass the duration to the model
@@ -208,6 +210,7 @@ module.exports = {
                   item_name,
                   item_description,
                   category_id,
+                  suggested_item,
                   audioUrl,
                   audioName,
                   foundItem?.item_time

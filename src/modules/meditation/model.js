@@ -140,6 +140,7 @@ const addItem = (
    item_name,
    item_description,
    category_id,
+   suggested_item,
    audioUrl,
    audioName,
    duration
@@ -150,6 +151,7 @@ const addItem = (
             item_name,
             item_description,
             category_id,
+            suggested_item,
             item_audio_url,
             item_audio_name,
             item_time
@@ -159,7 +161,8 @@ const addItem = (
             $3,
             $4,
             $5,
-            $6
+            $6,
+            $7
          ) RETURNING *;
    `;
 
@@ -168,6 +171,7 @@ const addItem = (
       item_name,
       item_description,
       category_id,
+      suggested_item,
       audioUrl,
       audioName,
       duration
@@ -190,6 +194,7 @@ const updateItem = (
    item_name,
    item_description,
    category_id,
+   suggested_item,
    audioUrl,
    audioName,
    duration
@@ -201,9 +206,10 @@ const updateItem = (
          item_name = $2,
          item_description = $3,
          category_id = $4,
-         item_audio_url = $5,
-         item_audio_name = $6,
-         item_time = $7
+         suggested_item = $5,
+         item_audio_url = $6,
+         item_audio_name = $7,
+         item_time = $8
       WHERE
          item_id = $1
       RETURNING *;
@@ -215,6 +221,7 @@ const updateItem = (
       item_name,
       item_description,
       category_id,
+      suggested_item,
       audioUrl,
       audioName,
       duration

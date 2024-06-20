@@ -276,6 +276,7 @@ CREATE TABLE meditation_item (
    item_time text,
    item_audio_url text,
    item_audio_name text,
+   suggested_item boolean DEFAULT false,
    item_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
