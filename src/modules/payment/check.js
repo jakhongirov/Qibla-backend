@@ -6,14 +6,26 @@ module.exports = {
          const { user_id } = req.params
          const foundUser = await model.foundUser(user_id)
 
-         if (foundUser && foundUser?.user_country_code == "uz") {
-            return res.status(200).json({
-               status: 200,
-               message: "Success",
-               data: {
-                  click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&amount=1000&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}&additional_param4=`,
-                  uzum: ""
-               }
+         if (foundUser) {
+            if (foundUser?.user_country_code == "uz") {
+               return res.status(200).json({
+                  status: 200,
+                  message: "Success",
+                  data: {
+                     click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&amount=1000&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}&additional_param4=`,
+                     uzum: ""
+                  }
+               })
+            } else {
+               return res.status(400).json({
+                  status: 400,
+                  message: "User country is not uz"
+               })
+            }
+         } else {
+            return res.status(404).json({
+               status: 404,
+               message: "Not found"
             })
          }
 
