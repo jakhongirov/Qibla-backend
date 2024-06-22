@@ -61,9 +61,24 @@ const deleteCategory = (id) => {
    return fetch(QUERY, id)
 }
 
+// CHECK
+const foundUser = (user_id) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         users
+      WHERE
+         user_id = $1;
+   `;
+
+   return fetch(QUERY, user_id)
+}
+
 module.exports = {
    categories,
    addCategory,
    updateCategory,
-   deleteCategory
+   deleteCategory,
+   foundUser
 }

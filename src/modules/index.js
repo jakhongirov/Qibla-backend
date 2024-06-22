@@ -28,6 +28,7 @@ const additionalVotes = require('./votes/votes')
 const mapKey = require('./map/map')
 const click = require('./click/click')
 const paymentCategories = require('./payment/payment')
+const paymentCheck = require('./payment/check')
 
 router
 
@@ -535,5 +536,8 @@ router
   .post('/payment/category/add', AUTH, paymentCategories.POST)
   .put('/payment/category/edit', AUTH, paymentCategories.PUT)
   .delete('/payment/category/delete', AUTH, paymentCategories.DELETE)
+
+  // PAYMENT CHECK
+  .get('/payment/check/:user_id', paymentCheck.GET)
 
 module.exports = router
