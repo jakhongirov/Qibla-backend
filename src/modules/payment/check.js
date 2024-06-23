@@ -12,7 +12,7 @@ module.exports = {
                   status: 200,
                   message: "Success",
                   data: {
-                     click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&amount=1000&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}&additional_param4=`,
+                     click: `https://my.click.uz/services/pay?merchant_id=26420&service_id=34442&amount=&transaction_param=Qiblah&additional_param3=${foundUser?.user_id}&additional_param4=`,
                      uzum: ""
                   }
                })
