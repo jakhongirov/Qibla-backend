@@ -17,9 +17,9 @@ module.exports = {
                   }
                })
             } else {
-               return res.status(400).json({
-                  status: 400,
-                  message: "User country is not uz"
+               return res.status(200).json({
+                  status: 200,
+                  message: "ok"
                })
             }
          } else {
