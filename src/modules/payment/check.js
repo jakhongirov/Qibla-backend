@@ -7,7 +7,7 @@ module.exports = {
          const foundUser = await model.foundUser(user_id)
 
          if (foundUser) {
-            if (foundUser?.user_country_code == "uz") {
+            if (foundUser?.user_country_code?.toLowerCase() == "uz") {
                return res.status(200).json({
                   status: 200,
                   message: "Success",

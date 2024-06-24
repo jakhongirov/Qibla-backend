@@ -1,5 +1,10 @@
 const model = require('./model')
 
+// let stringToEncode = "uzum:bank";
+
+// Encode the string to Base64
+// let encodedString = btoa(stringToEncode);
+
 module.exports = {
    CHECK: async (req, res) => {
       try {
@@ -10,7 +15,7 @@ module.exports = {
          } = req.body
 
          return res.status(200).json({
-            
+
          })
 
       } catch (error) {
