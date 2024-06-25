@@ -27,7 +27,7 @@ const getRandom = (type) => {
       };
    `;
 
-   return fetch(QUERY)
+   return fetchALL(QUERY)
 }
 const addKey = (key, type) => {
    const QUERY = `
