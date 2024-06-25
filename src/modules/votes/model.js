@@ -33,6 +33,7 @@ const versionVote = () => {
 const addVote = (
    vote_name,
    vote_lang,
+   suggested_item,
    audioUrl,
    audioName,
    iconUrl,
@@ -43,6 +44,7 @@ const addVote = (
          additional_votes (
             vote_name,
             vote_lang,
+            suggested_item,
             vote_audio_url,
             vote_audio_name,
             vote_icon_url,
@@ -53,7 +55,8 @@ const addVote = (
             $3,
             $4,
             $5,
-            $6
+            $6,
+            $7
          ) RETURNING *;
    `;
 
@@ -61,6 +64,7 @@ const addVote = (
       QUERY,
       vote_name,
       vote_lang,
+      suggested_item,
       audioUrl,
       audioName,
       iconUrl,
@@ -83,6 +87,7 @@ const updateVote = (
    vote_id,
    vote_name,
    vote_lang,
+   suggested_item,
    audioUrl,
    audioName,
    iconUrl,
@@ -94,10 +99,11 @@ const updateVote = (
       SET
          vote_name = $2,
          vote_lang = $3,
-         vote_audio_url = $4,
-         vote_audio_name = $5,
-         vote_icon_url = $6,
-         vote_icon_name = $7
+         suggested_item = $4,
+         vote_audio_url = $5,
+         vote_audio_name = $6,
+         vote_icon_url = $7,
+         vote_icon_name = $8
       WHERE
          vote_id = $1
       RETURNING *;
@@ -108,6 +114,7 @@ const updateVote = (
       vote_id,
       vote_name,
       vote_lang,
+      suggested_item,
       audioUrl,
       audioName,
       iconUrl,

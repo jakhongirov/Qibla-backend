@@ -45,7 +45,7 @@ module.exports = {
    ADD_VOTE: async (req, res) => {
       try {
          const uploadFile = req.files;
-         const { vote_name, vote_lang } = req.body
+         const { vote_name, vote_lang, suggested_item } = req.body
          const audioUrl = `${process.env.BACKEND_URL}/${uploadFile?.audio[0]?.filename}`;
          const audioName = uploadFile?.audio[0]?.filename;
          const iconUrl = `${process.env.BACKEND_URL}/${uploadFile?.icon[0]?.filename}`;
@@ -54,6 +54,7 @@ module.exports = {
          const addVote = await model.addVote(
             vote_name,
             vote_lang,
+            suggested_item,
             audioUrl,
             audioName,
             iconUrl,
@@ -85,7 +86,7 @@ module.exports = {
    UPDATE_VOTE: async (req, res) => {
       try {
          const uploadFile = req.files;
-         const { vote_id, vote_name, vote_lang } = req.body
+         const { vote_id, vote_name, vote_lang, suggested_item } = req.body
          const foundVote = await model.foundVote(vote_id)
          let audioUrl = '';
          let audioName = '';
@@ -121,6 +122,7 @@ module.exports = {
                vote_id,
                vote_name,
                vote_lang,
+               suggested_item,
                audioUrl,
                audioName,
                iconUrl,

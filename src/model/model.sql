@@ -288,6 +288,7 @@ CREATE TABLE additional_votes (
    vote_audio_name text,
    vote_icon_url text,
    vote_icon_name text,
+   suggested_item boolean DEFAULT false,
    vote_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
