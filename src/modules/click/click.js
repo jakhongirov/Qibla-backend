@@ -19,10 +19,12 @@ module.exports = {
             const today = new Date();
             const expiresDate = new Date(today);
             expiresDate.setMonth(today.getMonth() + Number(month));
-            if (expiresDate.getDate() < today.getDate()) {
-               expiresDate.setDate(0);
-            }
+            // if (expiresDate.getDate() < today.getDate()) {
+            //    expiresDate.setDate(0);
+            // }
             const timestamp = expiresDate.getTime();
+
+            console.log(timestamp)
 
             await model.editUserPremium(param2, timestamp)
             await model.addTransaction(click_trans_id, amount, month, param2, merchant_trans_id, error, error_note)
