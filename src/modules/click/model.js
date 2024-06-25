@@ -63,10 +63,10 @@ const foundPayment = (text) => {
       FROM
          payment_categories
       WHERE
-         category_name = $1;
+         category_name ilike '%${text}%';
    `;
 
-   return fetch(QUERY, text)
+   return fetch(QUERY)
 }
 
 module.exports = {
