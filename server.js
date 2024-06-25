@@ -35,6 +35,8 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {
    polling: true
 })
 
+let user;
+
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
@@ -43,6 +45,7 @@ bot.on('message', async (msg) => {
 
    if (command === '/start') {
       const foundUser = await model.foundUser(parameters[0])
+      user = foundUser
 
       if (foundUser) {
          const content = `
@@ -97,7 +100,7 @@ bot.on('callback_query', async (msg) => {
 
    if (data == 'uz') {
 
-      bot.sendMessage(chatId, `${foundUser?.user_name}, kontaktingizni yuboring`, {
+      bot.sendMessage(chatId, `${user?.user_name}, kontaktingizni yuboring`, {
          reply_markup: JSON.stringify({
             keyboard:
                [
@@ -115,7 +118,7 @@ bot.on('callback_query', async (msg) => {
          const replyListenerId = bot.on("contact", async (msg) => {
             bot.removeListener(replyListenerId)
             if (msg.contact) {
-               const updatedUserPhone = await model.updatedUserPhone(foundUser?.user_id, msg.contact.phone_number)
+               const updatedUserPhone = await model.updatedUserPhone(user?.user_id, msg.contact.phone_number)
 
                if (updatedUserPhone) {
                   bot.sendMessage(msg.chat.id, `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.`)
@@ -127,7 +130,7 @@ bot.on('callback_query', async (msg) => {
 
    } else if (data == "ru") {
 
-      bot.sendMessage(chatId, `${foundUser?.user_name}, отправьте свой контакт`, {
+      bot.sendMessage(chatId, `${user?.user_name}, отправьте свой контакт`, {
          reply_markup: JSON.stringify({
             keyboard:
                [
@@ -145,7 +148,7 @@ bot.on('callback_query', async (msg) => {
          const replyListenerId = bot.on("contact", async (msg) => {
             bot.removeListener(replyListenerId)
             if (msg.contact) {
-               const updatedUserPhone = await model.updatedUserPhone(foundUser?.user_id, msg.contact.phone_number)
+               const updatedUserPhone = await model.updatedUserPhone(user?.user_id, msg.contact.phone_number)
 
                if (updatedUserPhone) {
                   bot.sendMessage(msg.chat.id, `Ваш запрос успешно получен, вернитесь к приложению.`)
