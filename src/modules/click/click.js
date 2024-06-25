@@ -19,9 +19,9 @@ module.exports = {
             const today = new Date();
             const expiresDate = new Date(today);
             expiresDate.setMonth(today.getMonth() + Number(month));
-            // if (expiresDate.getDate() < today.getDate()) {
-            //    expiresDate.setDate(0);
-            // }
+            if (expiresDate.getDate() < today.getDate()) {
+               expiresDate.setDate(0);
+            }
             const timestamp = expiresDate.getTime();
 
             console.log(timestamp)
