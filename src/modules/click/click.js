@@ -24,6 +24,7 @@ module.exports = {
             }
             const timestamp = expiresDate.getTime();
 
+            console.log(expiresDate)
             console.log(timestamp)
 
             await model.editUserPremium(param2, timestamp)
