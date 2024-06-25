@@ -24,10 +24,7 @@ const getRandom = (type) => {
                   type = '${type}'
             `
       ) : ""
-      }
-      ORDER BY
-         random()
-      LIMIT 1;
+      };
    `;
 
    return fetch(QUERY)
