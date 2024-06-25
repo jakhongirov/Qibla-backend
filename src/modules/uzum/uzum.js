@@ -55,6 +55,35 @@ module.exports = {
             paymentSource,
             tariff
          } = req.body
+         const authHeader = req.headers['authorization'];
+         console.log(authHeader)
+         console.log(req.body)
+
+         if (authHeader) {
+            let [username, password] = atob(authHeader).split(':');
+
+            if (username == "+998998887123" || password == "a12345") {
+               const confirmTime = Date.now();
+               console.log(confirmTime);
+               res.status(200).json({
+                  serviceId: serviceId,
+                  transId: transId,
+                  status: "CONFIRMED",
+                  confirmTime: confirmTime,
+                  amount: 5000
+               })
+
+            } else {
+               res.status(401).json({
+                  status: 401
+               })
+            }
+
+         } else {
+            res.status(401).json({
+               status: 401
+            })
+         }
 
       } catch (error) {
          console.log(error);

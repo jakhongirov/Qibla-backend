@@ -29,6 +29,7 @@ const mapKey = require('./map/map')
 const click = require('./click/click')
 const paymentCategories = require('./payment/payment')
 const paymentCheck = require('./payment/check')
+const uzum = require('./uzum/uzum')
 
 router
 
@@ -539,5 +540,8 @@ router
 
   // PAYMENT CHECK
   .get('/payment/check/:user_id', paymentCheck.GET)
+
+  // UZUM
+  .post('/uzum/confirm', uzum.CONFIRM)
 
 module.exports = router
