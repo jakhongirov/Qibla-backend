@@ -15,20 +15,33 @@ module.exports = {
          }
 
          if (error_note === 'Success') {
-            const month = await model.foundPayment(param3)?.month
+            const foundPayment = await model.foundPayment(param3);
             const today = new Date();
             const expiresDate = new Date(today);
-            expiresDate.setMonth(today.getMonth() + Number(month));
-            if (expiresDate.getDate() < today.getDate()) {
-               expiresDate.setDate(0);
+            const monthToAdd = Number(foundPayment?.month);
+            let targetMonth = today.getMonth() + monthToAdd;
+            let targetYear = today.getFullYear();
+
+            while (targetMonth > 11) {
+               targetMonth -= 12;
+               targetYear++;
             }
-            const timestamp = expiresDate.getTime();
 
-            console.log(expiresDate)
-            console.log(timestamp)
+            expiresDate.setFullYear(targetYear, targetMonth, 1);
+            const maxDaysInTargetMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
+            expiresDate.setDate(Math.min(today.getDate(), maxDaysInTargetMonth));
+            
+            if (expiresDate < today) {
+               expiresDate.setMonth(expiresDate.getMonth() + 1);
+               expiresDate.setDate(0); 
+            }
+            const formattedDate = `${String(expiresDate.getDate()).padStart(2, '0')}.${String(expiresDate.getMonth() + 1).padStart(2, '0')}.${expiresDate.getFullYear()}`;
+            
+            console.log(formattedDate)
+            console.log(foundPayment)
 
-            await model.editUserPremium(param2, timestamp)
-            await model.addTransaction(click_trans_id, amount, month, param2, merchant_trans_id, error, error_note)
+            await model.editUserPremium(param2, formattedDate)
+            await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note)
          }
 
          makeCode(4)
