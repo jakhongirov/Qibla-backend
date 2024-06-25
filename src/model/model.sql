@@ -294,6 +294,7 @@ CREATE TABLE additional_votes (
 CREATE TABLE map_key (
    key_id bigserial PRiMARY KEY,
    key text not null,
+   type text,
    key_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 

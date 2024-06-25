@@ -12,12 +12,19 @@ const getList = () => {
 
    return fetchALL(QUERY)
 }
-const getRandom = () => {
+const getRandom = (type) => {
    const QUERY = `
       SELECT
          *
       FROM
          map_key
+      ${type ? (
+         `
+               WHERE
+                  type = '${type}'
+            `
+      ) : ""
+      }
       ORDER BY
          random()
       LIMIT 1;
@@ -25,17 +32,19 @@ const getRandom = () => {
 
    return fetch(QUERY)
 }
-const addKey = (key) => {
+const addKey = (key, type) => {
    const QUERY = `
       INSERT INTO 
          map_key (
-            key
+            key,
+            type
          ) VALUES (
-            $1
+            $1,
+            $2
          ) RETURNING *;
    `;
 
-   return fetch(QUERY, key)
+   return fetch(QUERY, key, type)
 }
 const deleteKey = (id) => {
    const QUERY = `

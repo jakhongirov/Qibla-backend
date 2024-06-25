@@ -29,7 +29,8 @@ module.exports = {
 
    GET_RANDOM: async (req, res) => {
       try {
-         const getRandom = await model.getRandom()
+         const { type } = req.query
+         const getRandom = await model.getRandom(type)
 
          if (getRandom) {
             return res.status(200).json({
@@ -55,9 +56,9 @@ module.exports = {
 
    ADD_KEY: async (req, res) => {
       try {
-         const { key } = req.body
+         const { key, type } = req.body
 
-         const addKey = await model.addKey(key)
+         const addKey = await model.addKey(key, type)
 
          if (addKey) {
             return res.status(200).json({
