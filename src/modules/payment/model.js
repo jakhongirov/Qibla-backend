@@ -5,7 +5,7 @@ const categories = () => {
       SELECT
          *
       FROM
-         payment_cateegories
+         payment_categories
       ORDER BY
          category_id DESC;
    `;
@@ -15,7 +15,7 @@ const categories = () => {
 const addCategory = (category_name, month) => {
    const QUERY = `
       INSERT INTO
-         payment_cateegories (
+         payment_categories (
             category_name,
             month
          ) VALUES (
@@ -33,7 +33,7 @@ const updateCategory = (
 ) => {
    const QUERY = `
       UPDATE
-         payment_cateegories
+         payment_categories
       SET
          category_name = $2,
          month = $3
@@ -52,7 +52,7 @@ const updateCategory = (
 const deleteCategory = (id) => {
    const QUERY = `
       DELETE FROM
-         payment_cateegories
+         payment_categories
       WHERE
          category_id = $1
       RETURNING *;

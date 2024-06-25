@@ -56,8 +56,21 @@ const addTransaction = (
       error_note
    )
 }
+const foundPayment = (text) => {
+   const QUERY = `
+      SELECT
+         *
+      FROM
+         payment_categories
+      WHERE
+         category_name = $1;
+   `;
+
+   return fetch(QUERY, text)
+}
 
 module.exports = {
    editUserPremium,
-   addTransaction
+   addTransaction,
+   foundPayment
 }

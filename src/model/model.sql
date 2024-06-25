@@ -309,7 +309,7 @@ CREATE TABLE transactions (
    transaction_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE payment_cateegories (
+CREATE TABLE payment_categories (
    category_id bigserial PRiMARY key,
    category_name text,
    month int,
