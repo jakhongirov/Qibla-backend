@@ -30,15 +30,13 @@ module.exports = {
             expiresDate.setFullYear(targetYear, targetMonth, 1);
             const maxDaysInTargetMonth = new Date(targetYear, targetMonth + 1, 0).getDate();
             expiresDate.setDate(Math.min(today.getDate(), maxDaysInTargetMonth));
-            
+
             if (expiresDate < today) {
                expiresDate.setMonth(expiresDate.getMonth() + 1);
-               expiresDate.setDate(0); 
+               expiresDate.setDate(0); // Set to the last day of the previous month
             }
-            const formattedDate = `${String(expiresDate.getDate()).padStart(2, '0')}.${String(expiresDate.getMonth() + 1).padStart(2, '0')}.${expiresDate.getFullYear()}`;
-            
-            console.log(formattedDate)
-            console.log(foundPayment)
+
+            const formattedDate = expiresDate.toISOString();
 
             await model.editUserPremium(param2, formattedDate)
             await model.addTransaction(click_trans_id, amount, monthToAdd, param2, merchant_trans_id, error, error_note)
