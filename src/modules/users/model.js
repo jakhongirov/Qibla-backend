@@ -172,7 +172,7 @@ const foundByPhoneNumber = (phone_number) => {
 
    return fetchALL(QUERY)
 }
-const checkUserEmial = (user_email) => {
+const checkUserEmail = (user_email) => {
    const QUERY = `
       SELECT
          *
@@ -751,7 +751,7 @@ module.exports = {
    checkUserById,
    foundUserByToken,
    foundByPhoneNumber,
-   checkUserEmial,
+   checkUserEmail,
    checkUserPhoneNumber,
    checkUserMethod,
    registerUser,
