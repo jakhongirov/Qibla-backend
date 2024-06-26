@@ -258,15 +258,21 @@ module.exports = {
             notification,
             location_status,
             user_address_name
-         } = req.body
-         const checkUserEmial = await model.checkUserEmial(user_email)
-         const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
-         
-         console.log(user_phone_number)
-         console.log(checkUserPhoneNumber)
+         } = req.body;
 
-         if (!checkUserEmial || !checkUserPhoneNumber) {
-            const pass_hash = await bcryptjs.hash(user_password, 10)
+         const checkUserEmail = await model.checkUserEmail(user_email);
+         const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number);
+
+         console.log(user_phone_number);
+         console.log(checkUserPhoneNumber);
+
+         if (checkUserEmail || checkUserPhoneNumber) {
+            return res.status(302).json({
+               status: 302,
+               message: "User found"
+            });
+         } else {
+            const pass_hash = await bcryptjs.hash(user_password, 10);
             const registerUser = await model.registerUser(
                user_phone_number,
                user_email,
@@ -289,38 +295,32 @@ module.exports = {
                notification,
                location_status == 'null' || location_status == null ? 0 : location_status,
                user_address_name
-            )
+            );
 
             if (registerUser) {
-               const token = await new JWT({ id: registerUser?.user_id }).sign()
+               const token = await new JWT({ id: registerUser?.user_id }).sign();
                return res.status(201).json({
                   status: 201,
                   message: "Success",
                   data: registerUser,
                   token: token
-               })
+               });
             } else {
                return res.status(400).json({
                   status: 400,
                   message: "Bad request"
-               })
+               });
             }
-
-         } else {
-            res.status(302).json({
-               status: 302,
-               message: "User found"
-            })
          }
-
       } catch (error) {
          console.log(error);
-         res.status(500).json({
+         return res.status(500).json({
             status: 500,
-            message: "Interval Server Error"
-         })
+            message: "Internal Server Error"
+         });
       }
    },
+
 
    TEMPORARY_USER: async (req, res) => {
       try {
