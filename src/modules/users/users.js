@@ -261,6 +261,9 @@ module.exports = {
          } = req.body
          const checkUserEmial = await model.checkUserEmial(user_email)
          const checkUserPhoneNumber = await model.checkUserPhoneNumber(user_phone_number)
+         
+         console.log(user_phone_number)
+         console.log(checkUserPhoneNumber)
 
          if (!checkUserEmial || !checkUserPhoneNumber) {
             const pass_hash = await bcryptjs.hash(user_password, 10)
