@@ -1,18 +1,19 @@
 const { fetch } = require('../../lib/postgres')
 
-const editUserPremium = (param2, timestamp) => {
+const editUserPremium = (param2, timestamp, payment_type) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_premium = true,
-         user_premium_expires_at = $2
+         user_premium_expires_at = $2,
+         payment_type = $3
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, param2, timestamp)
+   return fetch(QUERY, param2, timestamp, payment_type)
 }
 
 const addTransaction = (

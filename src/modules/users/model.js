@@ -527,19 +527,20 @@ const editUserAbout = (user_id, user_comment) => {
 
    return fetch(QUERY, user_id, user_comment)
 }
-const editUserPremium = (user_id, user_premium, expires_at) => {
+const editUserPremium = (user_id, user_premium, expires_at, payment_type) => {
    const QUERY = `
       UPDATE
          users
       SET
          user_premium = $2,
-         user_premium_expires_at = $3
+         user_premium_expires_at = $3,
+         payment_type = $4
       WHERE
          user_id = $1
       RETURNING *;
    `;
 
-   return fetch(QUERY, user_id, user_premium, expires_at)
+   return fetch(QUERY, user_id, user_premium, expires_at, payment_type)
 }
 const changeLang = (user_id, lang) => {
    const QUERY = `

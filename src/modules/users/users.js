@@ -792,12 +792,12 @@ module.exports = {
 
    EDIT_USER_PREMIUM: async (req, res) => {
       try {
-         const { user_id, user_premium, expires_at } = req.body
+         const { user_id, user_premium, expires_at, payment_type } = req.body
          const checkUser = await model.checkUserById(user_id)
 
          if (checkUser) {
             if (user_premium) {
-               const editUserPremium = await model.editUserPremium(user_id, user_premium, expires_at)
+               const editUserPremium = await model.editUserPremium(user_id, user_premium, expires_at, payment_type)
 
                if (editUserPremium) {
                   return res.status(200).json({
@@ -813,7 +813,7 @@ module.exports = {
                }
 
             } else {
-               const editUserPremium = await model.editUserPremium(user_id, user_premium, checkUser?.user_premium_expires_at)
+               const editUserPremium = await model.editUserPremium(user_id, user_premium, checkUser?.user_premium_expires_at, payment_type)
 
                if (editUserPremium) {
                   return res.status(200).json({

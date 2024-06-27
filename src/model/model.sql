@@ -33,6 +33,7 @@ CREATE TABLE users (
    user_app_version int DEFAULT 0,
    user_notification_id text,
    user_notification boolean DEFAULT false,
+   payment_type text,
    user_create_at timestamptz DEFAULT CURRENT_TIMESTAMP
 );
 
