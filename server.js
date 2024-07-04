@@ -12,6 +12,7 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
 const TelegramBot = require('node-telegram-bot-api')
+const bcryptjs = require('bcryptjs')
 const model = require('./model')
 
 const publicFolderPath = path.join(__dirname, 'public');
@@ -42,7 +43,7 @@ bot.on('message', async (msg) => {
 
    console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
 
-   if (text?.startsWith('/start') && text?.split(' ').length > 1) {
+   if (text && text.startsWith('/start') && text.split(' ').length > 1) {
       const parameter = text.split(' ')[1];
       console.log(`Extracted parameter: ${parameter}`);
 
@@ -142,11 +143,29 @@ bot.on('callback_query', async (msg) => {
          const replyListenerId = bot.on('contact', async (msg) => {
             bot.removeListener(replyListenerId);
             if (msg.contact) {
-               const updatedUserPhone = await model.updatedUserPhone(user.user_id, msg.contact.phone_number);
-               console.log(updatedUserPhone)
-               console.log(msg.contact.phone_number)
+               let phoneNumber = msg.contact.phone_number;
+               if (!phoneNumber.startsWith('+')) {
+                  phoneNumber = `+${phoneNumber}`;
+               }
+               const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
                if (updatedUserPhone) {
-                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`)
+                     .then(() => {
+                        bot.sendMessage(msg.chat.id, data === 'uz' ? `Parol qo'ying:` : `Введите пароль:`, {
+                           reply_markup: { force_reply: true }
+                        }).then((payload) => {
+                           const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
+                              bot.removeListener(replyListenerId);
+                              if (msg.text) {
+                                 const pass_hash = await bcryptjs.hash(msg.text, 10);
+                                 const updatedUserPassword = await model.updatedUserPassword(user.user_id, pass_hash);
+                                 if (updatedUserPassword) {
+                                    bot.sendMessage(msg.chat.id, data === 'uz' ? `Parol muvaffaqiyatli o'rnatildi.` : `Пароль успешно установлен.`);
+                                 }
+                              }
+                           });
+                        });
+                     });
                }
             }
          });
@@ -169,6 +188,7 @@ bot.onText(/\/reply/, (msg) => {
       reply_to_message_id: repliedMessageId
    });
 });
+
 
 app.get('/telegrambot', async (req, res) => {
    try {
