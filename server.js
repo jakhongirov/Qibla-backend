@@ -157,7 +157,8 @@ bot.on('message', async (msg) => {
    if (msg.chat.type === 'group' && msg.reply_to_message) {
       const date = msg.reply_to_message.date;
       const foundMsg = await model.foundMsg(date);
-      bot.sendMessage(foundMsg.chat_id, `Javob: ${msg.text}`);
+      console.log(foundMsg)
+      bot.sendMessage(foundMsg?.chat_id, `Javob: ${msg.text}`);
    }
 });
 
