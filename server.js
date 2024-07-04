@@ -35,7 +35,7 @@ const bot = new TelegramBot(process.env.TOKEN, { polling: true });
 
 let user;
 
-bot.onText(/\/start/, async (msg) => {
+bot.onText('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
    const username = msg.from.first_name;
