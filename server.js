@@ -46,6 +46,7 @@ bot.on('message', async (msg) => {
       try {
          const foundUser = await model.foundUser(parameter);
          user = foundUser;
+         user['parameter'] = parameter;
 
          if (foundUser) {
             const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
@@ -135,9 +136,28 @@ bot.on('callback_query', async (msg) => {
          const replyListenerId = bot.on('contact', async (msg) => {
             bot.removeListener(replyListenerId);
             if (msg.contact) {
-               const updatedUserPhone = await model.updatedUserPhone(user.user_id, msg.contact.phone_number);
-               if (updatedUserPhone) {
-                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+               let phoneNumber = msg.contact.phone_number;
+               if (!phoneNumber.startsWith('+')) {
+                  phoneNumber = `+${phoneNumber}`;
+               }
+               const checkUser = await model.checkUser(phoneNumber)
+
+               if (checkUser) {
+                  const addToken = await model.addToken(checkUser.user_id, user.parameter)
+
+                  if (addToken) {
+                     const deleteUser = await model.deleteUser(user.user_id)
+
+                     if (deleteUser) {
+                        bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+                     }
+                  }
+
+               } else {
+                  const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
+                  if (updatedUserPhone) {
+                     bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+                  }
                }
             }
          });
