@@ -160,7 +160,12 @@ bot.on('callback_query', async (msg) => {
                                  const pass_hash = await bcryptjs.hash(msg.text, 10);
                                  const updatedUserPassword = await model.updatedUserPassword(user.user_id, pass_hash);
                                  if (updatedUserPassword) {
-                                    bot.sendMessage(msg.chat.id, data === 'uz' ? `Parol muvaffaqiyatli o'rnatildi.` : `Пароль успешно установлен.`);
+                                    bot.sendMessage(msg.chat.id, data === 'uz' ? `Parol muvaffaqiyatli o'rnatildi.` : `Пароль успешно установлен.`, {
+                                       reply_markup: {
+                                          keyboard: [[{ text: "Savol berish" }]],
+                                          resize_keyboard: true
+                                       }
+                                    });
                                  }
                               }
                            });
