@@ -12,6 +12,7 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
 const TelegramBot = require('node-telegram-bot-api')
+const bcryptjs = require('bcryptjs')
 const model = require('./model')
 
 const publicFolderPath = path.join(__dirname, 'public');
@@ -182,7 +183,8 @@ bot.on("message", async (msg) => {
                      const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
                         bot.removeReplyListener(replyListenerId);
                         if (msg.text) {
-                           const updatedUserPassword = await model.updatedUserPassword(checkUser.user_id, msg.text);
+                           const pass_hash = await bcryptjs.hash(msg.text, 10);
+                           const updatedUserPassword = await model.updatedUserPassword(checkUser.user_id, pass_hash);
                            if (updatedUserPassword) {
                               const successText = text === "Parolingizni o'zgartiring" ? "Parol muvaffaqiyatli o'rnatildi." : "Пароль успешно установлен.";
                               bot.sendMessage(chatId, successText, {

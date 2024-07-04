@@ -397,16 +397,16 @@ module.exports = {
                user_token,
                user_app_version
             } = req.body
-            const checkUserEmial = await model.checkUserEmial(user_email)
+            const checkUserEmail = await model.checkUserEmail(user_email)
 
-            if (checkUserEmial) {
-               const validPass = await bcryptjs.compare(user_password, checkUserEmial?.user_password)
+            if (checkUserEmail) {
+               const validPass = await bcryptjs.compare(user_password, checkUserEmail?.user_password)
 
                if (validPass) {
                   if (user_token) {
-                     const addToken = await model.addToken(checkUserEmial?.user_id, user_token, user_app_version)
+                     const addToken = await model.addToken(checkUserEmail?.user_id, user_token, user_app_version)
 
-                     const token = await new JWT({ id: checkUserEmial?.user_id }).sign()
+                     const token = await new JWT({ id: checkUserEmail?.user_id }).sign()
                      return res.status(200).json({
                         status: 200,
                         message: "Success",
