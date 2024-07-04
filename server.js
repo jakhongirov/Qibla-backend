@@ -42,7 +42,7 @@ bot.on('message', async (msg) => {
 
    console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
 
-   if (text.startsWith('/start') && text.split(' ').length > 1) {
+   if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       const parameter = text.split(' ')[1];
       console.log(`Extracted parameter: ${parameter}`);
 
