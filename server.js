@@ -35,17 +35,16 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 let user;
 
-bot.onText(/\/start/, async msg => {
-   handleTextMessages(msg);
-})
-
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
    const username = msg.from.first_name;
 
+   console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
+
    if (text && text.startsWith('/start') && text.split(' ').length > 1) {
       const parameter = text.split(' ')[1];
+      console.log(`Extracted parameter: ${parameter}`);
 
       try {
          const foundUser = await model.foundUser(parameter);
@@ -54,6 +53,7 @@ bot.on('message', async (msg) => {
 
          if (foundUser) {
             const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
+            console.log(`User found: ${foundUser.user_name}`);
 
             bot.sendMessage(chatId, content, {
                reply_markup: {
@@ -64,6 +64,7 @@ bot.on('message', async (msg) => {
             });
          } else {
             const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
+            console.log(`User not found with parameter: ${parameter}`);
 
             bot.sendMessage(chatId, content, {
                reply_markup: {
@@ -85,6 +86,8 @@ bot.on('message', async (msg) => {
 const handleTextMessages = async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
+
+   console.log(`Handling text message: ${text} (Chat ID: ${chatId})`);
 
    if (text === "Uzbek") {
       bot.sendMessage(chatId, 'Qaysi xizmatdan foydalanisiz?', {
@@ -155,7 +158,7 @@ const handleTextMessages = async (msg) => {
                if (!phoneNumber.startsWith('+')) {
                   phoneNumber = `+${phoneNumber}`;
                }
-               const checkUser = await model.checkUser(phoneNumber)
+               const checkUser = await model.checkUser(phoneNumber);
 
                if (checkUser) {
                   bot.sendMessage(chatId, "Yengi parolingizni yozing!", {
@@ -205,7 +208,7 @@ const handleTextMessages = async (msg) => {
                if (!phoneNumber.startsWith('+')) {
                   phoneNumber = `+${phoneNumber}`;
                }
-               const checkUser = await model.checkUser(phoneNumber)
+               const checkUser = await model.checkUser(phoneNumber);
 
                if (checkUser) {
                   bot.sendMessage(chatId, "Введите новый пароль!", {
@@ -264,13 +267,13 @@ bot.on('callback_query', async (msg) => {
                if (!phoneNumber.startsWith('+')) {
                   phoneNumber = `+${phoneNumber}`;
                }
-               const checkUser = await model.checkUser(phoneNumber)
+               const checkUser = await model.checkUser(phoneNumber);
 
                if (checkUser) {
-                  const addToken = await model.addToken(checkUser.user_id, user.parameter)
+                  const addToken = await model.addToken(checkUser.user_id, user.parameter);
 
                   if (addToken) {
-                     const deleteUser = await model.deleteUser(user.user_id)
+                     const deleteUser = await model.deleteUser(user.user_id);
 
                      if (deleteUser) {
                         bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
@@ -314,7 +317,6 @@ bot.onText(/\/reply/, (msg) => {
       reply_to_message_id: repliedMessageId
    });
 });
-
 
 app.get('/telegrambot', async (req, res) => {
    try {
