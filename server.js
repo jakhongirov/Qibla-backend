@@ -12,7 +12,6 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
 const TelegramBot = require('node-telegram-bot-api')
-const bcryptjs = require('bcryptjs')
 const model = require('./model')
 
 const publicFolderPath = path.join(__dirname, 'public');
@@ -41,11 +40,8 @@ bot.on('message', async (msg) => {
    const text = msg.text;
    const username = msg.from.first_name;
 
-   console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
-
    if (text && text.startsWith('/start') && text.split(' ').length > 1) {
       const parameter = text.split(' ')[1];
-      console.log(`Extracted parameter: ${parameter}`);
 
       try {
          const foundUser = await model.foundUser(parameter);
@@ -53,7 +49,6 @@ bot.on('message', async (msg) => {
 
          if (foundUser) {
             const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
-            console.log(`User found: ${foundUser.user_name}`);
 
             bot.sendMessage(chatId, content, {
                reply_markup: {
@@ -64,7 +59,6 @@ bot.on('message', async (msg) => {
             });
          } else {
             const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
-            console.log(`User not found with parameter: ${parameter}`);
 
             bot.sendMessage(chatId, content, {
                reply_markup: {
@@ -86,8 +80,6 @@ bot.on('message', async (msg) => {
 const handleTextMessages = async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
-
-   console.log(`Handling text message: ${text} (Chat ID: ${chatId})`);
 
    if (text === "Uzbek") {
       bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
@@ -143,34 +135,9 @@ bot.on('callback_query', async (msg) => {
          const replyListenerId = bot.on('contact', async (msg) => {
             bot.removeListener(replyListenerId);
             if (msg.contact) {
-               let phoneNumber = msg.contact.phone_number;
-               if (!phoneNumber.startsWith('+')) {
-                  phoneNumber = `+${phoneNumber}`;
-               }
-               const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
+               const updatedUserPhone = await model.updatedUserPhone(user.user_id, msg.contact.phone_number);
                if (updatedUserPhone) {
-                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`)
-                     .then(() => {
-                        bot.sendMessage(msg.chat.id, data === 'uz' ? `Parol qo'ying:` : `Введите пароль:`, {
-                           reply_markup: { force_reply: true }
-                        }).then((payload) => {
-                           const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
-                              bot.removeListener(replyListenerId);
-                              if (msg.text) {
-                                 const pass_hash = await bcryptjs.hash(msg.text, 10);
-                                 const updatedUserPassword = await model.updatedUserPassword(user.user_id, pass_hash);
-                                 if (updatedUserPassword) {
-                                    bot.sendMessage(msg.chat.id, data === 'uz' ? `Parol muvaffaqiyatli o'rnatildi.` : `Пароль успешно установлен.`, {
-                                       reply_markup: {
-                                          keyboard: [[{ text: "Savol berish" }]],
-                                          resize_keyboard: true
-                                       }
-                                    });
-                                 }
-                              }
-                           });
-                        });
-                     });
+                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
                }
             }
          });
