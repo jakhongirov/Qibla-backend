@@ -61,6 +61,19 @@ const updatedUserPhone = (id, phone_number) => {
 
    return fetch(QUERY, id, phone_number)
 }
+const updatedUserPassword = (user_id, pass_hash) => {
+   const QUERY = `
+      UPDATE
+         users
+      SET
+         user_password = $2
+      WHERE
+         user_id = $1
+      RETURNING *;
+   `;
+
+   return fetch(QUERY, user_id, pass_hash)
+};
 const addMessage = (chat_id, date) => {
    const QUERY = `
       INSERT INTO
@@ -94,6 +107,7 @@ module.exports = {
    addToken,
    deleteUser,
    updatedUserPhone,
+   updatedUserPassword,
    addMessage,
    foundMsg
 }
