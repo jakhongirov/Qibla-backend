@@ -62,7 +62,7 @@ bot.on('message', async (msg) => {
                   ]
                }
             });
-         } else {
+         } else if (text == '/start') {
             const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
             console.log(`User not found with parameter: ${parameter}`);
 
