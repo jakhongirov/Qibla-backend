@@ -41,7 +41,7 @@ bot.onText(/\/start/, async msg => {
    const chatId = msg.chat.id
    const username = msg.from.first_name
    const content = `
-            Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.
+            Assalomu alaykum ${username}\nЗдравствуйте ${username}
          `;
 
    bot.sendMessage(chatId, content, {
