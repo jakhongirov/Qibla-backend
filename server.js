@@ -79,6 +79,7 @@ bot.on('message', async (msg) => {
          console.error(`Error fetching user: ${error.message}`);
       }
    } else {
+      console.log('aa')
       handleTextMessages(msg);
    }
 });
