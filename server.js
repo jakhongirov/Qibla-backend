@@ -93,13 +93,11 @@ bot.on('message', async (msg) => {
    }
 });
 
-bot.on("message", async (msg) => {
+bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
 
-   console.log(`Handling text message: ${text} (Chat ID: ${chatId})`);
-
-   if (text === "Uzbek") {
+   if (text == "Uzbek") {
       bot.sendMessage(chatId, 'Qaysi xizmatdan foydalanisiz?', {
          reply_markup: {
             keyboard: [
@@ -116,7 +114,7 @@ bot.on("message", async (msg) => {
             resize_keyboard: true
          }
       });
-   } else if (text === 'Русский') {
+   } else if (text == "Русский") {
       bot.sendMessage(chatId, 'Каким сервисом вы пользуетесь?', {
          reply_markup: {
             keyboard: [
@@ -133,17 +131,17 @@ bot.on("message", async (msg) => {
             resize_keyboard: true
          }
       });
-   } else if (text === 'Savol berish' || text === 'Задайте вопрос') {
-      const languagePrompt = text === 'Savol berish' ? 'Savol:' : 'Вопрос:';
-      bot.sendMessage(chatId, languagePrompt, {
+   } else if (text == "Savol berish") {
+      bot.sendMessage(chatId, "Savol:", {
          reply_markup: { force_reply: true }
       }).then((payload) => {
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
             bot.removeReplyListener(replyListenerId);
             if (msg.text) {
-               const content = text === 'Savol berish' ? `Savol: ${msg.text}` : `Вопрос: ${msg.text}`;
+               const content = `Savol: ${msg.text}`;
+               bot.sendMessage(process.env.CHAT_ID, content);
                await model.addMessage(msg.chat.id, msg.date);
-               bot.sendMessage(chatId, text === 'Savol berish' ? "Sizga tez orada javob berishadi." : "Они скоро вам ответят", {
+               bot.sendMessage(chatId, "Sizga tez orada javob berishadi.", {
                   reply_markup: {
                      keyboard: [[{ text: text }]],
                      resize_keyboard: true
@@ -152,19 +150,34 @@ bot.on("message", async (msg) => {
             }
          });
       });
-   } else if (text === "Parolingizni o'zgartiring" || text === "Измени пароль") {
-      const languageText = text === "Parolingizni o'zgartiring" ? "Kontaktingizni yuboring" : "Отправьте свой контакт";
-      const buttonText = text === "Parolingizni o'zgartiring" ? "Kontaktni yuborish" : "Отправить контакт";
-
-      bot.sendMessage(chatId, languageText, {
+   } else if (text == "Задайте вопрос") {
+      bot.sendMessage(chatId, "Вопрос:", {
+         reply_markup: { force_reply: true }
+      }).then((payload) => {
+         const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
+            bot.removeReplyListener(replyListenerId);
+            if (msg.text) {
+               const content = `Вопрос: ${msg.text}`;
+               bot.sendMessage(process.env.CHAT_ID, content);
+               await model.addMessage(msg.chat.id, msg.date);
+               bot.sendMessage(chatId, "Они скоро вам ответят.", {
+                  reply_markup: {
+                     keyboard: [[{ text: text }]],
+                     resize_keyboard: true
+                  }
+               });
+            }
+         });
+      });
+   } else if (text == "Parolingizni o'zgartiring") {
+      bot.sendMessage(chatId, "Kontaktingizni yuboring", {
          reply_markup: {
-            keyboard: [[{ text: buttonText, request_contact: true, one_time_keyboard: true }]],
+            keyboard: [[{ text: "Kontaktni yuborish", request_contact: true, one_time_keyboard: true }]],
             resize_keyboard: true
          }
       }).then(() => {
-         // Listen for contact event
          const replyListenerId = bot.on('contact', async (msg) => {
-            bot.removeReplyListener(replyListenerId); // Remove listener after use
+            bot.removeReplyListener(replyListenerId);
 
             if (msg.contact) {
                let phoneNumber = msg.contact.phone_number;
@@ -174,8 +187,7 @@ bot.on("message", async (msg) => {
                const checkUser = await model.checkUser(phoneNumber);
 
                if (checkUser) {
-                  const promptText = text === "Parolingizni o'zgartiring" ? "Yangi parolingizni yozing!" : "Введите новый пароль!";
-                  bot.sendMessage(chatId, promptText, {
+                  bot.sendMessage(chatId, "Yangi parolingizni yozing!", {
                      reply_markup: { force_reply: true }
                   }).then((payload) => {
                      const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
@@ -184,8 +196,8 @@ bot.on("message", async (msg) => {
                            const pass_hash = await bcryptjs.hash(msg.text, 10);
                            const updatedUserPassword = await model.updatedUserPassword(checkUser.user_id, pass_hash);
                            if (updatedUserPassword) {
-                              const successText = text === "Parolingizni o'zgartiring" ? "Parol muvaffaqiyatli o'rnatildi." : "Пароль успешно установлен.";
-                              bot.sendMessage(chatId, successText, {
+                              const successText = "Parol muvaffaqiyatli o'rnatildi."
+                              bot.sendMessage(msg.chat.id, successText, {
                                  reply_markup: {
                                     keyboard: [
                                        [
@@ -206,14 +218,13 @@ bot.on("message", async (msg) => {
                      });
                   });
                } else {
-                  bot.sendMessage(chatId, "topilmadi"); // Handle case where user is not found
+                  bot.sendMessage(msg.chat.id, "topilmadi");
                }
             }
-         });
-      });
+         })
+      })
    }
-});
-
+})
 
 bot.on('callback_query', async (msg) => {
    const chatId = msg.message.chat.id;
