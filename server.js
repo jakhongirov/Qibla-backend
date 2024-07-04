@@ -78,19 +78,22 @@ bot.on('message', async (msg) => {
       } catch (error) {
          console.error(`Error fetching user: ${error.message}`);
       }
-   } else {
-      const content = `Assalomu alaykum ${username}\nЗдравствуйте ${username}`;
-
-      bot.sendMessage(chatId, content, {
-         reply_markup: {
-            keyboard: [
-               [{ text: "Uzbek" }, { text: "Русский" }]
-            ],
-            resize_keyboard: true
-         }
-      });
    }
 });
+
+bot.onText(/\/start/, msg => {
+   const chatId = msg.chat.id;
+   const content = `Assalomu alaykum ${username}\nЗдравствуйте ${username}`;
+
+   bot.sendMessage(chatId, content, {
+      reply_markup: {
+         keyboard: [
+            [{ text: "Uzbek" }, { text: "Русский" }]
+         ],
+         resize_keyboard: true
+      }
+   });
+})
 
 bot.on("message", async (msg) => {
    const chatId = msg.chat.id;
