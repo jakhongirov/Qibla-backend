@@ -83,16 +83,36 @@ const handleTextMessages = async (msg) => {
    const text = msg.text;
 
    if (text === "Uzbek") {
-      bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
+      bot.sendMessage(chatId, 'Qaysi xizmatdan foydalanisiz?', {
          reply_markup: {
-            keyboard: [[{ text: "Savol berish" }]],
+            keyboard: [
+               [
+                  { text: "Savol berish" },
+                  { text: "Parolingizni o'zgartiring" },
+               ],
+               [
+                  {
+                     text: "Ilovani yuklab olish"
+                  }
+               ]
+            ],
             resize_keyboard: true
          }
       });
    } else if (text === 'Русский') {
-      bot.sendMessage(chatId, 'Напишите свой вопрос. Мы обязательно вам ответим!', {
+      bot.sendMessage(chatId, 'Каким сервисом вы пользуетесь?', {
          reply_markup: {
-            keyboard: [[{ text: "Задайте вопрос" }]],
+            keyboard: [
+               [
+                  { text: "Задайте вопрос" },
+                  { text: "Измени пароль" },
+               ],
+               [
+                  {
+                     text: "Загрузите приложение"
+                  }
+               ]
+            ],
             resize_keyboard: true
          }
       });
@@ -116,6 +136,106 @@ const handleTextMessages = async (msg) => {
             }
          });
       });
+   } else if (text == "Parolingizni o'zgartiring") {
+      bot.sendMessage(chatId, "Kontaktingizni yuboring", {
+         reply_markup: {
+            keyboard: [[{ text: "Kontaktni yuborish", request_contact: true, one_time_keyboard: true }]],
+            resize_keyboard: true
+         }
+      }).then(() => {
+         const replyListenerId = bot.on('contact', async (msg) => {
+            bot.removeListener(replyListenerId);
+
+            if (msg.contact) {
+               let phoneNumber = msg.contact.phone_number;
+               if (!phoneNumber.startsWith('+')) {
+                  phoneNumber = `+${phoneNumber}`;
+               }
+               const checkUser = await model.checkUser(phoneNumber)
+
+               if (checkUser) {
+                  bot.sendMessage(chatId, "Yengi parolingizni yozing!", {
+                     reply_markup: { force_reply: true }
+                  }).then((payload) => {
+                     const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
+                        bot.removeListener(replyListenerId);
+                        if (msg.text) {
+                           const updatedUserPassword = await model.updatedUserPassword(checkUser.user_id, msg.text);
+                           if (updatedUserPassword) {
+                              bot.sendMessage(chatId, "Parol muvaffaqiyatli o'rnatildi.", {
+                                 reply_markup: {
+                                    keyboard: [
+                                       [
+                                          { text: "Savol berish" },
+                                          { text: "Parolingizni o'zgartiring" },
+                                       ],
+                                       [
+                                          {
+                                             text: "Ilovani yuklab olish"
+                                          }
+                                       ]
+                                    ],
+                                    resize_keyboard: true
+                                 }
+                              });
+                           }
+                        }
+                     })
+                  })
+               }
+            }
+         })
+      })
+   } else if (text == "Измени пароль") {
+      bot.sendMessage(chatId, "Отправьте свой контакт", {
+         reply_markup: {
+            keyboard: [[{ text: "Отправить контакт", request_contact: true, one_time_keyboard: true }]],
+            resize_keyboard: true
+         }
+      }).then(() => {
+         const replyListenerId = bot.on('contact', async (msg) => {
+            bot.removeListener(replyListenerId);
+
+            if (msg.contact) {
+               let phoneNumber = msg.contact.phone_number;
+               if (!phoneNumber.startsWith('+')) {
+                  phoneNumber = `+${phoneNumber}`;
+               }
+               const checkUser = await model.checkUser(phoneNumber)
+
+               if (checkUser) {
+                  bot.sendMessage(chatId, "Введите новый пароль!", {
+                     reply_markup: { force_reply: true }
+                  }).then((payload) => {
+                     const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
+                        bot.removeListener(replyListenerId);
+                        if (msg.text) {
+                           const updatedUserPassword = await model.updatedUserPassword(checkUser.user_id, msg.text);
+                           if (updatedUserPassword) {
+                              bot.sendMessage(chatId, "Пароль успешно установлен.", {
+                                 reply_markup: {
+                                    keyboard: [
+                                       [
+                                          { text: "Задайте вопрос" },
+                                          { text: "Измени пароль" },
+                                       ],
+                                       [
+                                          {
+                                             text: "Загрузите приложение"
+                                          }
+                                       ]
+                                    ],
+                                    resize_keyboard: true
+                                 }
+                              });
+                           }
+                        }
+                     })
+                  })
+               }
+            }
+         })
+      })
    }
 };
 
