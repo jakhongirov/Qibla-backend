@@ -172,6 +172,8 @@ bot.on("message", async (msg) => {
                }
                const checkUser = await model.checkUser(phoneNumber);
 
+               console.log(phoneNumber, checkUser)
+
                if (checkUser) {
                   const promptText = text === "Parolingizni o'zgartiring" ? "Yangi parolingizni yozing!" : "Введите новый пароль!";
                   bot.sendMessage(chatId, promptText, {
