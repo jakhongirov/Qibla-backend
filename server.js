@@ -43,7 +43,7 @@ bot.on('message', async (msg) => {
    const [command, ...parameters] = text.split(' ');
    const username = msg.from.first_name
 
-   if (command === '/start') {
+   if (command === '/start' && parameters?.length) {
       const foundUser = await model.foundUser(parameters[0])
       user = foundUser
 
@@ -161,7 +161,7 @@ bot.on('callback_query', async (msg) => {
    }
 })
 
-bot.on("message", msg => {
+bot.on(/\/start/, msg => {
    const chatId = msg.chat.id
    const text = msg.text
 
