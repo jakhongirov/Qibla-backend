@@ -35,6 +35,10 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 let user;
 
+bot.onText(/\/start/, async msg => {
+   handleTextMessages(msg);
+})
+
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
