@@ -35,55 +35,6 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
 let user;
 
-bot.on('message', async (msg) => {
-   const chatId = msg.chat.id;
-   const text = msg.text;
-   const username = msg.from.first_name;
-
-   console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
-
-   if (text && text.startsWith('/start') && text.split(' ').length > 1) {
-      const parameter = text.split(' ')[1];
-      console.log(`Extracted parameter: ${parameter}`);
-
-      try {
-         const foundUser = await model.foundUser(parameter);
-         user = foundUser;
-         user['parameter'] = parameter;
-
-         if (foundUser) {
-            const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
-            console.log(`User found: ${foundUser.user_name}`);
-
-            bot.sendMessage(chatId, content, {
-               reply_markup: {
-                  inline_keyboard: [
-                     [{ text: 'Uzbek', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
-                  ]
-               }
-            });
-         } else {
-            const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
-            console.log(`User not found with parameter: ${parameter}`);
-
-            bot.sendMessage(chatId, content, {
-               reply_markup: {
-                  keyboard: [
-                     [{ text: "Uzbek" }, { text: "Русский" }]
-                  ],
-                  resize_keyboard: true
-               }
-            });
-         }
-      } catch (error) {
-         console.error(`Error fetching user: ${error.message}`);
-      }
-   } else {
-      console.log('aa')
-      handleTextMessages(msg);
-   }
-});
-
 const handleTextMessages = async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
@@ -246,6 +197,55 @@ const handleTextMessages = async (msg) => {
       })
    }
 };
+
+bot.on('message', async (msg) => {
+   const chatId = msg.chat.id;
+   const text = msg.text;
+   const username = msg.from.first_name;
+
+   console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
+
+   if (text && text.startsWith('/start') && text.split(' ').length > 1) {
+      const parameter = text.split(' ')[1];
+      console.log(`Extracted parameter: ${parameter}`);
+
+      try {
+         const foundUser = await model.foundUser(parameter);
+         user = foundUser;
+         user['parameter'] = parameter;
+
+         if (foundUser) {
+            const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
+            console.log(`User found: ${foundUser.user_name}`);
+
+            bot.sendMessage(chatId, content, {
+               reply_markup: {
+                  inline_keyboard: [
+                     [{ text: 'Uzbek', callback_data: 'uz' }, { text: 'Русский', callback_data: 'ru' }]
+                  ]
+               }
+            });
+         } else {
+            const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
+            console.log(`User not found with parameter: ${parameter}`);
+
+            bot.sendMessage(chatId, content, {
+               reply_markup: {
+                  keyboard: [
+                     [{ text: "Uzbek" }, { text: "Русский" }]
+                  ],
+                  resize_keyboard: true
+               }
+            });
+         }
+      } catch (error) {
+         console.error(`Error fetching user: ${error.message}`);
+      }
+   } else {
+      console.log('aa')
+      handleTextMessages(msg);
+   }
+});
 
 bot.on('callback_query', async (msg) => {
    const chatId = msg.message.chat.id;
