@@ -149,14 +149,24 @@ bot.on('callback_query', async (msg) => {
                      const deleteUser = await model.deleteUser(user.user_id)
 
                      if (deleteUser) {
-                        bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+                        bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
+                           reply_markup: {
+                              keyboard: [[{ text: data == "uz" ? "Savol berish" : "Задайте вопрос" }]],
+                              resize_keyboard: true
+                           }
+                        });
                      }
                   }
 
                } else {
                   const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
                   if (updatedUserPhone) {
-                     bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
+                     bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
+                        reply_markup: {
+                           keyboard: [[{ text: data == "uz" ? "Savol berish" : "Задайте вопрос" }]],
+                           resize_keyboard: true
+                        }
+                     });
                   }
                }
             }
