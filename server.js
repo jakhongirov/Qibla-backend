@@ -142,7 +142,11 @@ bot.on('callback_query', async (msg) => {
          const replyListenerId = bot.on('contact', async (msg) => {
             bot.removeListener(replyListenerId);
             if (msg.contact) {
-               const updatedUserPhone = await model.updatedUserPhone(user.user_id, msg.contact.phone_number);
+               let phoneNumber = msg.contact.phone_number;
+               if (!phoneNumber.startsWith('+')) {
+                  phoneNumber = `+${phoneNumber}`;
+               }
+               const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
                if (updatedUserPhone) {
                   bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
                }
