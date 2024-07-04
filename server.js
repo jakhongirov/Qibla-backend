@@ -37,6 +37,31 @@ const bot = new TelegramBot(process.env.BOT_TOKEN, {
 
 let user;
 
+bot.onText(/\/start/, async msg => {
+   const chatId = msg.chat.id
+   const username = msg.from.first_name
+   const content = `
+            Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.
+         `;
+
+   bot.sendMessage(chatId, content, {
+      reply_markup: JSON.stringify({
+         keyboard:
+            [
+               [
+                  {
+                     text: "Uzbek"
+                  },
+                  {
+                     text: "Русский"
+                  }
+               ]
+            ],
+         resize_keyboard: true
+      })
+   });
+})
+
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
@@ -161,7 +186,7 @@ bot.on('callback_query', async (msg) => {
    }
 })
 
-bot.on(/\/start/, msg => {
+bot.on("message", msg => {
    const chatId = msg.chat.id
    const text = msg.text
 
