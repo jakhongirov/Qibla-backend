@@ -203,6 +203,8 @@ bot.on("message", async (msg) => {
                         }
                      })
                   })
+               } else {
+                  bot.sendMessage(chatId, "topilmadi")
                }
             }
          })
