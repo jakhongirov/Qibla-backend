@@ -12,7 +12,6 @@ const swaggerJsDoc = require("swagger-jsdoc");
 const router = require("./src/modules");
 const socket = require('./src/lib/socket')
 const TelegramBot = require('node-telegram-bot-api')
-const bcryptjs = require('bcryptjs')
 const model = require('./model')
 
 const publicFolderPath = path.join(__dirname, 'public');
@@ -43,14 +42,13 @@ bot.on('message', async (msg) => {
 
    console.log(`Received message: ${text} from ${username} (Chat ID: ${chatId})`);
 
-   if (text && text.startsWith('/start') && text.split(' ').length > 1) {
+   if (text?.startsWith('/start') && text?.split(' ').length > 1) {
       const parameter = text.split(' ')[1];
       console.log(`Extracted parameter: ${parameter}`);
 
       try {
          const foundUser = await model.foundUser(parameter);
          user = foundUser;
-         user['parameter'] = parameter;
 
          if (foundUser) {
             const content = `Assalomu alaykum ${foundUser.user_name}\nЗдравствуйте ${foundUser.user_name}`;
@@ -79,74 +77,42 @@ bot.on('message', async (msg) => {
       } catch (error) {
          console.error(`Error fetching user: ${error.message}`);
       }
-   } else if (text == '/start') {
-      const content = `Assalomu alaykum ${username}\nЗдравствуйте ${username}`;
-
-      bot.sendMessage(chatId, content, {
-         reply_markup: {
-            keyboard: [
-               [{ text: "Uzbek" }, { text: "Русский" }]
-            ],
-            resize_keyboard: true
-         }
-      });
+   } else {
+      handleTextMessages(msg);
    }
 });
 
-bot.on("message", async (msg) => {
+const handleTextMessages = async (msg) => {
    const chatId = msg.chat.id;
    const text = msg.text;
 
    console.log(`Handling text message: ${text} (Chat ID: ${chatId})`);
 
-   // Handle language-specific commands
    if (text === "Uzbek") {
-      bot.sendMessage(chatId, 'Qaysi xizmatdan foydalanisiz?', {
+      bot.sendMessage(chatId, 'Savolingizni yozib qoldiring. Sizga albatta javob beramiz!', {
          reply_markup: {
-            keyboard: [
-               [
-                  { text: "Savol berish" },
-                  { text: "Parolingizni o'zgartiring" },
-               ],
-               [
-                  {
-                     text: "Ilovani yuklab olish"
-                  }
-               ]
-            ],
+            keyboard: [[{ text: "Savol berish" }]],
             resize_keyboard: true
          }
       });
    } else if (text === 'Русский') {
-      bot.sendMessage(chatId, 'Каким сервисом вы пользуетесь?', {
+      bot.sendMessage(chatId, 'Напишите свой вопрос. Мы обязательно вам ответим!', {
          reply_markup: {
-            keyboard: [
-               [
-                  { text: "Задайте вопрос" },
-                  { text: "Измени пароль" },
-               ],
-               [
-                  {
-                     text: "Загрузите приложение"
-                  }
-               ]
-            ],
+            keyboard: [[{ text: "Задайте вопрос" }]],
             resize_keyboard: true
          }
       });
    } else if (text === 'Savol berish' || text === 'Задайте вопрос') {
-      // Handling question prompts
       const languagePrompt = text === 'Savol berish' ? 'Savol:' : 'Вопрос:';
       bot.sendMessage(chatId, languagePrompt, {
          reply_markup: { force_reply: true }
       }).then((payload) => {
-         // Set up reply listener for the question
          const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
-            bot.removeReplyListener(replyListenerId); // Remove listener after use
+            bot.removeListener(replyListenerId);
             if (msg.text) {
-               // Process the user's reply
                const content = text === 'Savol berish' ? `Savol: ${msg.text}` : `Вопрос: ${msg.text}`;
-               await model.addMessage(msg.chat.id, msg.date); // Example database operation
+               await model.addMessage(msg.chat.id, msg.date);
+               bot.sendMessage(process.env.CHAT_ID, content);
                bot.sendMessage(chatId, text === 'Savol berish' ? "Sizga tez orada javob berishadi." : "Они скоро вам ответят", {
                   reply_markup: {
                      keyboard: [[{ text: text }]],
@@ -156,71 +122,8 @@ bot.on("message", async (msg) => {
             }
          });
       });
-   } else if (text === "Parolingizni o'zgartiring" || text === "Измени пароль") {
-      // Handling password change requests
-      const languageText = text === "Parolingizni o'zgartiring" ? "Kontaktingizni yuboring" : "Отправьте свой контакт";
-      const buttonText = text === "Parolingizni o'zgartiring" ? "Kontaktni yuborish" : "Отправить контакт";
-
-      bot.sendMessage(chatId, languageText, {
-         reply_markup: {
-            keyboard: [[{ text: buttonText, request_contact: true, one_time_keyboard: true }]],
-            resize_keyboard: true
-         }
-      }).then(() => {
-         // Listen for contact event
-         const replyListenerId = bot.on('contact', async (msg) => {
-            bot.removeReplyListener(replyListenerId); // Remove listener after use
-
-            if (msg.contact) {
-               let phoneNumber = msg.contact.phone_number;
-               if (!phoneNumber.startsWith('+')) {
-                  phoneNumber = `+${phoneNumber}`;
-               }
-               const checkUser = await model.checkUser(phoneNumber); // Example database operation
-
-               if (checkUser) {
-                  const promptText = text === "Parolingizni o'zgartiring" ? "Yangi parolingizni yozing!" : "Введите новый пароль!";
-                  bot.sendMessage(chatId, promptText, {
-                     reply_markup: { force_reply: true }
-                  }).then((payload) => {
-                     // Set up reply listener for the new password
-                     const replyListenerId = bot.onReplyToMessage(payload.chat.id, payload.message_id, async (msg) => {
-                        bot.removeReplyListener(replyListenerId); // Remove listener after use
-                        if (msg.text) {
-                           // Update user password in the database
-                           const pass_hash = await bcryptjs.hash(msg.text, 10); // Example password hashing
-                           const updatedUserPassword = await model.updatedUserPassword(checkUser.user_id, pass_hash); // Example database operation
-                           if (updatedUserPassword) {
-                              const successText = text === "Parolingizni o'zgartiring" ? "Parol muvaffaqiyatli o'rnatildi." : "Пароль успешно установлен.";
-                              bot.sendMessage(chatId, successText, {
-                                 reply_markup: {
-                                    keyboard: [
-                                       [
-                                          { text: "Savol berish" },
-                                          { text: "Parolingizni o'zgartiring" },
-                                       ],
-                                       [
-                                          {
-                                             text: "Ilovani yuklab olish"
-                                          }
-                                       ]
-                                    ],
-                                    resize_keyboard: true
-                                 }
-                              });
-                           }
-                        }
-                     });
-                  });
-               } else {
-                  bot.sendMessage(chatId, "topilmadi"); // Handle case where user is not found
-               }
-            }
-         });
-      });
    }
-});
-
+};
 
 bot.on('callback_query', async (msg) => {
    const chatId = msg.message.chat.id;
@@ -237,39 +140,11 @@ bot.on('callback_query', async (msg) => {
          }
       }).then(() => {
          const replyListenerId = bot.on('contact', async (msg) => {
-            bot.removeReplyListener(replyListenerId);
+            bot.removeListener(replyListenerId);
             if (msg.contact) {
-               let phoneNumber = msg.contact.phone_number;
-               if (!phoneNumber.startsWith('+')) {
-                  phoneNumber = `+${phoneNumber}`;
-               }
-               const checkUser = await model.checkUser(phoneNumber);
-
-               if (checkUser) {
-                  const addToken = await model.addToken(checkUser.user_id, user.parameter);
-
-                  if (addToken) {
-                     const deleteUser = await model.deleteUser(user.user_id);
-
-                     if (deleteUser) {
-                        bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
-                           reply_markup: {
-                              keyboard: [[{ text: data === "uz" ? "Savol berish" : "Задайте вопрос" }]],
-                              resize_keyboard: true
-                           }
-                        });
-                     }
-                  }
-               } else {
-                  const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
-                  if (updatedUserPhone) {
-                     bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
-                        reply_markup: {
-                           keyboard: [[{ text: data === "uz" ? "Savol berish" : "Задайте вопрос" }]],
-                           resize_keyboard: true
-                        }
-                     });
-                  }
+               const updatedUserPhone = await model.updatedUserPhone(user.user_id, msg.contact.phone_number);
+               if (updatedUserPhone) {
+                  bot.sendMessage(msg.chat.id, data === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`);
                }
             }
          });
@@ -283,6 +158,14 @@ bot.on('message', async (msg) => {
       const foundMsg = await model.foundMsg(date);
       bot.sendMessage(foundMsg.chat_id, `Javob: ${msg.text}`);
    }
+});
+
+bot.onText(/\/reply/, (msg) => {
+   const chatId = msg.chat.id;
+   const repliedMessageId = msg.reply_to_message.message_id;
+   bot.sendMessage(chatId, 'Replying to the bot message', {
+      reply_to_message_id: repliedMessageId
+   });
 });
 
 app.get('/telegrambot', async (req, res) => {
