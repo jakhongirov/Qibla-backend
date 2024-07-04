@@ -143,7 +143,6 @@ bot.on("message", async (msg) => {
             if (msg.text) {
                const content = text === 'Savol berish' ? `Savol: ${msg.text}` : `Вопрос: ${msg.text}`;
                await model.addMessage(msg.chat.id, msg.date);
-               bot.sendMessage(process.env.CHAT_ID, content);
                bot.sendMessage(chatId, text === 'Savol berish' ? "Sizga tez orada javob berishadi." : "Они скоро вам ответят", {
                   reply_markup: {
                      keyboard: [[{ text: text }]],
@@ -214,6 +213,7 @@ bot.on("message", async (msg) => {
       });
    }
 });
+
 
 bot.on('callback_query', async (msg) => {
    const chatId = msg.message.chat.id;
