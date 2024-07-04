@@ -62,38 +62,25 @@ bot.on('message', async (msg) => {
                   ]
                }
             });
-         } else if (text == '/start') {
-            const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
-            console.log(`User not found with parameter: ${parameter}`);
-
-            bot.sendMessage(chatId, content, {
-               reply_markup: {
-                  keyboard: [
-                     [{ text: "Uzbek" }, { text: "Русский" }]
-                  ],
-                  resize_keyboard: true
-               }
-            });
          }
       } catch (error) {
          console.error(`Error fetching user: ${error.message}`);
       }
+   } else if (text == '/start') {
+      const content = `Assalomu alaykum ${username}, Siz ro'yxatda o'ta olmadiz.\nЗдравствуйте ${username}, Вы не смогли зарегистрироваться.`;
+      console.log(`User not found with parameter: ${parameter}`);
+
+      bot.sendMessage(chatId, content, {
+         reply_markup: {
+            keyboard: [
+               [{ text: "Uzbek" }, { text: "Русский" }]
+            ],
+            resize_keyboard: true
+         }
+      });
    }
 });
 
-bot.onText(/\/start/, msg => {
-   const chatId = msg.chat.id;
-   const content = `Assalomu alaykum ${username}\nЗдравствуйте ${username}`;
-
-   bot.sendMessage(chatId, content, {
-      reply_markup: {
-         keyboard: [
-            [{ text: "Uzbek" }, { text: "Русский" }]
-         ],
-         resize_keyboard: true
-      }
-   });
-})
 
 bot.on("message", async (msg) => {
    const chatId = msg.chat.id;
