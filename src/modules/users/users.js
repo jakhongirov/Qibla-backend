@@ -265,6 +265,7 @@ module.exports = {
 
          console.log(user_phone_number);
          console.log(checkUserPhoneNumber);
+         console.log(checkUserEmail);
 
          if (checkUserEmail || checkUserPhoneNumber) {
             return res.status(302).json({
