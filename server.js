@@ -113,7 +113,7 @@ bot.on("message", (msg) => {
    } else if (text === 'Русский') {
       bot.sendMessage(chatId, 'Пожалуйста, выберите необходимое меню:', {
          reply_markup: {
-            keyboard: [[{ text: "Задавать вопрос" }, {text: "Восстановление пароля"}]],
+            keyboard: [[{ text: "Задавать вопрос" }, { text: "Восстановление пароля" }]],
             resize_keyboard: true
          }
       });
@@ -170,7 +170,7 @@ bot.on("message", (msg) => {
                               const content = text === 'Parolni tiklash' ? `${checkUser?.user_name}, parolingiz muvaffaqiyatli o'zgartirildi.` : `${checkUser?.user_name}, Ваш пароль был успешно изменен.`
                               bot.sendMessage(msg.chat.id, content, {
                                  reply_markup: {
-                                    keyboard: [[{ text: 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                                    keyboard: [[{ text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
                                     resize_keyboard: true
                                  }
                               })
@@ -184,7 +184,7 @@ bot.on("message", (msg) => {
                   const content = text === 'Parolni tiklash' ? `Foydalanuvchi topilmadi` : "Пользователь не найден"
                   bot.sendMessage(msg.chat.id, content, {
                      reply_markup: {
-                        keyboard: [[{ text: 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
+                        keyboard: [[{ text: text == 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
                         resize_keyboard: true
                      }
                   })
