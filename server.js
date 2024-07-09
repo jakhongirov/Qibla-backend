@@ -164,9 +164,9 @@ bot.on("message", (msg) => {
                         bot.removeListener(replyListenerId);
                         if (msg.text) {
                            const pass_hash = await bcryptjs.hash(msg.text, 10);
-                           const updatePassword = await model.updatePassword(checkUser?.user_id, pass_hash)
+                           const updatedUserPassword = await model.updatedUserPassword(checkUser?.user_id, pass_hash)
 
-                           if (updatePassword) {
+                           if (updatedUserPassword) {
                               const content = text === 'Parolni tiklash' ? `${checkUser?.user_name}, parolingiz muvaffaqiyatli o'zgartirildi.` : ""
                               bot.sendMessage(msg.chat.id, content, {
                                  reply_markup: {
