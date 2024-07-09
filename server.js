@@ -138,7 +138,7 @@ bot.on("message", (msg) => {
          });
       });
    } else if (text == "Parolni tiklash" || text == "Восстановление пароля") {
-      const languagePrompt = text === 'Parolni tiklash' ? 'Пожалуйста, пришлите ваш контакт:' : '';
+      const languagePrompt = text === 'Parolni tiklash' ? 'Iltimos, kontaktingizni yuboring:' : 'Пожалуйста, пришлите ваш контакт:';
       const buttonText = text === 'Parolni tiklash' ? 'Kontaktni yuborish' : 'Отправить контакт';
       bot.sendMessage(chatId, languagePrompt, {
          reply_markup: {
