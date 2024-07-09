@@ -113,7 +113,7 @@ bot.on("message", (msg) => {
    } else if (text === 'Русский') {
       bot.sendMessage(chatId, 'Пожалуйста, выберите необходимое меню:', {
          reply_markup: {
-            keyboard: [[{ text: "Задавать вопрос" }]],
+            keyboard: [[{ text: "Задавать вопрос" }, {text: "Восстановление пароля"}]],
             resize_keyboard: true
          }
       });
@@ -137,8 +137,8 @@ bot.on("message", (msg) => {
             }
          });
       });
-   } else if (text == "Parolni tiklash") {
-      const languagePrompt = text === 'Parolni tiklash' ? 'Iltimos, Kontaktingizni yuboring:' : '';
+   } else if (text == "Parolni tiklash" || text == "Восстановление пароля") {
+      const languagePrompt = text === 'Parolni tiklash' ? 'Пожалуйста, пришлите ваш контакт:' : '';
       const buttonText = text === 'Parolni tiklash' ? 'Kontaktni yuborish' : 'Отправить контакт';
       bot.sendMessage(chatId, languagePrompt, {
          reply_markup: {
@@ -156,7 +156,7 @@ bot.on("message", (msg) => {
                const checkUser = await model.checkUser(phoneNumber)
 
                if (checkUser) {
-                  const languagePrompt = text === 'Parolni tiklash' ? 'Yangi parolingizni yozing' : '';
+                  const languagePrompt = text === 'Parolni tiklash' ? 'Yangi parolingizni yozing' : 'Введите новый пароль';
                   bot.sendMessage(msg.chat.id, languagePrompt, {
                      reply_markup: { force_reply: true }
                   }).then(payload => {
@@ -167,10 +167,10 @@ bot.on("message", (msg) => {
                            const updatedUserPassword = await model.updatedUserPassword(checkUser?.user_id, pass_hash)
 
                            if (updatedUserPassword) {
-                              const content = text === 'Parolni tiklash' ? `${checkUser?.user_name}, parolingiz muvaffaqiyatli o'zgartirildi.` : ""
+                              const content = text === 'Parolni tiklash' ? `${checkUser?.user_name}, parolingiz muvaffaqiyatli o'zgartirildi.` : `${checkUser?.user_name}, Ваш пароль был успешно изменен.`
                               bot.sendMessage(msg.chat.id, content, {
                                  reply_markup: {
-                                    keyboard: [[{ text: 'Parolni tiklash' ? "Murojaat qilish" : "" }, { text: 'Parolni tiklash' ? "Parolni tiklash" : "" }]],
+                                    keyboard: [[{ text: 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
                                     resize_keyboard: true
                                  }
                               })
@@ -181,10 +181,10 @@ bot.on("message", (msg) => {
 
                   bot.off('contact', changePassword)
                } else {
-                  const content = text === 'Parolni tiklash' ? `Foydalanuvchi topilmadi` : ""
+                  const content = text === 'Parolni tiklash' ? `Foydalanuvchi topilmadi` : "Пользователь не найден"
                   bot.sendMessage(msg.chat.id, content, {
                      reply_markup: {
-                        keyboard: [[{ text: 'Parolni tiklash' ? "Murojaat qilish" : "" }, { text: 'Parolni tiklash' ? "Parolni tiklash" : "" }]],
+                        keyboard: [[{ text: 'Parolni tiklash' ? "Murojaat qilish" : "Задавать вопрос" }, { text: 'Parolni tiklash' ? "Parolni tiklash" : "Восстановление пароля" }]],
                         resize_keyboard: true
                      }
                   })
