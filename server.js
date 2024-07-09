@@ -188,6 +188,7 @@ bot.on("message", (msg) => {
                         resize_keyboard: true
                      }
                   })
+                  bot.off('contact', changePassword)
                }
             }
          }
