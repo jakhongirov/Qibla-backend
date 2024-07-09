@@ -139,6 +139,7 @@ bot.on("message", (msg) => {
       });
    } else if (text == "Parolni tiklash") {
       const languagePrompt = text === 'Parolni tiklash' ? 'Iltimos, Kontaktingizni yuboring:' : '';
+      const buttonText = language === 'uz' ? 'Kontaktni yuborish' : 'Отправить контакт';
       bot.sendMessage(chatId, languagePrompt, {
          reply_markup: {
             keyboard: [[{ text: buttonText, request_contact: true }]],
