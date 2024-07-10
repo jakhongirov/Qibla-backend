@@ -144,7 +144,7 @@ bot.on("message", (msg) => {
 
             bot.sendMessage(chatId, text === 'Murojaat qilish' ? "Tashakkur, tez orada sizga javob qaytaramiz!" : "Спасибо, мы скоро свяжемся с вами!", {
                reply_markup: {
-                  keyboard: [[{ text: text }]],
+                  keyboard: [[{ text: text == 'Murojaat qilish' ? "Murojaat qilish" : "Задавать вопрос" }, { text: text == 'Murojaat qilish' ? "Parolni tiklash" : "Восстановление пароля" }]],
                   resize_keyboard: true
                }
             });
