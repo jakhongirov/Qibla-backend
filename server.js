@@ -131,12 +131,13 @@ bot.on("message", (msg) => {
                await bot.sendMessage(process.env.CHAT_ID, content);
             } else if (msg.photo) {
                const fileId = msg.photo[msg.photo.length - 1].file_id; // Get the highest resolution photo
-               content = text === 'Murojaat qilish' ? `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Фото отправлено:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
+               const caption = msg.caption ? msg.caption : '';
+               content = text === 'Murojaat qilish' ? `Rasm yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nIzoh: ${caption}` : `Фото отправлено:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}\n\nПодпись: ${caption}`;
                await bot.sendPhoto(process.env.CHAT_ID, fileId, { caption: content });
             } else if (msg.sticker) {
                const fileId = msg.sticker.file_id;
                content = text === 'Murojaat qilish' ? `Stiker yuborildi:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}` : `Стикер отправлен:\n\n${msg.from.first_name} ${msg.from?.last_name ? msg.from?.last_name : ""} - ${msg.from?.username ? `@${msg.from?.username}` : ""} - ${msg.from?.language_code ? msg.from?.language_code : ""} -  ${msg.from?.id ? `#${msg.from?.id}` : ""}`;
-               await bot.sendSticker(process.env.CHAT_ID, fileId, { caption: content });
+               await bot.sendSticker(process.env.CHAT_ID, fileId);
             }
 
             await model.addMessage(msg.chat.id, msg.date);
