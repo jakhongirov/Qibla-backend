@@ -80,7 +80,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
 
       if (foundUser) {
          user[chatId] = foundUser;
-         user[chatId]?.parameter = parameter;
+         user[chatId].parameter = parameter;
          console.log(user[chatId])
          const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста выберите язык бота:`;
 
