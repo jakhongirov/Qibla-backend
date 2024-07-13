@@ -81,7 +81,7 @@ const handleStartCommand = async (msg, chatId, text, username) => {
       if (foundUser) {
          user[chatId] = foundUser;
          user[chatId].parameter = parameter;
-         console.log(user[chatId])
+         console.log("found", user[chatId])
          const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста выберите язык бота:`;
 
          bot.sendMessage(chatId, content, {
@@ -249,10 +249,12 @@ const handleLanguageSelection = async (chatId, language) => {
             const checkUser = await model.checkUser(phoneNumber)
 
             if (checkUser) {
+               console.log("chekc", checkUser)
                const addToken = await model.addToken(checkUser.user_id, user[chatId]?.parameter)
 
                if (addToken) {
-                  await model.deleteUser(user[chatId].user_id)
+                  const deleteUser = await model.deleteUser(user[chatId].user_id)
+                  console.log("delete", deleteUser)
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                      reply_markup: {
                         keyboard: [
