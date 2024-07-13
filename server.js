@@ -34,7 +34,7 @@ if (!fs.existsSync(imagesFolderPath)) {
 
 const bot = new TelegramBot(process.env.BOT_TOKEN, { polling: true });
 
-let user;
+const user = {};
 
 bot.on('message', async (msg) => {
    const chatId = msg.chat.id;
@@ -68,11 +68,20 @@ const handleStartCommand = async (msg, chatId, text, username) => {
    const parameter = text.split(' ')[1];
 
    try {
+
+      // Initialize user state if not present
+      if (!user[chatId]) {
+         user[chatId] = {
+            parameter: null,
+         };
+      }
+
       const foundUser = await model.foundUser(parameter);
-      user = foundUser;
-      user["parameter"] = parameter;
 
       if (foundUser) {
+         user[chatId] = foundUser;
+         user[chatId]?.parameter = parameter;
+         console.log(user[chatId])
          const content = `Assalomu alaykum, ${foundUser?.user_name}, iltimos bot tilni tanlang:\n\nЗдравствуйте, ${foundUser?.user_name}, пожалуйста выберите язык бота:`;
 
          bot.sendMessage(chatId, content, {
@@ -240,10 +249,10 @@ const handleLanguageSelection = async (chatId, language) => {
             const checkUser = await model.checkUser(phoneNumber)
 
             if (checkUser) {
-               const addToken = await model.addToken(checkUser.user_id, user?.parameter)
+               const addToken = await model.addToken(checkUser.user_id, user[chatId]?.parameter)
 
                if (addToken) {
-                  await model.deleteOldUser(user.user_id)
+                  await model.deleteUser(user[chatId].user_id)
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
                      reply_markup: {
                         keyboard: [
