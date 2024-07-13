@@ -246,27 +246,134 @@ const handleLanguageSelection = async (chatId, language) => {
             if (!phoneNumber.startsWith('+')) {
                phoneNumber = `+${phoneNumber}`;
             }
-            const checkUser = await model.checkUser(phoneNumber)
 
-            if (checkUser) {
-               console.log("chekc", checkUser)
-               const addToken = await model.addToken(checkUser.user_id, user[chatId]?.parameter)
+            const checkUser = {}
+            checkUser[chatId] = await model.checkUser(phoneNumber)
 
-               if (addToken) {
-                  const deleteUser = await model.deleteUser(user[chatId].user_id)
-                  console.log("delete", deleteUser)
-                  bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
-                     reply_markup: {
-                        keyboard: [
-                           [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
-                        ],
-                        resize_keyboard: true
+            if (checkUser[chatId]) {
+               console.log("check", checkUser[chatId])
+
+               if (checkUser[chatId]?.user_premium) {
+                  console.log("check user premium")
+
+                  const expirationDate = new Date(checkUser[chatId]?.user_premium_expires_at);
+                  const today = new Date();
+                  const isExpired = expirationDate < today;
+
+                  if (isExpired) {
+                     console.log("The user's premium membership has expired.");
+                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, !checkUser[chatId]?.user_premium, checkUser[chatId]?.user_premium_expires_at)
+
+                     if (addToken) {
+                        const deleteUser = await model.deleteUser(user[chatId].user_id)
+                        console.log("delete", deleteUser)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
                      }
-                  });
-                  bot.off('contact', contactHandler);
+                  } else {
+                     console.log("The user's premium membership is still valid.");
+                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId]?.user_premium, checkUser[chatId]?.user_premium_expires_at)
+
+                     if (addToken) {
+                        const deleteUser = await model.deleteUser(user[chatId].user_id)
+                        console.log("delete", deleteUser)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
+                     }
+                  }
+
+               } else if (user[chatId]?.user_premium) {
+                  console.log("user premium")
+
+                  const expirationDate = new Date(user[chatId]?.user_premium_expires_at);
+                  const today = new Date();
+                  const isExpired = expirationDate < today;
+
+                  if (isExpired) {
+                     console.log("The user's premium membership has expired.");
+                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, !user[chatId]?.user_premium, user[chatId]?.user_premium_expires_at)
+
+                     if (addToken) {
+                        const deleteUser = await model.deleteUser(user[chatId].user_id)
+                        console.log("delete", deleteUser)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
+                     }
+                  } else {
+                     console.log("The user's premium membership is still valid.");
+                     const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, user[chatId]?.user_premium, user[chatId]?.user_premium_expires_at)
+
+                     if (addToken) {
+                        const deleteUser = await model.deleteUser(user[chatId].user_id)
+                        console.log("delete", deleteUser)
+                        bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                           reply_markup: {
+                              keyboard: [
+                                 [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                              ],
+                              resize_keyboard: true
+                           }
+                        });
+                        bot.off('contact', contactHandler);
+                     }
+                  }
+               } else {
+                  console.log("users not premium")
+                  const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter, checkUser[chatId]?.user_premium, checkUser[chatId]?.user_premium_expires_at)
+
+                  if (addToken) {
+                     const deleteUser = await model.deleteUser(user[chatId].user_id)
+                     console.log("delete", deleteUser)
+                     bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+                        reply_markup: {
+                           keyboard: [
+                              [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+                           ],
+                           resize_keyboard: true
+                        }
+                     });
+                     bot.off('contact', contactHandler);
+                  }
                }
+
+               // const addToken = await model.addToken(checkUser[chatId].user_id, user[chatId]?.parameter)
+
+               // if (addToken) {
+               //    const deleteUser = await model.deleteUser(user[chatId].user_id)
+               //    console.log("delete", deleteUser)
+               //    bot.sendMessage(msg.chat.id, language === 'uz' ? `Siz Ro'yxatdan muvaffaqiyatli o'tdingiz. Endi Qiblah ilovasiga qaytishingiz mumkin ✅` : `Регистрация прошла успешно. Теперь вы можете вернуться в приложение Qiblah ✅`, {
+               //       reply_markup: {
+               //          keyboard: [
+               //             [{ text: language === 'uz' ? "Murojaat qilish" : "Задавать вопрос" }]
+               //          ],
+               //          resize_keyboard: true
+               //       }
+               //    });
+               //    bot.off('contact', contactHandler);
+               // }
             } else {
-               const updatedUserPhone = await model.updatedUserPhone(user.user_id, phoneNumber);
+               const updatedUserPhone = await model.updatedUserPhone(user[chatId].user_id, phoneNumber);
                if (updatedUserPhone) {
                   bot.sendMessage(msg.chat.id, language === 'uz' ? `Sizning so'rovingiz muvaffaqiyatli qabul qilindi, ilovaga qayting.` : `Ваш запрос успешно получен, вернитесь к приложению.`, {
                      reply_markup: {
